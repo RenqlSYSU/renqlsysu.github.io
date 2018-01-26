@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>山东半岛预报系统搭建</title>
+    <meta name="description" content="  编译WRF  编译WPS  下载geog包并解压。  调整wps设置  执行wps  调整WRF设置  执行real  执行wrf  计划任务打算做一个山东半岛的预报系统，以后也算投名状。编译WRFconfigure尝试选择20. INTEL (ifort/icc): Xeon (SNB with AVX m...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://202.116.70.212:80/2017/12/31/WRF-shandong-setup/">
+    <link rel="alternate" type="application/rss+xml" title="LZN's Blog" href="http://202.116.70.212:80/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f8f21649f9d39b36012bc6dac8898310";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">LZN's Blog</a>
+        <small>try to be a day-contributor!</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-clock-o"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-server"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/Side Projects/">
+                        
+                            <i class="fa fa-bar-chart"></i>Side Projects
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/sandbox/">
+                        
+                            <i class="fa fa-flask"></i>Sandbox
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/favorites/">
+                        
+                            <i class="fa fa-heart"></i>Favorites
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-id-card-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/comments/">
+                        
+                            <i class="fa fa-comments"></i>Comments
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>山东半岛预报系统搭建</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2017-12-31
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>LZN
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#modeling" title="Category: modeling" rel="category">modeling</a>&nbsp;
+    
+        <a href="/category/#linux" title="Category: linux" rel="category">linux</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#WRF" title="Tag: WRF" rel="tag">WRF</a-->
+        <a href="/tag/#WRF" title="Tag: WRF" rel="tag">WRF</a>&nbsp;
+    
+        <!--a href="/tag/#forecast%26nbsp%3Bsystem" title="Tag: forecast&nbsp;system" rel="tag">forecast&nbsp;system</a-->
+        <a href="/tag/#forecast&nbsp;system" title="Tag: forecast&nbsp;system" rel="tag">forecast&nbsp;system</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#编译wrf" id="markdown-toc-编译wrf">编译WRF</a></li>
+  <li><a href="#编译wps" id="markdown-toc-编译wps">编译WPS</a></li>
+  <li><a href="#下载geog包并解压" id="markdown-toc-下载geog包并解压">下载geog包并解压。</a></li>
+  <li><a href="#调整wps设置" id="markdown-toc-调整wps设置">调整wps设置</a></li>
+  <li><a href="#执行wps" id="markdown-toc-执行wps">执行wps</a></li>
+  <li><a href="#调整wrf设置" id="markdown-toc-调整wrf设置">调整WRF设置</a></li>
+  <li><a href="#执行real" id="markdown-toc-执行real">执行real</a></li>
+  <li><a href="#执行wrf" id="markdown-toc-执行wrf">执行wrf</a></li>
+  <li><a href="#计划任务" id="markdown-toc-计划任务">计划任务</a></li>
+  <li><a href="#执行测试" id="markdown-toc-执行测试">执行测试</a></li>
+  <li><a href="#运行时间问题" id="markdown-toc-运行时间问题">运行时间问题</a></li>
+</ul>
+
+<p>打算做一个山东半岛的预报系统，以后也算投名状。</p>
+
+<h3 id="编译wrf">编译WRF</h3>
+
+<p>configure尝试选择20. INTEL (ifort/icc): Xeon (SNB with AVX mods)</p>
+
+<p>之后直接执行编译</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./compile <span class="nt">-j</span> 8 em_real
+</code></pre></div></div>
+<p>执行编译过程卡住。更换15. 不包括avx指令集后成功。</p>
+
+<h3 id="编译wps">编译WPS</h3>
+
+<p>编译wps发现无法编译出ungrib，经过多次测试，分别</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install libpng-devel
+yum install jasper-devel
+</code></pre></div></div>
+<p>将devel包安装完整后成功。</p>
+
+<h3 id="下载geog包并解压">下载geog包并解压。</h3>
+
+<p><strong>Updated 2017-12-31</strong></p>
+
+<h3 id="调整wps设置">调整wps设置</h3>
+
+<p>完整namelist.wps</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&amp;</span><span class="n">share</span><span class="w">
+ </span><span class="n">wrf_core</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ARW'</span><span class="p">,</span><span class="w">
+ </span><span class="n">max_dom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'2018-01-05_12:00:00'</span><span class="p">,</span><span class="s1">'2018-01-05_12:00:00'</span><span class="p">,</span><span class="s1">'2018-01-05_12:00:00'</span><span class="p">,</span><span class="s1">'2018-01-05_12:00:00'</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_date</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s1">'2018-01-10_12:00:00'</span><span class="p">,</span><span class="s1">'2018-01-10_12:00:00'</span><span class="p">,</span><span class="s1">'2018-01-10_12:00:00'</span><span class="p">,</span><span class="s1">'2018-01-10_12:00:00'</span><span class="p">,</span><span class="w">
+ </span><span class="n">interval_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">21600</span><span class="w">
+ </span><span class="n">active_grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="kc">.true.</span><span class="p">,</span><span class="kc">.true.</span><span class="p">,</span><span class="w">
+ </span><span class="n">subgrid_ratio_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+ </span><span class="n">subgrid_ratio_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+ </span><span class="n">io_form_geogrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+ </span><span class="n">opt_output_from_geogrid_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'./'</span><span class="p">,</span><span class="w">
+ </span><span class="n">debug_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">/</span><span class="w">
+
+</span><span class="p">&amp;</span><span class="n">geogrid</span><span class="w">
+ </span><span class="n">parent_id</span><span class="w">         </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="p">,</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span><span class="w">
+ </span><span class="n">parent_grid_ratio</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span><span class="w">
+ </span><span class="n">i_parent_start</span><span class="w">    </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">  </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+ </span><span class="n">j_parent_start</span><span class="w">    </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="mi">80</span><span class="p">,</span><span class="w">  </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">110</span><span class="p">,</span><span class="w">
+ </span><span class="n">s_we</span><span class="w">              </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="n">e_we</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">,</span><span class="w">
+ </span><span class="n">s_sn</span><span class="w">              </span><span class="o">=</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="n">e_sn</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="mi">202</span><span class="p">,</span><span class="w"> </span><span class="mi">283</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">,</span><span class="w">
+ </span><span class="c1">!</span><span class="w">
+ </span><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPORTANT NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
+ </span><span class="c1">! The default datasets used to produce the HGT_M, GREENFRAC,</span><span class="w">
+ </span><span class="c1">! and LU_INDEX/LANDUSEF fields have changed in WPS v3.8. The HGT_M field</span><span class="w">
+ </span><span class="c1">! is now interpolated from 30-arc-second USGS GMTED2010, the GREENFRAC</span><span class="w">
+ </span><span class="c1">! field is interpolated from MODIS FPAR, and the LU_INDEX/LANDUSEF fields</span><span class="w">
+ </span><span class="c1">! are interpolated from 21-class MODIS.</span><span class="w">
+ </span><span class="c1">!</span><span class="w">
+ </span><span class="c1">! To match the output given by the default namelist.wps.all_options </span><span class="w">
+ </span><span class="c1">! in WPS v3.7.1, the following setting for geog_data_res may be used:</span><span class="w">
+ </span><span class="c1">!</span><span class="w">
+ </span><span class="c1">! geog_data_res = 'gtopo_10m+usgs_10m+nesdis_greenfrac+10m','gtopo_2m+usgs_2m+nesdis_greenfrac+2m',</span><span class="w">
+ </span><span class="c1">!</span><span class="w">
+ </span><span class="c1">!!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPORTANT NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!!</span><span class="w">
+ </span><span class="c1">!</span><span class="w">
+ </span><span class="n">geog_data_res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'default'</span><span class="p">,</span><span class="s1">'default'</span><span class="p">,</span><span class="s1">'default'</span><span class="p">,</span><span class="s1">'default'</span><span class="p">,</span><span class="w">
+ </span><span class="n">dx</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">27000</span><span class="p">,</span><span class="w">
+ </span><span class="n">dy</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">27000</span><span class="p">,</span><span class="w">
+ </span><span class="n">map_proj</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">'lambert'</span><span class="p">,</span><span class="w">
+ </span><span class="n">ref_lat</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mf">37.00</span><span class="p">,</span><span class="w">
+ </span><span class="n">ref_lon</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mf">110.00</span><span class="p">,</span><span class="w">
+ </span><span class="n">ref_x</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="mf">55.0</span><span class="p">,</span><span class="w">
+ </span><span class="n">ref_y</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="mf">35.0</span><span class="p">,</span><span class="w">
+ </span><span class="n">truelat1</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mf">30.0</span><span class="p">,</span><span class="w">
+ </span><span class="n">truelat2</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mf">60.0</span><span class="p">,</span><span class="w">
+ </span><span class="n">stand_lon</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mf">110.0</span><span class="p">,</span><span class="w">
+ </span><span class="n">geog_data_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'/home/lzhenn/wrf-surface-data/geog'</span><span class="w">
+ </span><span class="n">opt_geogrid_tbl_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'geogrid/'</span><span class="w">
+</span><span class="p">/</span><span class="w">
+ </span><span class="n">geog_data_res</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">'modis_lakes+10m'</span><span class="p">,</span><span class="s1">'modis_lakes+2m'</span><span class="p">,</span><span class="w">
+ </span><span class="n">geog_data_res</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">'usgs_lakes+10m'</span><span class="p">,</span><span class="s1">'usgs_lakes+2m'</span><span class="p">,</span><span class="w">
+
+</span><span class="p">&amp;</span><span class="n">ungrib</span><span class="w">
+ </span><span class="n">out_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'WPS'</span><span class="p">,</span><span class="w">
+ </span><span class="n">prefix</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">'GFS'</span><span class="p">,</span><span class="w">
+</span><span class="p">/</span><span class="w">
+
+</span><span class="p">&amp;</span><span class="n">metgrid</span><span class="w">
+ </span><span class="n">fg_name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">'GFS'</span><span class="p">,</span><span class="w"> </span><span class="s1">'SST'</span><span class="w">
+ </span><span class="n">constants_name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">'./TAVGSFC'</span><span class="w">
+ </span><span class="n">io_form_metgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+ </span><span class="n">opt_output_from_metgrid_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'./'</span><span class="p">,</span><span class="w">
+ </span><span class="n">opt_metgrid_tbl_path</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">'metgrid/'</span><span class="p">,</span><span class="w">
+ </span><span class="n">process_only_bdy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+</span><span class="p">/</span><span class="w">
+
+</span><span class="p">&amp;</span><span class="n">mod_levs</span><span class="w">
+ </span><span class="n">press_pa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">201300</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">200100</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">100000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">95000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">90000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">85000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">80000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">75000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">70000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">65000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">60000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">55000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">50000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">45000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">40000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">35000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">30000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">25000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">20000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+             </span><span class="mi">15000</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">10000</span><span class="w"> </span><span class="p">,</span><span class="w"> 
+              </span><span class="mi">5000</span><span class="w"> </span><span class="p">,</span><span class="w">   </span><span class="mi">1000</span><span class="w">
+</span><span class="p">/</span><span class="w">
+
+</span><span class="p">&amp;</span><span class="n">plotfmt</span><span class="w">
+ </span><span class="n">ix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w">
+ </span><span class="n">jx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w">
+ </span><span class="n">ioff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="w">
+ </span><span class="n">joff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="w">
+</span><span class="p">/</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>domain设置如下：
+<img src="http://ww1.sinaimg.cn/large/73ebdc71gy1fn6ptmsx25j20ug0o9dk8.jpg" alt="" /></p>
+
+<h3 id="执行wps">执行wps</h3>
+<p>设置从HKUST ENVR下载GFS输入文件<a href="http://envf.ust.hk/dataop/data/model_input/gfs_1.00deg_realtime/">GFS data archive</a></p>
+
+<p>测试加入gfs的SST数据，参考</p>
+
+<p><a href="http://www2.mmm.ucar.edu/wrf/OnLineTutorial/DATA/SST/index.html">http://www2.mmm.ucar.edu/wrf/OnLineTutorial/DATA/SST/index.html</a></p>
+
+<p>后发现并不能用，出现segfault，之后更改namelist和，对应GFS数据为SST变量Vtable，以及SST前缀，sst问题解决。</p>
+
+<p>met data生成过程一切顺利。</p>
+
+<p><strong>Updated 2018-01-06</strong></p>
+
+<h3 id="调整wrf设置">调整WRF设置</h3>
+
+<p>根据俊文和海洋局的配置调整namelist.input设置，过程中发现V3.9提供了经过测试的参数化suite，果断采用。CONUS代表北美大陆配置。</p>
+<h3 id="执行real">执行real</h3>
+<p>调整后real过程出错</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 5   --- ERROR: If sst_update /= 0, one of the auxinput4_interval settings must be /= 0
+ 6   --- Set auxinput4_interval_s to the same value as interval_seconds (usually a pretty good guess).
+</code></pre></div></div>
+<p>修改后，执行过程出现段错误。</p>
+
+<p>测试修改环境变量。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># set WRF</span>
+<span class="nb">export </span><span class="nv">WRFIO_NCD_LARGE_FILE_SUPPORT</span><span class="o">=</span>1
+<span class="nb">export </span><span class="nv">WRF_EM_CORE</span><span class="o">=</span>1
+<span class="nb">export </span><span class="nv">NETCDF4</span><span class="o">=</span>0
+
+<span class="nb">ulimit</span> <span class="nt">-s</span> unlimited
+<span class="nb">ulimit</span> <span class="nt">-c</span> unlimited
+</code></pre></div></div>
+<p>通过第一断点。新错误：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--------------</span> FATAL CALLED <span class="nt">---------------</span>
+FATAL CALLED FROM FILE:  &lt;stdin&gt;  LINE:     431 
+ Problems, we cannot have excluded middle data from WPS 
+ <span class="nt">-------------------------------------------</span>
+ application called MPI_Abort<span class="o">(</span>MPI_COMM_WORLD, 1<span class="o">)</span> - process 0
+ <span class="o">[</span><span class="nb">unset</span><span class="o">]</span>: write_line error<span class="p">;</span> <span class="nv">fd</span><span class="o">=</span><span class="nt">-1</span> <span class="nv">buf</span><span class="o">=</span>:cmd<span class="o">=</span>abort <span class="nv">exitcode</span><span class="o">=</span>1
+ :
+ system msg <span class="k">for </span>write_line failure : Bad file descriptor
+
+</code></pre></div></div>
+<p>将SST Update设置为0后可以顺利执行完real。</p>
+
+<h3 id="执行wrf">执行wrf</h3>
+<p>执行过程直接出错,有一个gwd_opt设置为1后可行。</p>
+
+<p>顺利执行，但是积分速度奇慢无比，决定采用180s步长，三层嵌套，速度快了很多。
+最终采用的wrf namelist.input</p>
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">&amp;</span><span class="n">time_control</span><span class="w">
+ </span><span class="n">run_days</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+ </span><span class="n">run_hours</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">run_minutes</span><span class="w">                         </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">run_seconds</span><span class="w">                         </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_year</span><span class="w">                          </span><span class="o">=</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_month</span><span class="w">                         </span><span class="o">=</span><span class="w"> </span><span class="mi">01</span><span class="p">,</span><span class="w">   </span><span class="mi">01</span><span class="p">,</span><span class="w">   </span><span class="mi">01</span><span class="p">,</span><span class="w">   </span><span class="mi">01</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_day</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">05</span><span class="p">,</span><span class="w">   </span><span class="mi">05</span><span class="p">,</span><span class="w">   </span><span class="mi">05</span><span class="p">,</span><span class="w">   </span><span class="mi">05</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_hour</span><span class="w">                          </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_minute</span><span class="w">                        </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">
+ </span><span class="n">start_second</span><span class="w">                        </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_year</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_month</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">01</span><span class="p">,</span><span class="w">   </span><span class="mi">01</span><span class="p">,</span><span class="w">   </span><span class="mi">01</span><span class="p">,</span><span class="w">   </span><span class="mi">01</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_day</span><span class="w">                             </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">   </span><span class="mi">10</span><span class="p">,</span><span class="w">   </span><span class="mi">10</span><span class="p">,</span><span class="w">   </span><span class="mi">10</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_hour</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="w">   </span><span class="mi">12</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_minute</span><span class="w">                          </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">
+ </span><span class="n">end_second</span><span class="w">                          </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">   </span><span class="mi">00</span><span class="p">,</span><span class="w">
+ </span><span class="n">interval_seconds</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="mi">21600</span><span class="w">
+ </span><span class="n">input_from_file</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="kc">.true.</span><span class="p">,</span><span class="kc">.true.</span><span class="p">,</span><span class="kc">.true.</span><span class="p">,</span><span class="w">
+ </span><span class="n">history_interval</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">  </span><span class="mi">60</span><span class="p">,</span><span class="w">   </span><span class="mi">60</span><span class="p">,</span><span class="w">   </span><span class="mi">60</span><span class="p">,</span><span class="w">
+ </span><span class="n">frames_per_outfile</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+ </span><span class="n">restart</span><span class="w">                             </span><span class="o">=</span><span class="w"> </span><span class="kc">.false.</span><span class="p">,</span><span class="w">
+ </span><span class="n">restart_interval</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+ </span><span class="n">io_form_history</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
+ </span><span class="n">io_form_restart</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
+ </span><span class="n">io_form_input</span><span class="w">                       </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
+ </span><span class="n">io_form_auxinput4</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> 
+ </span><span class="n">io_form_boundary</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
+ </span><span class="n">auxinput4_interval</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+ </span><span class="n">debug_level</span><span class="w">                         </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">domains</span><span class="w">
+ </span><span class="n">time_step</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+ </span><span class="n">time_step_fract_num</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">time_step_fract_den</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="n">max_dom</span><span class="w">                             </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+ </span><span class="n">e_we</span><span class="w">                                </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">,</span><span class="w">
+ </span><span class="n">e_sn</span><span class="w">                                </span><span class="o">=</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="mi">202</span><span class="p">,</span><span class="w"> </span><span class="mi">283</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">,</span><span class="w">
+ </span><span class="n">e_vert</span><span class="w">                              </span><span class="o">=</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">   </span><span class="mi">39</span><span class="p">,</span><span class="w">  </span><span class="mi">39</span><span class="p">,</span><span class="w">  </span><span class="mi">39</span><span class="p">,</span><span class="w"> 
+ </span><span class="n">p_top_requested</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+ </span><span class="n">num_metgrid_levels</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+ </span><span class="n">num_metgrid_soil_levels</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+ </span><span class="n">eta_levels</span><span class="w">			     </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9979</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9956</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9931</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.9904</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9875</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9844</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9807</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.9763</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9711</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9649</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9575</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.9488</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9385</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9263</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9120</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.8951</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8753</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8521</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8251</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.7937</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7597</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7229</span><span class="p">,</span><span class="w"> </span><span class="mf">0.6833</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.6410</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5960</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5484</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4985</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.4467</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3934</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3393</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2850</span><span class="p">,</span><span class="w">
+				       </span><span class="mf">0.2316</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1801</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1324</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0903</span><span class="p">,</span><span class="w">
+                                       </span><span class="mf">0.0542</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0241</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0000</span><span class="w">
+ </span><span class="n">dx</span><span class="w">                                  </span><span class="o">=</span><span class="w"> </span><span class="mi">27000</span><span class="p">,</span><span class="w">   </span><span class="mi">9000</span><span class="p">,</span><span class="w">   </span><span class="mi">3000</span><span class="p">,</span><span class="w">	</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+ </span><span class="n">dy</span><span class="w">                                  </span><span class="o">=</span><span class="w"> </span><span class="mi">27000</span><span class="p">,</span><span class="w"> 	</span><span class="mi">9000</span><span class="p">,</span><span class="w">   </span><span class="mi">3000</span><span class="p">,</span><span class="w">	</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+ 
+ </span><span class="n">grid_id</span><span class="w">                             </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">2</span><span class="p">,</span><span class="w">     </span><span class="mi">3</span><span class="p">,</span><span class="w">	   </span><span class="mi">4</span><span class="p">,</span><span class="w">
+ </span><span class="n">parent_id</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">2</span><span class="p">,</span><span class="w">	   </span><span class="mi">3</span><span class="p">,</span><span class="w">
+ </span><span class="n">i_parent_start</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="mi">140</span><span class="p">,</span><span class="w">    </span><span class="mi">80</span><span class="p">,</span><span class="w">  </span><span class="mi">140</span><span class="p">,</span><span class="w">
+ </span><span class="n">j_parent_start</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">    </span><span class="mi">80</span><span class="p">,</span><span class="w">    </span><span class="mi">50</span><span class="p">,</span><span class="w">  </span><span class="mi">110</span><span class="p">,</span><span class="w">
+ </span><span class="n">parent_grid_ratio</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">3</span><span class="p">,</span><span class="w">     </span><span class="mi">3</span><span class="p">,</span><span class="w">    </span><span class="mi">3</span><span class="p">,</span><span class="w">
+ </span><span class="n">parent_time_step_ratio</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">3</span><span class="p">,</span><span class="w">     </span><span class="mi">3</span><span class="p">,</span><span class="w">    </span><span class="mi">3</span><span class="p">,</span><span class="w">
+ </span><span class="n">feedback</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">smooth_option</span><span class="w">                       </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">physics</span><span class="w">
+ </span><span class="n">physics_suite</span><span class="w">                       </span><span class="o">=</span><span class="w"> </span><span class="s1">'CONUS'</span><span class="w">
+ 
+ </span><span class="n">cu_physics</span><span class="w">                          </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">     </span><span class="mi">6</span><span class="p">,</span><span class="w">     </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+
+ </span><span class="n">radt</span><span class="w">                                </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">    </span><span class="mi">30</span><span class="p">,</span><span class="w">    </span><span class="mi">30</span><span class="p">,</span><span class="w">  </span><span class="mi">30</span><span class="p">,</span><span class="w">
+ </span><span class="n">bldt</span><span class="w">                                </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">     </span><span class="mi">0</span><span class="p">,</span><span class="w">     </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">cudt</span><span class="w">                                </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">     </span><span class="mi">5</span><span class="p">,</span><span class="w">     </span><span class="mi">5</span><span class="p">,</span><span class="w">    </span><span class="mi">5</span><span class="p">,</span><span class="w">
+ </span><span class="n">icloud</span><span class="w">                              </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="n">num_soil_layers</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+ </span><span class="n">num_land_cat</span><span class="w">                        </span><span class="o">=</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+ </span><span class="n">sf_urban_physics</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">     </span><span class="mi">0</span><span class="p">,</span><span class="w">     </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">sst_update</span><span class="w">	            		     </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">fdda</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">dynamics</span><span class="w">
+ </span><span class="n">w_damping</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">diff_opt</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="n">km_opt</span><span class="w">                              </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">      </span><span class="mi">4</span><span class="p">,</span><span class="w">      </span><span class="mi">4</span><span class="p">,</span><span class="w">    </span><span class="mi">4</span><span class="p">,</span><span class="w">
+ </span><span class="n">diff_6th_opt</span><span class="w">                        </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">diff_6th_factor</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">   </span><span class="mf">0.12</span><span class="p">,</span><span class="w">   </span><span class="mf">0.12</span><span class="p">,</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">
+ </span><span class="n">base_temp</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mf">290.</span><span class="w">                          
+ </span><span class="n">damp_opt</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                            
+ </span><span class="n">zdamp</span><span class="w">                               </span><span class="o">=</span><span class="w"> </span><span class="mf">5000.</span><span class="p">,</span><span class="w">  </span><span class="mf">5000.</span><span class="p">,</span><span class="w">  </span><span class="mf">5000.</span><span class="p">,</span><span class="mf">5000.</span><span class="p">,</span><span class="w">
+ </span><span class="n">dampcoef</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">    </span><span class="mf">0.2</span><span class="p">,</span><span class="w">    </span><span class="mf">0.2</span><span class="w">   </span><span class="mf">0.2</span><span class="w">
+ </span><span class="n">khdif</span><span class="w">                               </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">kvdif</span><span class="w">                               </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w">      </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">non_hydrostatic</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w"> </span><span class="kc">.true..true.</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w">
+ </span><span class="n">moist_adv_opt</span><span class="w">                       </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">    </span><span class="mi">1</span><span class="p">,</span><span class="w">       
+ </span><span class="n">scalar_adv_opt</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">    </span><span class="mi">1</span><span class="p">,</span><span class="w">       
+ </span><span class="n">gwd_opt</span><span class="w">                             </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">bdy_control</span><span class="w">
+ </span><span class="n">spec_bdy_width</span><span class="w">                      </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+ </span><span class="n">spec_zone</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="n">relax_zone</span><span class="w">                          </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+ </span><span class="n">specified</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w"> </span><span class="kc">.false.</span><span class="p">,</span><span class="kc">.false.</span><span class="p">,</span><span class="kc">.false.</span><span class="p">,</span><span class="w">
+ </span><span class="n">nested</span><span class="w">                              </span><span class="o">=</span><span class="w"> </span><span class="kc">.false.</span><span class="p">,</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w"> </span><span class="kc">.true.</span><span class="p">,</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">grib2</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+
+ </span><span class="p">&amp;</span><span class="n">namelist_quilt</span><span class="w">
+ </span><span class="n">nio_tasks_per_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="n">nio_groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+ </span><span class="p">/</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="计划任务">计划任务</h3>
+<p>之后crontab配合自动运行脚本，每晚0:45开始执行，利用12Z数据，积分步长120s，尝试做未来5天预报。
+自动运行脚本：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="nv">LID</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'1 days ago'</span> +%Y%m%d<span class="sb">`</span>
+<span class="nv">LID_NLS</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'1 days ago'</span> +%Y-%m-%d<span class="sb">`</span>
+<span class="nv">LID_NLE</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'-4 days ago'</span> +%Y-%m-%d<span class="sb">`</span> <span class="c"># 5 days later, for forecast</span>
+
+<span class="nv">WPSDIR</span><span class="o">=</span>/home/lzhenn/package/WPS
+<span class="nv">WRFDIR</span><span class="o">=</span>/home/lzhenn/array/lzhenn/WRFV3/run
+<span class="nv">LOGFILE</span><span class="o">=</span>/home/lzhenn/workspace/wrf-sdpwfe/sys-log/<span class="k">${</span><span class="nv">LID</span><span class="k">}</span>.log
+<span class="nv">GFSDIR</span><span class="o">=</span>/home/lzhenn/array/lzhenn/gfs_fcst/<span class="nv">$LID</span>
+
+
+
+<span class="c">############ Fetch GFS ##############</span>
+
+<span class="nb">echo</span> <span class="s2">"Forecast </span><span class="k">${</span><span class="nv">LID_NLS</span><span class="k">}</span><span class="s2"> to </span><span class="k">${</span><span class="nv">LID_NLE</span><span class="k">}</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Fetching GFS data..."</span>
+python fetch_gfs.py
+
+<span class="c">############## WPS ##################</span>
+<span class="nb">cd</span> <span class="nv">$WPSDIR</span> 
+<span class="c"># Clean WPS data</span>
+
+<span class="nb">echo</span> <span class="s2">"Clean WPS..."</span>
+rm <span class="nt">-f</span> met_em.<span class="k">*</span>
+rm <span class="nt">-f</span> GFS:<span class="k">*</span>
+rm <span class="nt">-f</span> SST:<span class="k">*</span>
+
+<span class="c"># Process GFS</span>
+
+<span class="c">## Modify date and GFS</span>
+<span class="nb">echo</span> <span class="s2">"Working on WPS..."</span>
+sed <span class="nt">-i</span> <span class="s2">"/prefix/s/^.*/ prefix = 'GFS',/g"</span> namelist.wps
+sed <span class="nt">-i</span> <span class="s2">"/start_date/s/^.*</span><span class="nv">$/</span><span class="s2"> start_date = '</span><span class="k">${</span><span class="nv">LID_NLS</span><span class="k">}</span><span class="s2">_12:00:00','</span><span class="k">${</span><span class="nv">LID_NLS</span><span class="k">}</span><span class="s2">_12:00:00','</span><span class="k">${</span><span class="nv">LID_NLS</span><span class="k">}</span><span class="s2">_12:00:00','</span><span class="k">${</span><span class="nv">LID_NLS</span><span class="k">}</span><span class="s2">_12:00:00',/g"</span> namelist.wps
+sed <span class="nt">-i</span> <span class="s2">"/end_date/s/^.*</span><span class="nv">$/</span><span class="s2"> end_date = '</span><span class="k">${</span><span class="nv">LID_NLE</span><span class="k">}</span><span class="s2">_12:00:00','</span><span class="k">${</span><span class="nv">LID_NLE</span><span class="k">}</span><span class="s2">_12:00:00','</span><span class="k">${</span><span class="nv">LID_NLE</span><span class="k">}</span><span class="s2">_12:00:00','</span><span class="k">${</span><span class="nv">LID_NLE</span><span class="k">}</span><span class="s2">_12:00:00',/g"</span> namelist.wps
+
+<span class="nb">echo</span> <span class="s2">"Working on WPS-&gt;Ungrib GFS..."</span>
+ln <span class="nt">-sf</span> ungrib/Variable_Tables/Vtable.GFS Vtable
+./link_grib.csh <span class="nv">$GFSDIR</span>/gfs<span class="k">*</span> 
+./ungrib.exe <span class="o">&gt;</span>&amp; <span class="nv">$LOGFILE</span>
+
+<span class="c">## Modify  GFS SST</span>
+<span class="nb">echo</span> <span class="s2">"Working on WPS-&gt;Ungrib SST..."</span>
+sed <span class="nt">-i</span> <span class="s2">"/prefix/s/^.*/ prefix = 'SST',/g"</span> namelist.wps
+
+ln <span class="nt">-sf</span> ungrib/Variable_Tables/Vtable.SST Vtable
+./ungrib.exe <span class="o">&gt;</span>&amp; <span class="nv">$LOGFILE</span>
+
+<span class="nb">echo</span> <span class="s2">"Working on WPS-&gt;Metgrid..."</span>
+./metgrid.exe <span class="o">&gt;</span>&amp; <span class="nv">$LOGFILE</span>
+
+<span class="c">############## WRF ##################</span>
+<span class="nb">echo</span> <span class="s2">"Working on WRF-&gt;REAL..."</span>
+<span class="nb">cd</span> <span class="nv">$WRFDIR</span>
+
+<span class="nv">YYYY_NLS</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'1 days ago'</span> +%Y<span class="sb">`</span>
+<span class="nv">YYYY_NLE</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'-4 days ago'</span> +%Y<span class="sb">`</span>
+
+<span class="nv">MM_NLS</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'1 days ago'</span> +%m<span class="sb">`</span>
+<span class="nv">MM_NLE</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'-4 days ago'</span> +%m<span class="sb">`</span>
+
+<span class="nv">DD_NLS</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'1 days ago'</span> +%d<span class="sb">`</span>
+<span class="nv">DD_NLE</span><span class="o">=</span><span class="sb">`</span>date <span class="nt">-d</span> <span class="s1">'-4 days ago'</span> +%d<span class="sb">`</span>
+
+sed <span class="nt">-i</span> <span class="s2">"/start_year/s/^.*</span><span class="nv">$/</span><span class="s2"> start_year                          = </span><span class="k">${</span><span class="nv">YYYY_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">YYYY_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">YYYY_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">YYYY_NLS</span><span class="k">}</span><span class="s2">,/g"</span> namelist.input
+sed <span class="nt">-i</span> <span class="s2">"/end_year/s/^.*</span><span class="nv">$/</span><span class="s2"> end_year                            = </span><span class="k">${</span><span class="nv">YYYY_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">YYYY_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">YYYY_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">YYYY_NLE</span><span class="k">}</span><span class="s2">,/g"</span> namelist.input
+sed <span class="nt">-i</span> <span class="s2">"/start_month/s/^.*</span><span class="nv">$/</span><span class="s2"> start_month                          = </span><span class="k">${</span><span class="nv">MM_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">MM_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">MM_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">MM_NLS</span><span class="k">}</span><span class="s2">,/g"</span> namelist.input
+sed <span class="nt">-i</span> <span class="s2">"/end_month/s/^.*</span><span class="nv">$/</span><span class="s2"> end_month                          = </span><span class="k">${</span><span class="nv">MM_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">MM_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">MM_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">MM_NLE</span><span class="k">}</span><span class="s2">,/g"</span> namelist.input
+sed <span class="nt">-i</span> <span class="s2">"/start_day/s/^.*</span><span class="nv">$/</span><span class="s2"> start_day                          = </span><span class="k">${</span><span class="nv">DD_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">DD_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">DD_NLS</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">DD_NLS</span><span class="k">}</span><span class="s2">,/g"</span> namelist.input
+sed <span class="nt">-i</span> <span class="s2">"/end_day/s/^.*</span><span class="nv">$/</span><span class="s2"> end_day                          = </span><span class="k">${</span><span class="nv">DD_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">DD_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">DD_NLE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">DD_NLE</span><span class="k">}</span><span class="s2">,/g"</span> namelist.input
+
+rm <span class="nt">-f</span> met_em.d0<span class="k">*</span>
+rm <span class="nt">-f</span> wrfout_d0<span class="k">*</span>
+rm <span class="nt">-f</span> wrfinput_d0<span class="k">*</span>
+rm <span class="nt">-f</span> wrflowinp_d0<span class="k">*</span>
+rm <span class="nt">-f</span> wrfbdy_d0<span class="k">*</span>
+ln <span class="nt">-sf</span> <span class="nv">$WPSDIR</span>/met_em.d0<span class="k">*</span> ./
+./real.exe <span class="o">&gt;</span>&amp; <span class="nv">$LOGFILE</span>
+
+<span class="nb">echo</span> <span class="s2">"Working on WRF-&gt;WRF..."</span>
+mpirun <span class="nt">-np</span> 16 ./wrf.exe
+
+</code></pre></div></div>
+<p><strong>Updated 2018-01-07</strong></p>
+
+<h3 id="执行测试">执行测试</h3>
+
+<p>测试预报，发现如下问题：</p>
+<ol>
+  <li>domain区域有问题，竟然d03居然框在勘察加半岛附近，经检查为WPS的ref_x和ref_y的问题，调整为d01中点后，</li>
+  <li>五天预报利用现有机器完全无法完成，3天大概需要9小时，发现问题1后怀疑为区域设置错误，高纬度地图因子问题，重新调整积分步长为180s进行测试。
+    <div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ref_x</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="mf">150.0</span><span class="p">,</span><span class="w">
+</span><span class="n">ref_y</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="mf">110.0</span><span class="p">,</span><span class="w"> 
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><strong>Updated 2018-01-16</strong></p>
+
+<h3 id="运行时间问题">运行时间问题</h3>
+
+<p>系统按计划任务运行了一天，发现会在运行结束附近提示无法找到更新的边界条件，然后不停写log无法退出。非常不理解，毕竟到这个时候应该终止才对呀。经查发现是wrf的namelist run days依然写的五天。调整后正常。</p>
+
+<p>目前的问题是依然不能在上午九点之前运行完，后面需要考虑调整domain大小。</p>
+
+<p><strong>Updated 2018-01-16</strong></p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2017/12/30/ubuntu-cuda-setup/">Ubuntu/K4200机器学习系统搭建</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2017/12/31/new-year-blog/">岁末年初</a></p>
+        
+    </div>
+</div>
+
+
+<!--        <h2 id="comments">Comments</h2>
+    
+
+
+
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: 'Novarizark',
+  repo: 'Novarizark.github.io',
+  oauth: {
+    client_id: '08594414abfaba1aa8bd',
+    client_secret: '56bd0f234257f69ca94cafa5086af0ff2e43ac70',
+  },
+})
+gitment.render('container')
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://imsun.github.io/gitment/" rel="nofollow">comments powered by Gitment.</a></noscript>
+
+ -->
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+            
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/Novarizark" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:lzhenn@mail2.sysu.edu.cn" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>        
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>
