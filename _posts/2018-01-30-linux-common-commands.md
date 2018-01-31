@@ -1,8 +1,8 @@
---
+---
 layout: post
 title:  "20180130 linux常用命令整理"
 categories: linux
-tags: linux 命令整理
+tags: linux 整理
 author: renql
 ---
 
@@ -14,8 +14,6 @@ author: renql
 	ls -alh # 可以将所有文件（包括隐藏文件）容量以GB,KB等列出来
 
     ls -al | grep "^l" #通过管道命令和正则表达式，可以只显示链接文件，^l表示以l开头，l$表示以l结尾
-
-
 
 
 

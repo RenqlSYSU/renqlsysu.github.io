@@ -1,4 +1,4 @@
---
+---
 layout: post
 title:  "20180131 linux系统维护常用命令"
 categories: linux 整理
@@ -12,6 +12,11 @@ author: renql
 # 压缩包命令 #
     tar -zxv -f filename.tar.gz -c directory  #将压缩包解压在directory文件夹下
     tar -jxv -f filename.tar.bz2 -c directory #将压缩包解压在directory文件夹下
+
+
+
+
+
 
 #源代码软件安装命令#
 

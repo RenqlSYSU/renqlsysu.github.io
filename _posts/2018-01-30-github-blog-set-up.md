@@ -15,6 +15,11 @@ author: renql
 
 # 现把搭建过程记录如下： #
 
+
+
+
+
+
 - 先在团队服务器上建立文件夹用于放代码，然后再clone师兄的代码    
 ```bash
 mkdir RenqlSYSU.github.io    

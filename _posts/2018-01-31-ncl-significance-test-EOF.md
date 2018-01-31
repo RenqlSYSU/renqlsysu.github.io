@@ -1,4 +1,4 @@
---
+---
 layout: post
 title:  "20180131 ncl显著性检验函数和EOF函数"
 categories: ncl 整理  
@@ -14,7 +14,6 @@ author: renql
     time := cd_calendar(time,option) #将混合日期转换为公历日期，且option=0时，输出数据会多一维
 ```
 # 显著性检验函数 #
-
 
 
 
