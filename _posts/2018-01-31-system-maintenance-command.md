@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "20180131 linux系统维护常用命令"
-categories: linux 整理
+categories: linux
 tags: linux 整理
 author: renql
 ---

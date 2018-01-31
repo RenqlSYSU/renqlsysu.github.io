@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "20180131 ncl显著性检验函数和EOF函数"
-categories: ncl 整理  
-tags: ncl 函数 整理
+categories: ncl
+tags: ncl 整理
 author: renql
 ---
 
@@ -10,8 +10,8 @@ author: renql
 {:toc}
 
 ```ncl
-    copy_VarMeta(var_from,var_to) #最常用的一个函数，因为若变量的LAT和LON坐标若没有定义单位等要素，画map图会报错
-    time := cd_calendar(time,option) #将混合日期转换为公历日期，且option=0时，输出数据会多一维
+    copy_VarMeta(var_from,var_to) ;最常用的一个函数，因为若变量的LAT和LON坐标若没有定义单位等要素，画map图会报错
+    time := cd_calendar(time,option) ;将混合日期转换为公历日期，且option=0时，输出数据会多一维
 ```
 # 显著性检验函数 #
 
