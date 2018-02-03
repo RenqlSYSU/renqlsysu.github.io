@@ -10,11 +10,13 @@ type: page
 {:toc}
 
 ## 关于我
-了解各路杂学，希望能有卵用。
-![](http://ww1.sinaimg.cn/large/73ebdc71gy1fmzzdtzucxj20wu0kugmh.jpg)
+刚进入研究生阶段，一切都还处于摸索阶段。
+
+谨以此网页记录学习过程中的点滴，与大家共勉。
+
 
 ## 联系我
 
-* GitHub：[Novarizark](https://github.com/Novarizark)
-* email：lzhenn@mail2.sysu.edu.cn
+* GitHub：[RenqlSYSU](https://github.com/Novarizark)
+* email：renql@mail2.sysu.edu.cn
 
