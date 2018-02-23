@@ -2,7 +2,7 @@
 layout: post
 title: 关于水汽概念的整理
 categories: 大气科学
-tags: 动力气象、整理
+tags: 动力气象 整理
 author: renql
 ---
 
