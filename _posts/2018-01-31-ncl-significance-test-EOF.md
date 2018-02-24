@@ -9,7 +9,7 @@ author: renql
 * content
 {:toc}
 
-```ncl
+```
     copy_VarMeta(var_from,var_to) ;最常用的一个函数，因为若变量的LAT和LON坐标若没有定义单位等要素，画map图会报错
     time := cd_calendar(time,option) ;将混合日期转换为公历日期，且option=0时，输出数据会多一维
 ```
