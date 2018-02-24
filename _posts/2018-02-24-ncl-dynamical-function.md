@@ -10,7 +10,7 @@ author: renql
 {:toc}
 
 # 散度涡度 divergence and vorticity #
-```ncl
+```
 ；以下是用中央差分的方法计算涡度散度
 	divg = uv2dv_cfd ( uwnd, vwnd, uwnd&lat, uwnd&lon, scalar-integer )
 	vort = uv2vr_cfd ( uwnd, vwnd, uwnd&lat, uwnd&lon, scalar-integer )
@@ -27,6 +27,6 @@ author: renql
 
 
 # 可降水量 #
-```ncl
+```
 	flux = wgt_vert_avg_beta ( shum&level, shum, pres_sfc, 0, 0 ) / g ；将比湿垂直积分得到该地区可降水量
 ```
