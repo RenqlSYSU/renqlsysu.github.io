@@ -32,9 +32,9 @@ author: renql
 
 
 虽然官网说用球谐函数计算散度和涡度比用中央差分法更精确，但我在用乳源地区的日降水量与涡度散度算相关时，
-却发现用球谐函数计算得到的散度和涡度不是很靠谱。
-![](http://wx1.sinaimg.cn/small/006APL3qgy1fosot2mm64j31j60ub4qp.jpg)
-![](http://wx3.sinaimg.cn/small/006APL3qgy1fosot0h1rcj31j60t14qp.jpg)
+却发现用球谐函数计算得到的散度和涡度不是很靠谱。  
+![](http://wx3.sinaimg.cn/mw690/006APL3qgy1fosp01jvhkj31j60t14qp.jpg)  
+![](http://wx3.sinaimg.cn/mw690/006APL3qgy1fosp033kxoj31j60ub4qp.jpg)  
 
 # 可降水量 #
 ```
