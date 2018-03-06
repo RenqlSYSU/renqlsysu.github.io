@@ -13,6 +13,9 @@ Francis建议我在香港时可以做的研究是：conducting AGCM experiment t
 
 > Xu, K., et al. (2017). "CMIP5 Projections of Two Types of El Nino and Their Related Tropical Precipitation in the Twenty-First Century." Journal of Climate 30(3): 
 
+
+
+
 # 摘要 #
 本文利用CMIP5（phase 5 of the Coupled Model Intercomparison Project）模式中用RCP8.5排放量模拟未来2050-2099的气候，发现在中部型EiNino没有明显变化时，未来东部型EiNino会变弱，且中部型向东部型转变的频率在未来如何变化无统一结论。 
   
