@@ -31,8 +31,8 @@ IPCC每6年左右编写一次气候变化科学评估报告，还会应会员国
 1970年以来，北极海冰范围显著缩小    
 全球变暖速度比第五次评估报告要快很多   
 
-![](http://wx4.sinaimg.cn/small/006fa9Xlgy1fp7i1x8figj30oo0ptgql.jpg)   
-![](http://wx2.sinaimg.cn/small/006fa9Xlgy1fp7i1yc3qvj30rt0o1wkl.jpg)   
+![](http://wx4.sinaimg.cn/large/006fa9Xlgy1fp7i1x8figj30oo0ptgql.jpg)   
+![](http://wx2.sinaimg.cn/large/006fa9Xlgy1fp7i1yc3qvj30rt0o1wkl.jpg)   
 
 # 未来地球框架  黄磊
 **人类世**概念的提出，认为现在正处于该世纪
