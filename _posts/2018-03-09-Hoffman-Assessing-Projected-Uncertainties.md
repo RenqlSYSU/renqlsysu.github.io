@@ -24,10 +24,10 @@ author: renql
 
 北极海冰数量的大幅下降与北极变暖以及极地经圈环流减弱相关。一个弱的极地经圈环流伴随着北纬60N强的下沉气流以及海平面气压上升  
 
-![](http://wx1.sinaimg.cn/small/006fa9Xlgy1fp7inf9a40j30nf0eutc3.jpg)    
-![](http://wx2.sinaimg.cn/small/006fa9Xlgy1fp7incw84jj30o30gqgus.jpg)  
-![](http://wx3.sinaimg.cn/small/006fa9Xlgy1fp7ineoag7j30nb0ge111.jpg)  
-![](http://wx3.sinaimg.cn/small/006fa9Xlgy1fp7inb1kyrj30o60g7do8.jpg)
+![](http://wx1.sinaimg.cn/large/006fa9Xlgy1fp7inf9a40j30nf0eutc3.jpg)    
+![](http://wx2.sinaimg.cn/large/006fa9Xlgy1fp7incw84jj30o30gqgus.jpg)  
+![](http://wx3.sinaimg.cn/large/006fa9Xlgy1fp7inb1kyrj30o60g7do8.jpg)  
+![](http://wx2.sinaimg.cn/large/006fa9Xlgy1fp7incw84jj30o30gqgus.jpg)
 
 # 存在的问题
 1. RCP8.5的影响-SST和CO2的影响=海冰的影响？why
