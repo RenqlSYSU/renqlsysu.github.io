@@ -1,9 +1,9 @@
 ---
-layout:post
-title:cesm模式输出结果的变量名称
-categories:模式学习
-tags:整理 模式
-author:renql
+layout: post
+title: cesm模式输出结果的变量名称
+categories: 模式学习
+tags: 整理 模式
+author: renql
 ---
 
 *content
@@ -42,4 +42,4 @@ author:renql
 
 **U**: (m/s),(time,lev,lat,lon)  
 **V**: (m/s),(time,lev,lat,lon)  
-**OMEGA**: Vertical velocity (pressure)(Pa/s),(time,lev,lat,lon)  
+**OMEGA**: Vertical velocity (pressure)(Pa/s),(time,lev,lat,lon)  
