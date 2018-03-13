@@ -24,7 +24,7 @@ author: renql
 **LHFLX**: Surface latent heat flux(W/m2),(time,lat,lon)  
 **SHFLX**: Surface sensible heat flux(W/m2),(time,lat,lon)  
 
-**TS**:  Surface temperature (radiative)(K),(time,lat,lon) 
+**TS**:  Surface temperature (radiative)(K),(time,lat,lon)     
 **T**: Temperature(K),(time,lev,lat,lon)  
 
 **PS**: Surface pressure(Pa),(time,lat,lon)  
