@@ -26,6 +26,8 @@ author: renql
     ln source destination    # 创建硬连接
 
     ln -s source destination # 创建软连接
+    
+    rm destination #删除软连接目录时，目录名后不能有/，否则将删除原目录下的文档
 
 # vim中的常用命令 #
     ：n1,n2s/word1/word2/gc # 在n1到n2行之间，用word2替换word1
