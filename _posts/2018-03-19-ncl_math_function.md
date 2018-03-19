@@ -9,13 +9,18 @@ author: renql
 * content
 {:toc}
 
+整理ncl中的常用数学函数，如取整、平均、标准化
+
+
+
+
 # 取整函数
 ```
-floor(values)  ;Returns the **largest** integral value less than or equal to each input value.
+floor(values)  ;Returns the largest integral value less than or equal to each input value.
 ;values 可以是一个数或一个数组，此外，若输入的是double，则输出的也是double
 ；若要得到整数，需用  toint(floor(values))
 
-ceil(values)   ;Returns the **smallest** integral value greater than or equal to each input value.
+ceil(values)   ;Returns the smallest integral value greater than or equal to each input value.
 ;values 可以是一个数或一个数组，此外，若输入的是double，则输出的也是double
 
 ;上述函数可以用来设置纵坐标的取值范围
