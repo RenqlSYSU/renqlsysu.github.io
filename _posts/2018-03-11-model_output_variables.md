@@ -2,7 +2,7 @@
 layout: post
 title: cesm模式输出结果的变量名称
 categories: 模式学习
-tags: 整理 模式
+tags: 整理 气候模式
 author: renql
 ---
 
