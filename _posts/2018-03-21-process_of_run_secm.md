@@ -33,8 +33,11 @@ source  ~/.bashrc_cesm
 修改方法：一直接用vi修改该文件，二用命令./xmlchange NTASKS = $NTASKS。  
 修改的文件及相应可修改的内容有：  
 - **env_mach_pes.xml** 在setup前修改，可修改 ntasks,nthrds,rootpe,ninst
+<a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/modelnl/env_mach_pes.html" target="_blank">env_mach_pes.xml variables 超链接</a>
 - **env_build.xml** ，在build前修改，可修改 EXEROOT, CALENDAR (NO_LEAP)
+<a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/modelnl/env_build.html" target="_blank">env_build.xml variables 超链接</a>
 - **env_run.xml** 在run前修改，可修改 RUNDIR, RUNTYPE(hybrid,branch,startup), STOP_OPTION, STOP_N, REST_OPTION, REST_N, RESUBMIT, DIN_LOC_ROOT, DIN_LOC_ROOT_CLMFORC，也可设置short term archiving and long term archiving，也可修改SST等强迫的文件路径
+<a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/modelnl/env_run.html" target="_blank">env_run.xml variables 超链接</a>
 
 ## 4. setup ##
 ```bash
