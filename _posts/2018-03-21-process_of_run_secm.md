@@ -15,6 +15,9 @@ author: renql
 source  ~/.bashrc_cesm
 ```
 
+
+
+
 ## 2. 创建案例
 ```bash
 ./create_newcase -case $CASENAME -compset B1850CN -res f19_g16 -mach yellowstone
@@ -68,3 +71,109 @@ source  ~/.bashrc_cesm
 
 # 三、师兄写的create_case.sh脚本 #
 该脚本中主要定义了casename，compset，分辨率，运行时间（stop_option，stop_n），计算节点数及所用阵列，然后进行了$./cesm_setup并输出run.pbs文件
+```bash
+# Name of your case, your name to be prefix, e.g. LZN_HEAT
+CASENAME=test_x
+
+# Component set of your case
+COMPSET=X
+
+#Resolution of your case
+RES=f45_g37
+
+#Stop option of your case, should be nyears, nmonths, ndays, etc.
+STOP_OPTION=nyears
+
+#Stop N of your case, when stop_option set to be 'nyear' and stop N
+#set to 5, it means the model will run for 5 years
+STOP_N=30
+
+#How many processors you will use for your case, sequential only
+#Multiple of 16, such as 32, 48, 64, 80, 96, 112, 128, etc#
+#CAM4 f19 works fine below  96PEs#
+#CAM5 f19 works fine below 384PEs. However, there are not so many 
+#CPUs for this kind of work#
+NTASKS=64
+
+#Which que you will use for your case, such as 'ys', 'few', 'medium',
+#and much
+QUENAME=ys
+
+#rm -rf $CASENAME
+
+#*************************************************************
+#---------------Above for user defined part-------------------
+#*************************************************************
+
+#*************Below to execute the change*********************
+# WARNING:
+#   If you are willing to change anything below, you need to be
+# VERY CAUTIOUS to do so.
+#*************************************************************
+
+create_newcase -case $CASENAME -compset $COMPSET -res $RES -mach sigon
+exit
+cd $CASENAME
+
+#Change compile out and run out roots
+./xmlchange EXEROOT=`pwd`/exe
+./xmlchange RUNDIR=`pwd`/exe
+
+#Change PE layers
+./xmlchange NTASKS_ATM=$NTASKS
+./xmlchange NTASKS_LND=$NTASKS
+./xmlchange NTASKS_ICE=$NTASKS
+./xmlchange NTASKS_OCN=$NTASKS
+./xmlchange NTASKS_GLC=$NTASKS
+./xmlchange NTASKS_WAV=$NTASKS
+./xmlchange NTASKS_ROF=$NTASKS
+./xmlchange NTASKS_CPL=$NTASKS
+
+#./cesm_setup
+
+#Compile Process, It will take long...
+#./${CASENAME}.build
+
+#Link the input data to your caseroot,
+#NEVER POLLUTE THE ORIGINAL INPUTROOT!!!
+#link_dirtree $CSMDATA ./input
+
+#./xmlchange DIN_LOC_ROOT=`pwd`/input
+
+./xmlchange STOP_OPTION=$STOP_OPTION
+./xmlchange STOP_N=$STOP_N
+
+#Deal with que and nodes
+NNODES=$[NTASKS/16]
+
+if [ $QUENAME = "ys" ]; then
+    WALLTIME=999
+elif [ $QUENAME = "few" ]; then
+    WALLTIME=720
+elif [ $QUENAME = "medium" ]; then
+    WALLTIME=168
+else
+    WALLTIME=48
+fi
+
+#--------------------------------------
+#------Now generate the pbs file-------
+#--------------------------------------
+cat << EOF > run.pbs
+#!/bin/sh
+#PBS -N lzn_$CASENAME
+#PBS -q $QUENAME
+#PBS -l walltime=$WALLTIME:00:00
+#PBS -l nodes=$NNODES:ppn=16
+#PBS -r n
+#PBS -o cesmrun.log
+#PBS -e cesmrun.err
+#PBS -V 
+echo "This jobs is "\$PBS_JOBID@\$PBS_QUEUE
+echo running >& \$EXEROOT/../run_status
+MPIBIN=/public/mpi/mvapich2-18-intel/bin
+cd \$EXEROOT
+\$MPIBIN/mpirun -np $NTASKS -hostfile \$PBS_NODEFILE  ./cesm.exe >& ../run.log
+echo finished >& \$EXEROOT/../run_status
+EOF
+```
