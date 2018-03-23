@@ -36,8 +36,9 @@ var(var,prob.lt.siglvl,True) ;prob是统计概率值，维数与var相同，若s
 ```
 plot = gsn_csm_lat_time( wks, data, res ) ;data必须为（lat，time）的二维数组
 plot = gsn_csm_time_lat( wks, data, res ) ;data必须为（time，lat）的二维数组
-plot = gsn_csm_hov( wks, data, res)       ;data必须为（time，lon）的二维数组   
-```   
+plot = gsn_csm_hov( wks, data, res)       ;data必须为（time，lon）的二维数组
+```
+
 If the resource cnFillOn is set to True, then the following will happen automatically:   
 - a labelbar will be automatically added (default horizontal)  
 - contour line labels will be turned off  
