@@ -9,6 +9,8 @@ author: renql
 * content
 {:toc}
 
+> Jiang, Z., et al. (2017). "Impact of moisture source variation on decadal-scale changes of precipitation in North China from 1951 to 2010." Journal of Geophysical Research-Atmospheres 122(2): 600-613.
+
 # 文章结构
 1. Introduction
 2. Data and Methods  
@@ -22,9 +24,6 @@ author: renql
 	5.3 Relationship Between Precipitation in North China and Moisture Transport  
 	5.4 Assessment of Moisture Sources  
 6. Conclusion and Discussion 
-
-
-
 
 # 英语词句摘录
 > manifest 证明，表明，显示   
