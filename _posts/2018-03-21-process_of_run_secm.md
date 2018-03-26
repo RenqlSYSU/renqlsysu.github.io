@@ -48,7 +48,7 @@ source  ~/.bashrc_cesm
 ```
 可修改源代码（如加nudg，修改后的代码放在Sourcemod相应模块下）  
 该操作后生成的有用的文件有：  
-- **user_nl_xxx** 修改输入模式中的一些常量如CO2浓度、太阳辐射，也可设定输出数据的频率和类型（至于是否修改成功可通过运行preview_namelists来查看，可修改的常量在CaseDocs/xxx_in），在run前修改即可  
+- **user_nl_xxx** 修改输入模式中的一些变量如CO2浓度、太阳辐射、海温资料、植被资料等等，也可设定输出数据的频率和类型（至于是否修改成功可通过运行preview_namelists来查看，可修改的常量在CaseDocs/xxx_in），在build前修改即可  
 - **CaseDocs** 存放有各模块在run时需要用到的变量名，供参考  
 - **env_derived** 存放有从其他设置中获得的环境变量，用户不能修改  
 
@@ -57,6 +57,7 @@ source  ~/.bashrc_cesm
 ./$CASENAME.build
 ```
 若build后又有修改源代码，可以直接build，不需要clean build 
+build后会在 **$RUNDIR** 生成存有最后跑模式时用到的变量文件 **xxx_in** ,不能再修改.
 
 ## 6. run ##
 ```bash
