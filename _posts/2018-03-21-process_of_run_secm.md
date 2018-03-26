@@ -56,7 +56,7 @@ source  ~/.bashrc_cesm
 ```bash
 ./$CASENAME.build
 ```
-若build后又有修改源代码，可以直接build，不需要clean build 
+若build后又有修改源代码，可以直接build，不需要clean build     
 build后会在 **$RUNDIR** 生成存有最后跑模式时用到的变量文件 **xxx_in** ,不能再修改.
 
 ## 6. run ##
