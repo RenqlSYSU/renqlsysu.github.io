@@ -52,6 +52,10 @@ source  ~/.bashrc_cesm
 - **CaseDocs** 存放有各模块在run时需要用到的变量名，供参考  
 - **env_derived** 存放有从其他设置中获得的环境变量，用户不能修改  
 
+另外关于所有变量介绍的说明文件可以在这里找到：
+<a href="http://www.cesm.ucar.edu/models/cesm1.2/" target="_blank">http://www.cesm.ucar.edu/models/cesm1.2/</a>    
+可通过一开始的搜索寻找想要查找的变量名称。
+
 ## 5. build ##
 ```bash
 ./$CASENAME.build
