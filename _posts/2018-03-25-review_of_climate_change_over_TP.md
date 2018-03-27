@@ -66,10 +66,10 @@ Bowen ratio 即感热与潜热的比值。在干旱地区不宜使用该指数�
 
 ## 4. A conceptual model for the Plateau climatic changes ##
 造成TP表面空气温度升高的原因有很多种：   
-- 1. 风速减弱，使得TP区域与周围区域的能量交换与传输减弱，使能量过多地留在了TP（这是本文提出的）   
-- 2. 二氧化碳效应   
-- 3. 地表水汽含量丰富加强了向下的长波辐射  
-- 4. TP区域上空的臭氧浓度比同纬度其他区域要小  
+- 风速减弱，使得TP区域与周围区域的能量交换与传输减弱，使能量过多地留在了TP（这是本文提出的）   
+- 二氧化碳效应   
+- 地表水汽含量丰富加强了向下的长波辐射  
+- TP区域上空的臭氧浓度比同纬度其他区域要小  
 
 the warming trend over the Plateau is not observed in NCEP reanalysis data (You et al., 2010)    
 the wind decline is not observed in ERA-40 and ERA-interim data    
@@ -77,16 +77,16 @@ the negative trend in the heat source is not seen in the JRA-25.
 
 # 文章结构 #
 1. Introduction
-2. Observed climatic changes
-	2.1. Spatial variability of surface temperature change
-	2.2. Wind speed change
-	2.3. Solar radiation change
-3. Response of energy and water cycles
-	3.1. Land and atmospheric energy budget
-	3.2. Land surface water budget
-	3.3. Response of heat and evaporation to climate change
-4. A conceptual model for the Plateau climatic changes
-5. Recommendations for future studies（提了四点）
+2. Observed climatic changes   
+	2.1. Spatial variability of surface temperature change    
+	2.2. Wind speed change   
+	2.3. Solar radiation change   
+3. Response of energy and water cycles   
+	3.1. Land and atmospheric energy budget   
+	3.2. Land surface water budget   
+	3.3. Response of heat and evaporation to climate change   
+4. A conceptual model for the Plateau climatic changes   
+5. Recommendations for future studies（提了四点）   
 
 # 英语词句摘录 #
 > Siberian 西伯利亚，prerequisite 首要必备的，先决条件，prevailling 普遍的，striking 显著的   
