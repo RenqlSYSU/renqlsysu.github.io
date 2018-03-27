@@ -60,7 +60,10 @@ source  ~/.bashrc_cesm
 ```bash
 ./$CASENAME.build
 ```
-若build后又有修改源代码，可以直接build，不需要clean build     
+build过程中，1.检查模式运转时需要的输入数据，若数据缺失，build会终止并列出缺失数据，此时可用 `./check_input_data -export` 获得缺失的数据文件。
+2.创建 build/run 目录，里面放油模式运转时用到的namelist（即xxx_in），后面输出的数据文件也放于此处。    
+
+若build后又有修改源代码，可以直接build，不需要clean build     
 build后会在 **$RUNDIR** 生成存有最后跑模式时用到的变量文件 **xxx_in** ,不能再修改.
 
 ## 6. run ##
