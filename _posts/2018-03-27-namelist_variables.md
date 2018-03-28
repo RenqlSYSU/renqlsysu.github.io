@@ -9,7 +9,8 @@ author: renql
 * content
 {:toc}
 
-**dtime**：动力与物理耦合时间间隔，以秒为单位，取决于精度和动力核  
+# CAM模块中的变量
+**dtime**：动力与物理耦合时间间隔，以秒为单位，取决于精度和动力核  
 
 **ext_frc**:external forcings, 属于chem_inparm   
 **sol_facti_cloud_borne**：In-cloud scav for cloud-borne aerosol tuning factor   
@@ -29,3 +30,16 @@ author: renql
 **water_refindex_file**：Full pathname of dataset for water refractive indices used in modal aerosol optics   
 **iceopticsfile**：filepath and name for ice optics data for rrtmg   
 **liqopticsfile**：filepath and name for liquid cloud (gamma distributed) optics data for rrtmg     
+
+# DOCN
+**domainfile**：spatial gridfile associated with the strdata.  grid information will be read from this file and that grid will serve as the target grid for all input data for this strdata input.   
+
+# CLM4.0
+**fatmlndfrc**: Full pathname of land fraction data file.  
+**finidat**:Full pathname of initial conditions file. If blank CLM will startup from arbitrary initial conditions.   
+**fpftcon**: Full pathname datafile with plant function type (PFT) constants    
+**fpftdyn**: Full pathname of time varying PFT data file. This causes the land-use types of the initial surface dataset to vary over time.  
+**fsnowaging**: SNICAR (SNow, ICe, and Aerosol Radiative model) snow aging data file name   
+**fsnowoptics**: SNICAR (SNow, ICe, and Aerosol Radiative model) optical data file name    
+**fsurdat**: Full pathname of surface data file.  
+
