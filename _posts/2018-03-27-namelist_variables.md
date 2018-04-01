@@ -9,8 +9,15 @@ author: renql
 * content
 {:toc}
 
+以下 namelist variables 都是从 $casename/$RUNDIR/xxx_in 文件中看到，其解释可在官网查询。
+
+另外，模式运行过程中用到的输入数据文件可在 $casename/Buildconf/xxx.input_data_list 找到   
+
 # CAM模块中的变量
 **dtime**：动力与物理耦合时间间隔，以秒为单位，取决于精度和动力核  
+
+
+
 
 **ext_frc**:external forcings, 属于chem_inparm   
 **sol_facti_cloud_borne**：In-cloud scav for cloud-borne aerosol tuning factor   
