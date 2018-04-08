@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ncl文件的输入与输出
+title: ncl文件的操作函数、输入与输出
 categories: ncl
 tags: ncl 整理
 author: renql
@@ -8,6 +8,29 @@ author: renql
 
 * content
 {:toc}
+
+# 文件操作函数
+```
+f1 = addfile("ghg_hist_1765-2005_c091218.nc","r")
+  
+fatts = getfileatts(f1)     ;返回文件的全局变量名称，只返回名称
+  do na=0,dimsizes(fAtts)-1
+    print ("f@" + fAtts(na) + " = " + f@$fAtts(na)$) ；可查看各全局变量的具体内容
+  end do
+  
+dnames = getfiledimnames(f1) ;返回一维字符数组
+dsizes = getfiledimsizes(f1) ;返回一维整型数组，顺序同dnames
+print(dSizes+"   "+dNames)   ;输出查看
+
+vnames = getfilevarnames(f1) ;返回一维字符串数组
+vatts  = getfilevaratts(f1,vname(0))  ;返回一维字符型数组
+vtype  = getfilevartypes(f1,vname(0)) ;返回一维字符型数组
+vdname = getfilevardimnames(f1,vname(0))
+vdsize = getfilevardimsizes(f1,vname(0))
+```
+
+
+
 
 # 输出数据到ASCII文件
 1. write_matrix 输出二维数据   
@@ -19,9 +42,6 @@ author: renql
 	opt@row 	= True 			;表示会打印行数，若为False则不打印行数
 write_matrix(data,fmtf,opt)		;data只能是二维的，fmtf是打印的格式如"9f12.6"
 ```
-
-
-
 
 2. write_table 输出规则列表
 ```
