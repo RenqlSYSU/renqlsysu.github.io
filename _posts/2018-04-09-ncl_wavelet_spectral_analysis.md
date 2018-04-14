@@ -44,9 +44,12 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
 `scale = so*2^[(jtot-1)*dj]`   
 6. **wave@period**，A one-dimensional array of length jtot (same type as wave) containing the "Fourier" periods (in time units) corresponding to "scale".    
 7. **wave@signif**，A one-dimensional array of length jtot (same type as wave) containing significance levels versus scale.    
-8. **wave@gws**，A one-dimensional array of length jtot (same type as wave) containing the global wavelet spectrum.
+8. **wave@gws**，A one-dimensional array of length jtot (same type as wave) containing the global wavelet spectrum.     
+9. **wave@coi**，A one-dimensional array of length N (same type as wave) containing the e-folding factor used for the cone of influence.是画边界区域必须的参数    
+10. **wave@cdelta**，A scalar (same type as wave) containing the constant "Cdelta" for the mother wavelet (Table 2 of reference).     
+11. **wave@psi0**，A scalar (same type as wave) containing the constant "psi(0)" for the mother wavelet (Table 2 of reference).
 
- ```
+ ```    
  ;计算显著性水平
   SIG  = power           ; transfer metadata
   SIG  = power/conform (power,w@signif,0)  ; >= 1 is significant
@@ -55,10 +58,16 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
   power = onedtond (wave@power, (/jtot,npad/) ) 
   power_no_bias = power/conform(power,wave@scale,0)
   gws_no_bias   = wave@gws/wave@scale
-  ```
   
+  ;如何画边界区域的曲线
+  rescoi = True
+  rescoi@gsFillIndex  = 1 ;确定填充类型  
+  ;只要是gs开头的属性均可设置，另外还可以设置gsFillColor，gsEdgeColor，gsEdgeDashPattern，gsEdgeThicknessF
+  plot = ShadeCOI(wks, plot, wave, data&time,rescoi)
+  ```    
+   
   其中函数 `conform` 是用于扩展数组的，其用法介绍如下
-  ```
+  ``` 
   data  = conform(x, r, ndim) ;将数组r扩充为和数组x同等大小的数组
   ;x，任何维数的数组
   ;r，一个值或一个数组，但这个数组必须是X的子集
