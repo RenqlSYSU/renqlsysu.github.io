@@ -64,8 +64,8 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
   rescoi@gsFillIndex  = 1 ;确定填充类型  
   ;只要是gs开头的属性均可设置，另外还可以设置gsFillColor，gsEdgeColor，gsEdgeDashPattern，gsEdgeThicknessF
   plot = ShadeCOI(wks, plot, wave, data&time,rescoi)
-  ```    
-   
+  ```
+  
   其中函数 `conform` 是用于扩展数组的，其用法介绍如下
   ``` 
   data  = conform(x, r, ndim) ;将数组r扩充为和数组x同等大小的数组
@@ -77,4 +77,8 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
 无偏差的小波分析    
 >  Liu Y (2007),Rectification of the bias in the wavelet power spectrum,Journal of Atmospheric and Oceanic Technology, 24(12), 2093-2102.
 
+若有一个序列包含有两个相同振幅的正弦波，但两者的频率不同，
+那么传统的小波分析总是会使周期长、频率小的那个波动的功率谱大，但实际两者的功率谱应该是一样的。
+这就是目前传统小波分析所存在问题。
 
+为解决这一办法，传统的方法是滤去显著地低频波动，然后再做小波分析。
