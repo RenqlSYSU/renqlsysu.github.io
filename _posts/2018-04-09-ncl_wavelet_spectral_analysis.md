@@ -44,10 +44,13 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
 `scale = so*2^[(jtot-1)*dj]`   
 6. **wave@period**，A one-dimensional array of length jtot (same type as wave) containing the "Fourier" periods (in time units) corresponding to "scale".    
 7. **wave@signif**，A one-dimensional array of length jtot (same type as wave) containing significance levels versus scale.    
-8. **wave@gws**，A one-dimensional array of length jtot (same type as wave) containing the global wavelet spectrum.     
+8. **wave@gws**，A one-dimensional array of length jtot (same type as wave) containing the global wavelet spectrum.即某一周期的所有时间点的功率谱平均，类似于基于傅里叶变换的功率谱分析。      
 9. **wave@coi**，A one-dimensional array of length N (same type as wave) containing the e-folding factor used for the cone of influence.是画边界区域必须的参数    
 10. **wave@cdelta**，A scalar (same type as wave) containing the constant "Cdelta" for the mother wavelet (Table 2 of reference).     
-11. **wave@psi0**，A scalar (same type as wave) containing the constant "psi(0)" for the mother wavelet (Table 2 of reference).
+11. **wave@psi0**，A scalar (same type as wave) containing the constant "psi(0)" for the mother wavelet (Table 2 of reference).   
+12. **wave@lag1**，A scalar (same type as wave) containing the lag-1 autocorrelation of the input series.     
+13. **wave@r1**，A scalar of the same type as wave. If noise = 1, this contains the lag-1 autocorrelation of the input series. Otherwise, wave@r1 = 0.0. This is the value used in the significance test.     
+14. **wave@dof**，A one-dimensional array of length jtot (same type as wave) containing the degrees-of-freedom for significance test.   
 
 计算发现，输入的数据为原始值和用距平值算出来的结果是一样的。   
 但若用标准化数据计算的话，功率谱值会小很多。同时，用标准化数据计算的结果与用原始值计算的功率谱值（power）除以数据的方差的结果一样。   
