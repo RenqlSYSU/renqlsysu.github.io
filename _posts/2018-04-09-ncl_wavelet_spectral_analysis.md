@@ -56,7 +56,7 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
 但若用标准化数据计算的话，功率谱值会小很多。同时，用标准化数据计算的结果与用原始值计算的功率谱值（power）除以数据的方差的结果一样。   
 如果只是为了比较周期的变化，个人觉得用标准化数据计算的功率谱值便于在不同时间序列之间进行比较。因为有些地区的降水本来平均值就比较大，波动也就比较剧烈，因此气功率谱值就会比较大。
 
- ```    
+```    
  ;计算显著性水平
   SIG  = power           ; transfer metadata
   SIG  = power/conform (power,w@signif,0)  ; >= 1 is significant
@@ -71,17 +71,16 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
   rescoi@gsFillIndex  = 1 ;确定填充类型  
   ;只要是gs开头的属性均可设置，另外还可以设置gsFillColor，gsEdgeColor，gsEdgeDashPattern，gsEdgeThicknessF
   plot = ShadeCOI(wks, plot, wave, data&time,rescoi)
-  
-  ```
+```
   
   其中函数 `conform` 是用于扩展数组的，其用法介绍如下
-  
-  ``` 
+ ``` 
   data  = conform(x, r, ndim) ;将数组r扩充为和数组x同等大小的数组
   ;x，任何维数的数组
   ;r，一个值或一个数组，但这个数组必须是X的子集
   ;ndim，表明X的哪几维是与r相同的，若r是一个值，则ndim设为-1
-  ```
+```
+
 
 无偏差的小波分析    
 >  Liu Y (2007),Rectification of the bias in the wavelet power spectrum,Journal of Atmospheric and Oceanic Technology, 24(12), 2093-2102.
