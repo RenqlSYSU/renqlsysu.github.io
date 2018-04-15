@@ -49,6 +49,10 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
 10. **wave@cdelta**，A scalar (same type as wave) containing the constant "Cdelta" for the mother wavelet (Table 2 of reference).     
 11. **wave@psi0**，A scalar (same type as wave) containing the constant "psi(0)" for the mother wavelet (Table 2 of reference).
 
+计算发现，输入的数据为原始值和用距平值算出来的结果是一样的。   
+但若用标准化数据计算的话，功率谱值会小很多。同时，用标准化数据计算的结果与用原始值计算的功率谱值（power）除以数据的方差的结果一样。   
+如果只是为了比较周期的变化，个人觉得用标准化数据计算的功率谱值便于在不同时间序列之间进行比较。因为有些地区的降水本来平均值就比较大，波动也就比较剧烈，因此气功率谱值就会比较大。
+
  ```    
  ;计算显著性水平
   SIG  = power           ; transfer metadata
@@ -64,9 +68,11 @@ wave = wavelet(data, mother, dt, param, s0, dj, jtot, npad, noise, isigtest, sig
   rescoi@gsFillIndex  = 1 ;确定填充类型  
   ;只要是gs开头的属性均可设置，另外还可以设置gsFillColor，gsEdgeColor，gsEdgeDashPattern，gsEdgeThicknessF
   plot = ShadeCOI(wks, plot, wave, data&time,rescoi)
+  
   ```
   
   其中函数 `conform` 是用于扩展数组的，其用法介绍如下
+  
   ``` 
   data  = conform(x, r, ndim) ;将数组r扩充为和数组x同等大小的数组
   ;x，任何维数的数组
