@@ -52,7 +52,56 @@ write_matrix(data,fmtf,opt)		;data只能是二维的，fmtf是打印的格式如
 ```
 
 # 输出数据到二进制文件，可用Fortran读取
+关于ncl、Fortran、grads对二进制文件的处理区别介绍博客：<a href="http://bbs.06climate.com/home.php?do=blog&id=3487&mod=space&uid=12776" target="_blank"> http://bbs.06climate.com/home.php?do=blog&id=3487&mod=space&uid=12776 </a>
+
 1.  直接写入二进制文件，类似于fortran中的"form=unformatted,access=direct"
 ```
 fbindirwrite(path,var)  ;var可以是任意维度,若写入的数据文件之前就存在，新写入的数据将写在后面，而不是覆盖
 ```
+
+若输出的二进制文件想要被grads读取，也可用此函数，并运用循环，将每个时次每个变量各个高度的场依次输出，用Fortran写的函数例子为：
+```f90
+    program text1
+	 parameter(nx=144,ny=73,nz=17,nt=12)
+	 real u(nx,ny,nz,nt)
+	 real v(nx,ny,nz,nt)    
+	 open(unit=1,file='E:\ftp\GrADS\uwnd.dat',form="binary",access="direct",recl=4*nx*ny)
+	 open(unit=2,file='E:\ftp\GrADS\vwnd.dat',form="binary",access="direct",recl=4*nx*ny)
+	 open(unit=3,file='E:\ftp\GrADS\uvwnd.dat',form="binary",access="direct",recl=4*nx*ny)
+	 irec=1
+	 do it=1,nt
+	  do iz=1,nz
+	   read(1,rec=irec) ((u(i,j,iz,it),i=1,nx),j=1,ny)
+	   read(2,rec=irec) ((v(i,j,iz,it),i=1,nx),j=1,ny)
+	   irec=irec+1
+	  end do 
+	 end do 
+	 
+	 irec=1
+	 do it=1,nt 
+	  do iz=1,nz
+	   write(3,rec=irec) ((u(i,j,iz,it),i=1,nx),j=1,ny)
+	   irec=irec+1
+	  end do 
+	  do iz=1,nz
+	   write(3,rec=irec) ((v(i,j,iz,it),i=1,nx),j=1,ny)
+	   irec=irec+1
+	  end do 
+	 end do
+	 end 
+```
+对应dat的ctl文件书写例子：
+```
+dset d:\grads\uvwnd.dat
+title monthly longterm mean u wind from the NCEP reanalysis
+undef -9.96921e+36
+xdef 144 linear 0 2.5
+ydef 73 linear -90 2.5
+zdef 17 levels 1000 925 850 700 600 500 400 300 250 200 150 100 70 50 30 20 10
+tdef 12 linear 00z01jan1948 1mo
+vars 2
+uwnd 17 99 monthly longterm mean of u-wind
+vwnd 17 99 monthly longterm mean of u-wind
+endvars
+```
+
