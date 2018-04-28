@@ -2,7 +2,7 @@
 layout: post
 title: 青藏高原对全球天气与气候的影响
 categories: 大气科学
-tags: 整理 天气学原理 青藏高原
+tags: 整理 天气学原理 TP
 author: renql
 ---
 
