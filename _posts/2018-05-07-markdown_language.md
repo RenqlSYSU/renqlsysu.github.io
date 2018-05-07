@@ -17,7 +17,8 @@ author: renql
 `![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fr34g1tkdpj30ow0j9gq1.jpg)`    
 其中，如插入小图为small，大图为large，mw690介于大图与小图之间     
 
-3. github博客的开头必须为：    
+3. github博客的开头必须为：
+
 ```
 ---
 layout: post
