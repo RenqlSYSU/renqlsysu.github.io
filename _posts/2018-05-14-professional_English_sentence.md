@@ -9,11 +9,17 @@ author: renql
 * content
 {:toc}
 
+今天在写毕业论文的英文摘要时，发现自己一个英文长句都造不出来，很多描述物理现象的短语也都不记得了。
+为此，特地将一些文献中写的好的英语长句和常用的专业短语罗列如下，无聊的时候多背背。
+
 The effect of anomalous snow cover over the Tibetan Plateau upon the South Asian summer monsoon is investigated by numerical simulations using the NCAR regional climate model (RegCM2) into which gravity wave drag has been introduced．
 
 the sensitivity of the South Asian early summer monsoon to snow cover anomaly over the Tibetan Platea
 
 be revealed
+
+
+
 
 The main results are summarized as follows
 
