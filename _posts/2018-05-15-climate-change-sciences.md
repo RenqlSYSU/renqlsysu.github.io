@@ -32,7 +32,10 @@ author: renql
 3. 21世纪**澳大利亚季风**环流变化不明显。澳洲降水的总体变化较小，存在较大的不确定性。
 
 ### 全球季风（Wang and Ding，2006）
-**经典气候学**把季风视为局地现象，把季风视为近地面风的季节性反转，强调亚非澳季风区    
+![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1frc2ozlwajj30pr0ajdli.jpg)     
+全球季风分布图     
+
+**经典气候学**把季风视为局地现象，把季风视为近地面风的季节性反转，强调亚非澳季风区    
 **现代气候学**把季风视为全球现象，季风形成的机制是随季节而变化的大尺度持续大气翻转，全球热带有6-7个区。把季风区扩大到海上是季风研究的一个新发展。
 
 近半个世纪以来，**全球陆地季风降水减少**趋势主要由于北半球季风降水减弱。全球海洋-陆地季风降水在**1979年后呈增多**的趋势主要由于北半球海洋季风降水增加所致。其原因归纳如下：     
@@ -49,8 +52,7 @@ author: renql
 ![](http://wx3.sinaimg.cn/mw690/006fa9Xlgy1frc2ovmfl4j314b0nnn4m.jpg)    
 ![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1frc2owe4t3j31630mytet.jpg)    
 ![](http://wx3.sinaimg.cn/mw690/006fa9Xlgy1frc2oyrp4xj31290q5x6p.jpg)    
-![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1frc2ozlwajj30pr0ajdli.jpg)     
-
+  
 # 气候变化的预估 董文杰 #
 updated by 2018/04/28 周六
 
