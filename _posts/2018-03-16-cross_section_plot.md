@@ -45,9 +45,25 @@ If the resource cnFillOn is set to True, then the following will happen automati
 - the contour information label will be turned off  
 If you want to turn the labelbar off, set lbLabelBarOn to False.  
 
-一般时间坐标是从0开始的数字，若要表示具体的年月日，需要自己指定横坐标
+# 时间坐标轴的标注
+1、最常用的，一般时间坐标是从0开始的数字，若要表示具体的年月日，需要自己指定横坐标
 ```
 res@tmYLMode = "Explicit" 
 res@tmYLValues = (/ 0. , 30., 61., 89., 120., 150. /)
 res@tmYLLabels = (/"DEC","JAN","FEB","MAR","APR","MAY" /)
 ```
+
+2、用`time_axis_labels`函数，其用法如下：
+```
+; Set special resources for the time axis
+  resTick                = True
+  resTick@ttmFormat      = "%d %c"
+  resTick@ttmAxis        = "YL"
+  resTick@ttmMajorStride = 10
+
+; Set resources necessary to customize Y axis labels
+  time_axis_labels( data&time,  res, resTick )
+```
+
+生成的图如下：    
+![](https://www.ncl.ucar.edu/Applications/Images/time_labels_2_lg.png)
