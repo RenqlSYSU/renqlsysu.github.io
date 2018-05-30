@@ -9,7 +9,7 @@ author: renql
 * content
 {:toc}
 
-2018年5月30日打卡
+2018年5月30日打卡     
 raise an issue 提出争论点    
 spot something 发现什么东西    
 violate the guidelines 违反规定      
