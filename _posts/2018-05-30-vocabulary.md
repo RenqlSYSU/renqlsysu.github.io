@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 词汇积累
-categories: 杂学
+categories: 语言
 tags: TOEFL 英语单词
 author: renql
 ---
@@ -9,7 +9,18 @@ author: renql
 * content
 {:toc}
 
-2018年5月30日打卡     
+### 2018年5月31日打卡
+<a href="https://www.ets.org/toefl" target="_blank"> 托福官网 </a>    
+
+看了一篇讲托福备考的帖子，感觉总结的不错，推荐看纽约时报和CNN的新闻，在大量阅读的过程中理解单词    
+<a href="https://forum.chasedream.com/thread-1286514-1-1.html" target="_blank"> [备考心经] 纯自学托福112备考经验+资料分享 </a>  
+在听力模块还有许多辅助听力的网站   
+
+另外还找到TOEFL的
+<a href="https://courses.edx.org/courses/course-v1:ETSx+TOEFLx+1T2018/course/" target="_blank"> 免费官网课程 </a>     
+
+
+### 2018年5月30日打卡     
 raise an issue 提出争论点    
 spot something 发现什么东西    
 violate the guidelines 违反规定      
