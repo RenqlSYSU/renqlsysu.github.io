@@ -10,7 +10,11 @@ author: renql
 {:toc}
 
 ### 2018年6月6日打卡
-optimum 最适宜的，最适宜条件
+optimum 最适宜的，最适宜条件   
+muscle glycogen 肌糖原   
+lateral 侧面的，侧部，横向传球  
+tile 瓷砖，瓦片  
+grasp the overall situation 把握大局   
 
 ### 2018年6月5日打卡
 最近开始追《波士顿法律》这部美剧，准备以此来练听力，感觉还是挺好看的，就是有时候有点跟不上节奏。    
