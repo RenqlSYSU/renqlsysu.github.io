@@ -15,6 +15,14 @@ muscle glycogen 肌糖原
 lateral 侧面的，侧部，横向传球  
 tile 瓷砖，瓦片  
 grasp the overall situation 把握大局   
+pragmatic 实际的，实用主义的，国事的； practical，realistic    
+igloo 圆顶建筑   
+pioneering spirit 首创的，先驱的  
+nonsense 胡说，荒谬的  
+naval 海军的  
+petrochemical 石油化学的  
+mushroom 蘑菇，伞菌  
+terrain 地形，地势；topography
 
 ### 2018年6月5日打卡
 最近开始追《波士顿法律》这部美剧，准备以此来练听力，感觉还是挺好看的，就是有时候有点跟不上节奏。    
