@@ -23,11 +23,12 @@ author: renql
 
     cp -s source destination # 创建软连接，这是最常用的，当源文件被删除时，该链接失效
 
-    ln source destination    # 创建硬连接
+    ln source destination    # 创建硬连接，写目标目录时，注意写成 `./data` 而不是 `/data`，因为直接 `/` 意味着根目录  
 
-    ln -s source destination # 创建软连接
+    ln -s source destination # 创建软连接  
     
-    rm destination #删除软连接目录时，目录名后不能有/，否则将删除原目录下的文档
+    rm destination  #删除软连接目录时，目录名后不能有/，否则将删除原目录下的文档
+    
 
 # vim中的常用命令 #
     ：n1,n2s/word1/word2/gc # 在n1到n2行之间，用word2替换word1
@@ -42,8 +43,10 @@ author: renql
 ```bash
 nohup mpirun –np 8 ./wrf.exe
 ```
-用`nohup`后，再次登录查看任务可以用` top `或者` ps –a `
-` ps -ef `  可以查看主机所有运行的进程   ` ps -ef | grep ` 过滤条件
+用`nohup`后，再次登录查看任务可以用` top `或者` ps –a `    
+` ps -ef `  可以查看主机所有运行的进程   ` ps -ef | grep ` 过滤条件   
+但是，请注意，以上两个命令都只能查看单个节点的运行情况。对于并行运行、集群系统、天河等电脑，则无法使用上述命令来查看任务提交情况，而应该使用 `qstat`（四期）,`yhq`(tianhe)
+
 如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件
 ` nohup command > myout.file 2>&1 & `
 
@@ -55,7 +58,11 @@ fg  %n   //将编号为n的任务转前台运行
 ctrl+z    //挂起当前任务
 ctrl+c    //结束当前任务
 ```
-3. 终止后台运行的删除脚本： ` kill -9  进程号 `
+3. 终止后台运行的删除脚本：  
+```
+kill -9  进程号  #立即强制删除一个工作   
+kill -15 %n  #以正常的程序方式终止一项工作
+```
 
 # 振宁师兄模式课上教的几个命令 #
 ```bash
