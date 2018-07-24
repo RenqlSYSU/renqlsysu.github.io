@@ -27,7 +27,9 @@ Bulletin of the American Meteorological Society 86(11): 1609-+.
 
 
 该作者是在GFDL（Geophysical Fluid Dynamics Laboratory）任职，听说他很喜欢写倡议，
-另外还找到了他的blog，发现他的每一篇博文都是配一幅图，然后围绕该图长篇大论，有时间还是可以拜读一下的。    
+另外还找到了他的blog，发现他的每一篇博文都是配一幅图，然后围绕该图长篇大论，有时间还是可以拜读一下的。
+不过不知道为什么，他的blog都只更新到2016年11月，或许是退休了？    
 <a href="https://www.gfdl.noaa.gov/blog_held/" target="_blank">Isaac M Held's Climate Dynamics Blog </a>     
 
-这篇文章提出一些问题。
+个人觉得这篇文章主要还是在探讨模式应用与理解之间的矛盾，即很多学者都只会用模式，但不能确定模式模拟地是否准确及模式的不同设置会有什么影响。    
+此外，在模式的发展过程中，人们一方面希望模式能尽可能多地抓住所有
