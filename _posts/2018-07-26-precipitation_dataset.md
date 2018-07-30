@@ -14,7 +14,7 @@ The Asian Precipitation—Highly-Resolved Observational Data Integration Towards
 gridded rainfall data set for “Monsoon-Asia” [APHRO_MA_025deg_V1003R1; Yatagai et al., 2012]     
 
 从未听说过，在查询该数据时，发现NCAR有一个专门介绍降水数据的网站，感觉非常不错，分享如下：
-<a href="https://climatedataguide.ucar.edu/climate-data/precipitation-data-sets-overview-comparison-table" target="_blank">降水数据比较</a>   
+<a href="https://climatedataguide.ucar.edu/climate-data/precipitation-data-sets-overview-comparison-table" target="_blank">降水数据比较</a>  
 该网页中罗列了现有的很多降水数据，介绍了其数据来源、分辨率、频率、起止时间等。
 
 其中介绍到，目前的降水数据大致可以分为三类：   
@@ -23,3 +23,6 @@ gridded rainfall data set for “Monsoon-Asia” [APHRO_MA_025deg_V1003R1; Yatag
 3. 综合卫星数据和雨量筒数据的，如 GPCP, CMAP, TRMM,3B42   
 
 虽然现在卫星几乎遍布全球，但是很多卫星一天内同一区域只能经过两次，因此会漏掉那些低强度的、短时的降水。
+
+
+<a href="https://www.climate.gov/news-features/department/enso-blog" target="_blank"> ENSO blog </a> 
