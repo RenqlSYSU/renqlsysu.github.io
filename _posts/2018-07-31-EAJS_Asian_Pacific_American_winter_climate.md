@@ -12,7 +12,7 @@ author: renql
 师兄建议我多看看老板的论文，这才发现自己好像没怎么读过老板的文章，除了那篇非常著名的《Monsoon and ENSO: selectively interactive》（1992）外就没有看过其他文章。于是上网去搜了老板有哪些文章。   
 <a href="http://atmos.sysu.edu.cn/teacher/357" target="_blank">老板简历</a>，从中挑选高引用文章看。  
 
-先看了下面这一篇讲亚洲-太平洋-北美冬季风的文章，感觉格局非常的大。      
+先看了下面这一篇讲亚洲-太平洋-北美冬季风的文章，感觉格局非常的大。且该文是2002年发表的，看到那时老板的归属部门还是 NOAA/NWS/NCEP Climate Prediction Center, Camp Springs, Maryland      
 > Yang, S., et al. (2002). "Variations of the East Asian jet stream and Asian-Pacific-American winter climate anomalies." Journal of Climate 15(3): 306-325.
 
 因为文章比较长，因此下面主要记录了我认为比较有意思的内容，至于具体的图片可以上官网查看。
