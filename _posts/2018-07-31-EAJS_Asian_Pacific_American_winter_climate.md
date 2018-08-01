@@ -52,7 +52,7 @@ author: renql
 ### 4. EAJS and Asian–Pacific–American climate   
 #### 4.1 Broadscale circulation patterns      
 对比了强EAJS、弱EAJS年和EINino、LaNina年冬季的H500差值场，发现EAJS对应的H500变化幅度更大fig6   
-随后还计算了准静止波通量（基于**Plumb，1985**），这个就完全不懂了，打算有时间学习一下fig7   
+随后还计算了准静止波通量（基于<a href="https://journals.ametsoc.org/doi/pdf/10.1175/1520-0469%281985%29042%3C0217%3AOTTDPO%3E2.0.CO%3B2" target="_blank">Plumb，1985</a>），这个就完全不懂了，打算有时间学习一下,fig7   
 
 #### 4.2 Regional-scale features 
 (low level circulation systems, surface temperature and precipitation)   
