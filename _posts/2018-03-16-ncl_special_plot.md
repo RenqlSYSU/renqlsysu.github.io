@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ncl切面图画法
+title: ncl特殊图画法
 categories: ncl
 tags: ncl 绘图函数 整理
 author: renql
@@ -14,7 +14,7 @@ author: renql
 
 
 
-# 特殊的绘图函数
+# 一、特殊的绘图函数
 ## 只画某些等值线内的内容
 ```
 res@gsnShadeFillType    = "color" or "pattern" 
@@ -32,7 +32,19 @@ var(var,prob.lt.siglvl,True) ;prob是统计概率值，维数与var相同，若s
 
 在用prob画显著性区域时，一定要先设置prob的lat和lon坐标，否则显著性区域会与实际不符 ``` copy_VarMate(var,prob) ```
 
-# 纬度(经度）-时间剖面图
+## 负值等值线和正值等值线线型颜色不同 ##
+```
+；1、通过设置res的属性来改变负值的线型    
+ res@gsnContourZeroLineThicknessF = 0 	    ; eliminates zero contour   
+ res@gsnContourNegLineDashPattern = 1       ; sets negative contours to dash pattern 1   
+ res@gsnContourPosLineDashPattern = 0       ; sets positive contours to dash pattern 0    
+ 
+ ;2、通过绘图函数来统一设定负值和正值的不同颜色   
+ plot = gsn_csm_contour_map_polar(wks,regres_t,res)   
+ plot = ColorNegDashZeroPosContour(plot,"red","magenta","blue")    
+```
+
+# 二、纬度(经度）-时间剖面图
 ```
 plot = gsn_csm_lat_time( wks, data, res ) ;data必须为（lat，time）的二维数组
 plot = gsn_csm_time_lat( wks, data, res ) ;data必须为（time，lat）的二维数组
@@ -45,7 +57,7 @@ If the resource cnFillOn is set to True, then the following will happen automati
 - the contour information label will be turned off  
 If you want to turn the labelbar off, set lbLabelBarOn to False.  
 
-# 时间坐标轴的标注
+# 三、时间坐标轴的标注
 1、最常用的，一般时间坐标是从0开始的数字，若要表示具体的年月日，需要自己指定横坐标
 ```
 res@tmYLMode = "Explicit" 
