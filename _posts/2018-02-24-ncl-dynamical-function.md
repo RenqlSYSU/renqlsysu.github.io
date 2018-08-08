@@ -9,7 +9,7 @@ author: renql
 * content
 {:toc}
 
-# 散度涡度 divergence and vorticity #
+# 一、散度涡度 divergence and vorticity #
 ```
 ；以下是用中央差分的方法计算涡度散度
 	divg = uv2dv_cfd ( uwnd, vwnd, uwnd&lat, uwnd&lon, scalar-integer )
@@ -35,6 +35,27 @@ author: renql
 却发现用球谐函数计算得到的散度和涡度不是很靠谱。  
 ![](http://wx3.sinaimg.cn/large/006APL3qgy1fosp01jvhkj31j60t14qp.jpg)  
 ![](http://wx3.sinaimg.cn/large/006APL3qgy1fosp033kxoj31j60ub4qp.jpg)  
+
+# 二、流函数和速度势计算 #  
+![](https://edge.uacdn.net/SIJ2YXNNI3A0N6AHBWZ6/images/2.jpeg?w=768&fm=webp&q=25)   
+一般情况下，为查看风场的气旋反气旋情况，会用旋衡风分量计算流函数   
+```
+uv2vrf(uwnd,vwnd,vort)  ;calculate the vorticity via spherical harmonics on a fixed grid   
+vr2uvf(vort,ur,vr)      ;calculate the rotational wind components via spherical harmonics on a fixed grid    
+uv2sfvpf(ur,vr,sf,vp)   ;calculate stream function and velocity potential via spherical harmonics on a fixed grid
+;the data used by these function must be on a global grid and no missing values    
+;if there are missing values, you can make the missing value zero by this method
+uwnd = where(ismissing(uwnd),0,uwnd)
+
+sf = sf/1000000    ;the stream function's unit is m^2/s, and the magnitude is large, so divided by 10^6
+copy_VarMeta(vars,sf(0,0,:,:))
+```   
+
+# 三、经圈质量流函数 #  
+![](https://image2.slideserve.com/4148663/slide12-n.jpg)    
+除水平流函数外，还有经圈环流的质量流函数，可方便查看Hadly环流，但目前还未研究出其具体计算方法。
+但绝对不是水平流函数的**高度-经度剖面图**
+
 
 # 可降水量 #
 ```
