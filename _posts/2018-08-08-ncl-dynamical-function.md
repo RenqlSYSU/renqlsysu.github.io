@@ -57,7 +57,7 @@ copy_VarMeta(vars,sf(0,0,:,:))
 但绝对不是水平流函数的**高度-经度剖面图**
 
 
-# 可降水量 #
+# 四、可降水量 #
 ```
 	flux = wgt_vert_avg_beta ( shum&level, shum, pres_sfc, punits, opt ) / g ；将比湿垂直积分得到该地区可降水量
 	;punits = 0表明shum&level和pres.sfc的单位为hPa或mb；1表明单位为Pa
