@@ -37,7 +37,7 @@ author: renql
 ![](http://wx3.sinaimg.cn/large/006APL3qgy1fosp033kxoj31j60ub4qp.jpg)  
 
 # 二、流函数和速度势计算 #  
-![](https://edge.uacdn.net/SIJ2YXNNI3A0N6AHBWZ6/images/2.jpeg?w=768&fm=webp&q=25)   
+![](http://wx2.sinaimg.cn/large/006fa9Xlgy1fu2kqef91zj30lc0clq36.jpg)   
 一般情况下，为查看风场的气旋反气旋情况，会用旋衡风分量计算流函数   
 ```
 uv2vrf(uwnd,vwnd,vort)  ;calculate the vorticity via spherical harmonics on a fixed grid   
