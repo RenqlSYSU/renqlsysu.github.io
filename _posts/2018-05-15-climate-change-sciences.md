@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 气候变化科学概论
-categories: 讲座笔记
+categories: 课堂笔记
 tags: 讲座笔记 气候变化
 author: renql
 ---
