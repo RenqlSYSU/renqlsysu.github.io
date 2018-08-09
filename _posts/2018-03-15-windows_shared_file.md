@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在同一局域网内的两台电脑文件共享
-categories: windows
+categories: 杂学
 tags: windows 文件存储
 author: renql
 ---
