@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 老板在肇庆召开的973项目年会
-categories: 会议学习
+categories: 讲座笔记
 tags: 讲座笔记 整理 会议
 author: renql
 ---
