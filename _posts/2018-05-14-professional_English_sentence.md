@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 文献中描述物理现象的长句与短语
-categories: 文献笔记 语言
+categories: 文献笔记 English_learning
 tags: 整理 文献笔记
 author: renql
 ---
