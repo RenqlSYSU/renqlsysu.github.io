@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 东亚急流与亚洲-太平洋-北美冬季气候异常的关系
-categories: 文献阅读
+categories: 文献笔记
 tags: monsoon Jet-stream ENSO
 author: renql
 ---
