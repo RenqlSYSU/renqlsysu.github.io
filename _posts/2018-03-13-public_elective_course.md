@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 大四公选课笔记
-categories: 讲座笔记
+categories: 课堂笔记
 tags: 轶闻
 author: renql
 ---
