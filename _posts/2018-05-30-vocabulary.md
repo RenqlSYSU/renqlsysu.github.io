@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 词汇积累
-categories: 语言
+categories: English_learning
 tags: TOEFL 英语单词
 author: renql
 ---
