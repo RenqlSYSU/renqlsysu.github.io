@@ -76,8 +76,19 @@ build后会在 **$RUNDIR** 生成 **xxx_in** ,不能再修改。同时这也是�
 ```bash
 ./$CASENAME.run
 ```
-提交作业，该命令实际会通过运行run.pbs来提交作业至集群系统中的多个节点。   
+提交作业，该命令在四期会通过运行run.pbs来提交作业至集群系统中的多个节点。
+```bash
+if ( "$MPILIB" == "mpi-serial" ) then
+    $EXEROOT/cesm.exe >&! cesm.log.$LID
+else
+    qsub run.pbs
+endif
+wait
+echo "`date` -- CSM EXECUTION HAS FINISHED"
+```   
 而run.pbs最后主要是通过mpirun运行EXEROOT下面的cesm.exe
+
+但在天河中，$casename.run则通过yhbatch来提交一个sh文件，sh文件中又用yhrun来运行cesm.exe
 
 # 二、关于两类runtype的解释 #
 - **Branch**（分支）, 需要设定RUN_REFCASE和RUN_REFDATE, 机制同restart run（当CONTINUE_RUN是TRUE时），当两个case之间的各种参数都一样时，他们跑出来的数据也是一模一样的。常用于敏感性实验。    
