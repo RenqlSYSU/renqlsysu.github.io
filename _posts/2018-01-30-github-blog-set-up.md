@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "20180130github博客搭建过程"
-categories: 配置过程记录
+title:  github博客搭建过程
+categories: 杂学
 tags:  linux github
 author: renql
 ---
