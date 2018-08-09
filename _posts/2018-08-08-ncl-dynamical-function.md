@@ -38,6 +38,7 @@ author: renql
 
 # 二、流函数和速度势计算 #  
 ![](http://wx2.sinaimg.cn/large/006fa9Xlgy1fu2kqef91zj30lc0clq36.jpg)   
+流函数的高值中心代表气旋，低值中心代表反气旋   
 一般情况下，为查看风场的气旋反气旋情况，会用旋衡风分量计算流函数   
 ```
 uv2vrf(uwnd,vwnd,vort)  ;calculate the vorticity via spherical harmonics on a fixed grid   
