@@ -1,3 +1,14 @@
+---
+layout: post
+title: Factors contributing to the onset of the Australian summer monsoon
+categories: 文献笔记
+tags: Australian_monsoon 文献笔记
+author: renql
+---
+
+* content
+{:toc}
+
 > Hung, C. W. and M. Yanai (2004). "Factors contributing to the onset of the Australian summer monsoon." Quarterly Journal of the Royal Meteorological Society 130(597): 739-758.   
 <a href="https://rmets.onlinelibrary.wiley.com/doi/epdf/10.1256/qj.02.191" target="_blank">论文原文链接</a>
 
