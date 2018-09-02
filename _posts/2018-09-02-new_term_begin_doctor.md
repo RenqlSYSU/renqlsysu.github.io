@@ -2,7 +2,7 @@
 layout: post
 title: 四年后再次成为新生
 categories: ponder
-tags: 
+tags: 学业要求 心理健康
 author: renql
 ---
 
