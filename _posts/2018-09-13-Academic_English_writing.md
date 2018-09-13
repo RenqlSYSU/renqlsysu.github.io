@@ -2,7 +2,7 @@
 layout: post
 title: Academic English Writing Style
 categories: 课堂笔记 English_learning
-tags: 英语写作 注意点
+tags: 学术论文特点 论文写作注意点
 author: renql
 ---
 
