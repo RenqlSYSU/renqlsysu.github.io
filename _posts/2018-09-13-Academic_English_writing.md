@@ -12,7 +12,7 @@ author: renql
 2018年9月12日，第二次学术英语写作课，感觉这学期的英语课比以往有趣多了。这次讲了学术英语与口头英语的区别。    
 ![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fv865my3bfj30sy0d30tt.jpg)  
 
-## Academic Writing Style: Vocabulary
+# Academic Writing Style: Vocabulary
 **a. Use appropriate academic words**  
 (see <a href="http://www.uefap.com/vocab/select/awl.htm" target="_blank"> Academic Word List</a> or Oxford Advanced Leaner’s Dictionary.)   
 其中Academic Word List (AWL) 主要是一个主要单词后面跟一堆衍生词，都是在学术英语中常见的单词，没事可以背一些
@@ -29,7 +29,7 @@ such as keep up, get by, take on. They are usually too informal. Use more formal
 
 **e. Include field-specific, technical language. 使用专业术语**
 
-## Academic Writing Style: Grammar
+# Academic Writing Style: Grammar
 **a. Avoid contractions 避免缩写**  
 It’s ==> It is,    can’t ==> cannot, etc.
 
@@ -50,7 +50,7 @@ Then the solution can be discarded. ==> ______________
 This means that there is much use of passive structures or nouns as subjects or objects.  
 You can see the results in Table 1. ==> The results can be seen in Table 1. 
 
-## Exercise: Reducing informality
+# Exercise: Reducing informality
 **1. OK, what are the reasons that coffee prices have fallen? There’re a lot of possibilities.**  
 **A large number of** possible reasons causes the **decreased** coffee prices.
 
@@ -66,7 +66,7 @@ The research on e-reader devices and the effect they hold on learning **is littl
 **5. So far there hasn’t been any comprehensive study looking into the role of smiling in getting the initial trust of individuals.**
 So far there has **no** comprehensive study **investigating** the role of smiling in getting the initial trust of individuals.
 
-## Academic English Feartures
+# Academic English Feartures
 1. **Density**：学术文章中会有一连串的名词词组，一个句子中或许会只有一个动词  
 2. **Formailty**：正式，严谨，避免使用口语化的表达（a lot of, thing, sort of)、缩略语（can't, shouldn't)  
 3. **Objectivity**：客观，避免使用 In my opinion. I think, you, 多用事物的被动语态
@@ -78,7 +78,7 @@ So far there has **no** comprehensive study **investigating** the role of smilin
 	 8.1 你对其他文章理解的陈述要负责  
 	 8.2 对证据和论证负责  
 
-## 学术英语常用衔接词
+# 学术英语常用衔接词
 It is claimed that..... 据说   
 It is widely believed that ....   
 be supported by  
