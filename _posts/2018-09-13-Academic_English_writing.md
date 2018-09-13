@@ -9,7 +9,7 @@ author: renql
 * content
 {:toc}
 
-2018年9月12日，第二次学术英语写作课，感觉这学期的英语课比以往有趣多了。这次讲了学术英语与口头英语的区别。    
+2018年9月12日，第二次学术英语写作课，感觉这学期的英语课比以往有趣多了。这次讲了学术英语与口头英语的区别，以及学术英语的写作规范，下节课将讲述学术论文的结构。    
 ![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fv865my3bfj30sy0d30tt.jpg)  
 
 # Academic Writing Style: Vocabulary
@@ -28,6 +28,9 @@ such as keep up, get by, take on. They are usually too informal. Use more formal
 (think ==> assert, mention ==> illustrate)
 
 **e. Include field-specific, technical language. 使用专业术语**
+
+
+
 
 # Academic Writing Style: Grammar
 **a. Avoid contractions 避免缩写**  
