@@ -45,53 +45,24 @@ The analysis didn’t yield any new results. \Longrightarrow The analysis  yield
  In informal English, adverbs often occur at the beginning or end of sentences.   
 Then the solution can be discarded. \Longrightarrow  ______________
 
-**e. Avoid excessive “personal language” 避免使用过多与人有关的语言，一般多把物体当做主语**   
+**e. Avoid excessive “personal language” 避免使用过多与人有关的，一般多把物体当做主语**   
 – addressing the reader as “you” (except if you are writing a textbook). 
 This means that there is much use of passive structures or nouns as subjects or objects.  
 You can see the results in Table 1. \Longrightarrow The results can be seen in Table 1. 
 
 ## Exercise: Reducing informality
-1. OK, what are the reasons that coffee prices have fallen? There’re a lot of possibilities.
+**1. OK, what are the reasons that coffee prices have fallen? There’re a lot of possibilities.**  
+**A large number of** possible reasons causes the **decreased** coffee prices.
 
+**2. You can see the difference between these two approaches to designing underground subway stations clearly.**  
+The difference between these two approaches to designing underground subway stations **can be seen clearly**.
 
-  
- 
- 
-  
-  2. You can see the difference
-  between these two approaches to designing underground subway stations
-  clearly.
+**3. There isn’t very much research on e-reader devices and the effect they hold on learning.**  
+The research on e-reader devices and the effect they hold on learning **is little**.
 
+**4. There are some studies that have concluded that bamboo could be used by builders more widely than it is now as a construction material.**  
+**XXX(year)** have concluded that bamboo could be used by builders more widely than it is now as a construction material.
 
-  
- 
- 
-  
-  3.
-  There isn’t very much research on e-reader devices and the
-  effect they hold on learning.
-
-
-  
- 
- 
-  
-  4.
-  There are some studies that have concluded that bamboo could be used by
-  builders more widely than it is now as a construction material.
-
-
-  
- 
- 
-  
-  5.
-  So far there hasn’t been any comprehensive study looking into the role of
-  smiling in getting the initial trust of individuals.
-
-
-  
- 
-
-
+**5. So far there hasn’t been any comprehensive study looking into the role of smiling in getting the initial trust of individuals.**
+So far there has **no** comprehensive study **investigating** the role of smiling in getting the initial trust of individuals.
 
