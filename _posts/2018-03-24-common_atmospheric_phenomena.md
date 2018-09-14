@@ -29,11 +29,17 @@ NAO和AO一样，都是处于费雷尔环流中的动力机制，一般会把两
 在北半球中，中纬度大气环流主要是副高，而高纬度是副低，因此北极涛动的实质就是反映了夹在两者之间的西风带的变化（纬向或经向）。   
 也就是说，副高和副地的拉锯战导致西风带的变化，这点以副高和副低两者气压的变化上（或者说强度的变化）来体现，这就是北极涛动。
 
-当北极振荡指数为正值（正相位）时，表示北极的气压较例年为低，与中纬度的气压差变大，此时围绕北极的寒带喷射气流－极地涡旋（Polar Vortex）变强，
-此一变化会抑制北极的寒冷气流南下，使得欧亚大陆北部及北美洲北部的冬季气温较例年为高，形成暖冬。  
-反之，当北极振荡指数为负值（负相位）时便会造成北半球中纬度地带冬季严寒。
+当北极振荡指数为**正值（正相位）**时，表示北极的气压较例年为低，与中纬度的气压差变大，此时围绕北极的寒带喷射气流－极地涡旋（Polar Vortex）变强，
+此一变化会抑制北极的寒冷气流南下，使得欧亚大陆北部及北美洲北部的冬季气温较例年为高，形成**暖冬**。  
+反之，当北极振荡指数为**负值（负相位）**时便会造成北半球中纬度地带**冬季严寒**。
 
 如同南极震荡与北半球夏季风强弱正相关，北极振荡与澳洲夏季热带气旋频率跟强度正相关。
+
+The loading pattern of the AO is defined as the leading mode of Empirical Orthogonal Function (EOF) analysis of monthly mean 1000mb height during 1979-2000 period.  
+![](http://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/new.ao.loading.gif)  
+![](http://arcturan.com/wp-content/uploads/2014/10/articoscillation.png)  
+![](https://www.daculaweather.com/images/ao_neg.png)  
+![](https://www.daculaweather.com/images/ao_pos.png)  
 
 # AMO
 
