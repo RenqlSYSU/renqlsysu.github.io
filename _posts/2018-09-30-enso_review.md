@@ -1,0 +1,113 @@
+---
+layout: post
+title: ENSO review
+categories: 文献笔记
+tags: ENSO impact change
+author: renql
+---
+
+* content
+{:toc}
+
+## 1. Introduction  
+## 2. Fundamentals of ENSO  
+### 2.1 ENSO characteristics  
+
+### 2.2 Conventional views of ENSO dynamics   
+主要介绍了以下四种结束ENSO现象的负反馈现象。
+
+- **2.2.1 The delayed oscillator** 有西风异常时，冷的罗斯贝波（西传）和暖的开尔文波（东传）的传播角度出发   
+
+- **2.2.2 The discharge/recharge oscillator** 赤道中太平洋西风异常及对应的（向极地的）斯韦尔德鲁普输送异常导致赤道太平洋热容量出现负异常  
+
+- **2.2.3 The western Pacific oscillator** 在正位相时，赤道外西太平洋局地海洋-大气相互作用形成反气旋，赤道有异常东风，激起东传冷的开尔文波  
+
+- **2.2.4 The advective-reflective oscillator** 认为与海洋波动对应的海洋环流的热平流效应会影响暖池东边界的移动，进而发生ENSO位相转换（与之相关的文章发在1997年的Science上） 
+
+另外，还有四种激发ENSO现象的正反馈过程（这在另一偏综述文章中有介绍），其情况如下图所示，其中被广泛认可的是 **Bjerkness Feedback**。  
+![](http://wx1.sinaimg.cn/mw690/006fa9Xlgy1fvm4epj5j6j311f0l9tjq.jpg) 
+
+### 2.3 View on ENSO diversity  
+
+- **2.3.1 Displacement of the thermocline dynamics** 认为，由于赤道太平洋区域的温跃层压扁，使温跃层的上升区由太平洋东部转移到太平洋中部，从而出现CP型EI Nino。该观点认为CP型的出现并不是因为ENSO动力过程的变化，只是发生区域的转换 
+
+- **2.3.2 Zonal advective feedback (favoring CP type) vs thermocline feedback (favoring EP type)**  
+
+- **2.3.3 Subtropical forcing mechanism** 先在美国的加利福尼亚地区产生海温异常，随后这个副热带地区的海温异常向西南方向传播来到赤道太平洋，随后赤道太平洋局地海气相互作用以及海洋水平平流作用是该异常海温最后成长为CP  
+
+## 3. The ENSO teleconnection mechanisms  
+### 3.1 ENSO teleconnections within the tropics  
+
+- **3.1.1 Atmospheric bridge and tropical tropospheric mechanisms** 能使ENSO影响印度洋和大西洋的两大机制。  
+一是与Walker环流有关的大气桥，赤道太平洋强对流活动的东移减弱了Walker环流在西太平洋的上升支，在赤道印度洋东部产生异常下沉支，并通过太阳辐射和潜热通量加热印度洋，对大西洋的作用类似，。可以看一下这篇参考文献  
+> Alexander, MA, Bladé, I, Newman, M et al. The atmospheric bridge: The influence of ENSO
+teleconnections on air-sea interaction over the global oceans. J Clim 2002; 15: 2205–31.   
+
+二是赤道对流层加热/冷却机制激发西传Rossby波和东传的Kelvin波，此处可以看参考文献  
+> Chiang, JCH, Sobel, AH. Tropical tropospheric temperature variations caused by ENSO and their influence on the remote tropical climate. J Clim 2002; 15: 2616–31.。  
+
+- **3.1.2 Additional mechanisms for the tropical Atlantic Ocean** EINino期间，北大西洋赤道（TNA）变暖   
+EINino在赤道大西洋激起异常下沉运动，再通过Walker环流在大西洋副热带地区引起异常上升运动。于是大西洋副热带高压减弱，东北信风减弱，从而使北大西洋赤道海温有正异常。该正异常从ENSO次年春季达到顶峰并可维持到夏季。    
+除上述从纬圈环流和经圈环流出发的解释外，还有从中纬度波列出发的解释。认为由EINino激发的**太平洋—北美遥相关**在美国东南部有一异常中心，该异常中心可以扩展至大西洋并减弱大西洋副高，从而导致TNA增暖。
+
+- **3.1.3 Additional oceanic mechanisms for the tropical Indian Ocean**  
+ENSO可以激发印度洋整个海盆的变暖（冷）或IOD，这里主要介绍了激发IOD的可能物理机制。  
+ENSO正位相激发IOD正位相（印度洋西部比东部暖）  
+随着CP型EINino发生次数的增加，ENSO对印度洋的影响也发生了变化（激发的印度洋SSTA可能会减弱）  
+
+### 3.2 Downstream ENSO teleconnections to the Northern and Southern Hemispheres  
+
+- **3.2.1 The PNA and TNH wave train mechanisms in the Northern Hemisphere**  
+- **3.2.2 The PSA wave train mechanism to the Southern Hemisphere**  
+CP对南半球的影响更剧烈  
+
+- **3.2.3 Jet stream displacement mechanisms**  
+EINino期间，赤道对流层变暖加强并缩小了Hadley环流，使得副热带急流位置向赤道偏移同时影响斜压涡旋的中心位置，在中纬度激起异常上升运动 
+
+### 3.3 Upstream ENSO teleconnections to western Pacific and East Asia  
+在赤道冷源或热源西边能激发一对西传的罗斯贝波，但这还无法解释ENSO在次年夏季对西北太平洋以及东亚的影响。为解释该影响有两种机制提出。  
+一是WangBin等人2000年提出的局地海气相互作用，通过两次Gill响应在西北太平洋产生异常反气旋，加强西太副高，从而影响东亚的天气和气候。  
+二是谢尚平等人2009年提出的印度洋电容器机制。在EINino成熟期，印度洋变暖，通过局地海气相互作用，印度洋的暖信号能维持到次年夏季。此外，印度洋变暖能在大气中激发向东传播的暖Kelvin波。由于地面摩擦，Kelvin波的北支在副热带产生辅散，进而加强西太副高。  
+此外，EINino也能通过赤道大西洋的海温异常影响次年夏季的西太副高。  
+此外，Jin F-F等人2013年提出的由ENSO和西太年循环非线性相互作用形成的C-mode模型也能影响西太副高的强度  
+
+**question：为什么我记得之前看介绍ENSO和东亚季风相互作用的文章时有介绍到很多种影响机制呢？为什么这里只涉及了四种呢？**
+
+## 4. The changing ENSO and its climate impact  
+### 4.1 Long-term changes in ENSO  
+在年代际尺度上，ENSO自1970年以来，正面临振幅增大和时间延长的趋势。有学者认为这与温室气体浓度有关，但也有学者不认同。因为在CMIP5中，即便是相同的温室气体浓度序列，ENSO在不同模式中的表现不同。
+
+### 4.2 The changing impact of ENSO  
+大气对西太海温异常或海温梯度的变化非常敏感。但对东太海温的变化则不是那么敏感，这或许是因为东太的气候态海温低于发生对流的临界值。随着CP发生次数的增多，中太平洋的海温高于东太平洋，因此尤其引发的降水和温度影响也将发生巨大变化。 
+ 
+- **4.2.1 The changing impacts on tropical oceans**   
+ENSO和IOD的变化在1950年代前相对独立，但在1970年后，由于赤道印度洋东部温跃层加深，两者的关系变得紧密。  
+此外，CP对赤道北大西洋增暖的影响不如EP来得强烈，但EP和CP对赤道南大西洋增暖的影响强度是一致的。  
+
+- **4.2.2 The changing impacts on North America climate**  
+EP能使北美北部（加拿大和美国北部）异常变暖，北美南部异常变冷。但在CP情况下，美国西北部（暖）和东南部（冷）的温度对其比较敏感。  
+此外，在CP情况下，在美国西部，易呈现出北干南湿的状况，但在EP型时，美国西部整体偏湿。
+
+- **4.2.3 The changing impacts on Asian and Australian monsoons**  
+发现两篇老板的文章
+有学者指出CP在东亚三极型降水形成过程中的重要作用
+大多数模式结果表明，在全球变暖的背景下，ENSO和南亚季风间的关系减弱，只有四个模式表明这种关系没有减弱。
+
+- **4.2.4 The changing impacts on tropical cyclones**  
+一般情况下，EINino时期的台风会比LaNina时期的弱。CP下，西北太平洋台风频率和强度会比EP高。而在EP情况下，由于西太副高位置的变动，使得台风更易在中国登陆。
+
+- **4.2.5 The changing impacts on midlatitude and polar climate**  
+
+
+## 5. ENSO in the future
+5.1 Changes in intensity and frequency  
+
+- 5.1.1 Model consensus  
+
+- 5.1.2 Diversity in ENSO intensity and frequency 
+ 
+5.2 Change in the type of ENSO  
+
+5.3 Changes in ENSO impacts  
+
+## 6. Summary and discussions
