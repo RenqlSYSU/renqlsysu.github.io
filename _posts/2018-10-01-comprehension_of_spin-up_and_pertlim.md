@@ -27,9 +27,9 @@ CO2缓慢增长到两倍，模式spin-up后的全球平均温度比CO2瞬间增�
 查阅CESM官网论坛，得到如下解释： 
 
 ```fortran   
-pertlim is a perturbation you apply to the initial temperature field.
-
-Usually, you add a perturbation of the order of 1e-14. It is add to the initial temperature field using a random_number generator based on global column index
+!pertlim is a perturbation you apply to the initial temperature field.
+!Usually, you add a perturbation of the order of 1e-14. 
+!It is add to the initial temperature field using a random_number generator based on global column index
 
 call random_seed(put=rndm_seed)
 	do k = 1, km
