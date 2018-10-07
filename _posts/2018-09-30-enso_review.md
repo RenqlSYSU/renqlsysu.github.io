@@ -9,6 +9,22 @@ author: renql
 * content
 {:toc}
 
+最近看了两篇2018年发表的ENSO综述文章，其中一篇是老板和师兄师姐他们一起写的**《El Niño–Southern Oscillation and Its Impact in the Changing Climate》**，主要侧重于ENSO在过去和未来对全球其他地区天气气候的影响，非常系统，光看其文章标题即可大致了解ENSO对全球的影响有哪些，非常有利于发散思维。但鉴于我主要研究**ENSO-monsoon**（目前而言主要关注**Asian monsoon**），因此若要细读的话，可以主要看有关这一part的，至于对其他地方的影响，结论太多不好记忆。
+
+另外还有一篇是刊登在nature上的一篇论文，估计有30多个共同作者，且都是这一领域的大牛（不过没有老板）。这篇文章则主要集中于ENSO的多样性及其物理机制，还有ENSO的预报。和老板的关注点不同。   
+> Timmermann, A., et al. (2018). "El Nino-Southern Oscillation complexity." Nature 559(7715): 535-545.   
+
+在看这两篇综述文献时，发现其引用的一些参考文献我都曾看过，但现在却完全想不起来他的研究方法和结论。看来一些经典的文章还是需要多读呀。比如老板1992年的文章，还有WangBin 2000的文章（讲ENSO通过怎样的遥相关影响东亚）。
+
+# Timmermann 2018 El Nino-Southern Oscillation complexity
+## 1. A conceptual view of ENSO dynamics  
+## 2. Space–time complexity of ENSO   
+## 3. Seasonal ENSO dynamics  
+## 4. ENSO predictability  
+## 5. A unifying framework  
+## 6. Outlook
+
+# YangS 2018 El Niño–Southern Oscillation and Its Impact in the Changing Climate
 ## 1. Introduction  
 ## 2. Fundamentals of ENSO  
 ### 2.1 ENSO characteristics  
