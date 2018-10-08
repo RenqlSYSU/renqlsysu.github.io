@@ -20,7 +20,7 @@ author: renql
 ![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1fw13oqmlotj30qp0i2dnq.jpg)  
 The BJ index is used to assess the growth rate of ENSO in models and observations.   
 Assessed using coefficients representing processes in ENSO and variable (e.g. h, Q, T…) mean states.   
-**I**<sub>BJ<sub> < 0 the leading ENSO mode is damped, and for **I**<sub>BJ<sub> > 0 the leading mode is unstable.
+**I**<sub>BJ</sub> < 0 the leading ENSO mode is damped, and for **I**<sub>BJ</sub> > 0 the leading mode is unstable.
 
 
 # 二 Timmermann 2018 El Nino-Southern Oscillation complexity
