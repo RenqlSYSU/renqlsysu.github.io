@@ -35,7 +35,7 @@ author: renql
 4. 上下标表示方法    
 
 ```
-H<sub>2</sub>O  CO<sub>2</sub>
+H<sub>2</sub>O  CO<sub>2</sub>  注意：第二个sub前有斜杠
 爆米<sup>TM</sup>
 ```
 
