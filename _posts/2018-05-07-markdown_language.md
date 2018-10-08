@@ -41,7 +41,7 @@ H<sub>2</sub>O  CO<sub>2</sub>
 
 效果
 
-> H<sub>2</sub>O  CO<sub>2</sub>
+> H<sub>2</sub>O  CO<sub>2</sub>     
 > 爆米<sup>TM</sup>
 
 # 分类 categories
