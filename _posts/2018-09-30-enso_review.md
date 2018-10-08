@@ -16,7 +16,14 @@ author: renql
 
 在看这两篇综述文献时，发现其引用的一些参考文献我都曾看过，但现在却完全想不起来他的研究方法和结论。看来一些经典的文章还是需要多读呀。比如老板1992年的文章，还有WangBin 2000的文章（讲ENSO通过怎样的遥相关影响东亚）。
 
-# Timmermann 2018 El Nino-Southern Oscillation complexity
+# 一 Bjerknes Stability Index
+![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1fw13oqmlotj30qp0i2dnq.jpg)  
+The BJ index is used to assess the growth rate of ENSO in models and observations.   
+Assessed using coefficients representing processes in ENSO and variable (e.g. h, Q, T…) mean states.   
+**I**<sub>BJ<sub> < 0 the leading ENSO mode is damped, and for **I**<sub>BJ<sub> > 0 the leading mode is unstable.
+
+
+# 二 Timmermann 2018 El Nino-Southern Oscillation complexity
 ## 1. A conceptual view of ENSO dynamics  
 ## 2. Space–time complexity of ENSO   
 ## 3. Seasonal ENSO dynamics  
@@ -24,7 +31,7 @@ author: renql
 ## 5. A unifying framework  
 ## 6. Outlook
 
-# YangS 2018 El Niño–Southern Oscillation and Its Impact in the Changing Climate
+# 三 YangS 2018 El Niño–Southern Oscillation and Its Impact in the Changing Climate
 ## 1. Introduction  
 ## 2. Fundamentals of ENSO  
 ### 2.1 ENSO characteristics  
