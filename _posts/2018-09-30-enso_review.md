@@ -27,6 +27,15 @@ Assessed using coefficients representing processes in ENSO and variable (e.g. h,
 一般认为1997/98的EINino是最强的，其次是1982/83。
 
 # 二 Timmermann 2018 El Nino-Southern Oscillation complexity
+非常喜欢这篇文章的构图，很新颖。且每一幅图的信息量都比较大。  
+此外，这篇文章在第二页中有一个表格，罗列与ENSO有关的术语，个人感觉非常有用，可以说是扫盲了。现将其中一些翻译如下：
+
+- **东太平洋冷舌Eastern Pacifc cold tongue**：指气候态下，东太平洋海温因上升流而较冷，但在EINino年会异常偏暖   
+- **西太平洋暖池Western Pacifc Warm Pool**：气候态下，西太平洋海温较高，一般高于28摄氏度。西太暖池的南北季节性移动对EINino的结束有重要作用   
+- **ENSO skewness（倾斜）**：指EINino和LaNina海温变化幅度的不对称，一般情况下EINino的幅度大于LaNina。这种倾斜也表明了ENSO循环的非线性  
+- **西风事件Westerly wind event（WWE）**：太平洋西部中部的天气系统往往与赤道信风的突然减弱有关，从而产生下传的开尔文波，使暖池向东扩展  
+- **Equatorial Kelvin wave**：发生在海洋表面暖水层和次表冷水层交界面、向东传播的海洋内部波动。赤道异常西风能产生向下的东传Kelvin波，使得东太平洋温跃层变厚，表层海水增暖。赤道异常东风能产生向上的东传Kelvin波，使得东太平洋温跃层变浅，表层海水变冷。
+
 ## 1. A conceptual view of ENSO dynamics  
 ## 2. Space–time complexity of ENSO   
 ## 3. Seasonal ENSO dynamics  
