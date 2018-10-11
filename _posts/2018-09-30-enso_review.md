@@ -36,6 +36,7 @@ Assessed using coefficients representing processes in ENSO and variable (e.g. h,
 - **西风事件Westerly wind event（WWE）**：太平洋西部中部的天气系统往往与赤道信风的突然减弱有关，从而产生下传的开尔文波，使暖池向东扩展  
 - **Equatorial Kelvin wave**：发生在海洋表面暖水层和次表冷水层交界面、向东传播的海洋内部波动。赤道异常西风能产生向下的东传Kelvin波，使得东太平洋温跃层变厚，表层海水增暖。赤道异常东风能产生向上的东传Kelvin波，使得东太平洋温跃层变浅，表层海水变冷。   
 - **Z20**：20摄氏度等温线深度，可以表征温跃层厚度。   
+- **Combination tones/C-mode**：ENSO被季节年循环非线性调节后产生的9个月或15-18个月的谱能量。或者说是**I**<sub>BJ</sub>的季节年循环和ENSO海温信号的年际变化相互作用产生的9个月或15-18个月的周期。c-mode（combination mode）在EINino的季节转变中起到重要作用。  
 
 EINino和LaNina之间的转换是全球气候系统中最强的年际波动。本文主要介绍了目前关于其时空复杂性的研究情况。
 
@@ -57,8 +58,11 @@ ENSO现象的重构也表明ENSO在工业革命后有加强的趋势，于是人
 为抓住ENSO的时空变化特征，对赤道海温做EOF（从左边的功率谱分析单位为年，推断此处是用冬季平均海温做的EOF），得到两个主要模态。第一模态为EP型，呈现准四年周期。第二模态呈现准两年周期。  
 
 ## 3. Seasonal ENSO dynamics  
+
 ## 4. ENSO predictability  
+
 ## 5. A unifying framework  
+
 ## 6. Outlook
 
 # 三 YangS 2018 El Niño–Southern Oscillation and Its Impact in the Changing Climate
