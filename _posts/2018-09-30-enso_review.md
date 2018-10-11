@@ -34,7 +34,14 @@ Assessed using coefficients representing processes in ENSO and variable (e.g. h,
 - **西太平洋暖池Western Pacifc Warm Pool**：气候态下，西太平洋海温较高，一般高于28摄氏度。西太暖池的南北季节性移动对EINino的结束有重要作用   
 - **ENSO skewness（倾斜）**：指EINino和LaNina海温变化幅度的不对称，一般情况下EINino的幅度大于LaNina。这种倾斜也表明了ENSO循环的非线性  
 - **西风事件Westerly wind event（WWE）**：太平洋西部中部的天气系统往往与赤道信风的突然减弱有关，从而产生下传的开尔文波，使暖池向东扩展  
-- **Equatorial Kelvin wave**：发生在海洋表面暖水层和次表冷水层交界面、向东传播的海洋内部波动。赤道异常西风能产生向下的东传Kelvin波，使得东太平洋温跃层变厚，表层海水增暖。赤道异常东风能产生向上的东传Kelvin波，使得东太平洋温跃层变浅，表层海水变冷。
+- **Equatorial Kelvin wave**：发生在海洋表面暖水层和次表冷水层交界面、向东传播的海洋内部波动。赤道异常西风能产生向下的东传Kelvin波，使得东太平洋温跃层变厚，表层海水增暖。赤道异常东风能产生向上的东传Kelvin波，使得东太平洋温跃层变浅，表层海水变冷。   
+- **Z20**：20摄氏度等温线深度，可以表征温跃层厚度。   
+
+EINino和LaNina之间的转换是全球气候系统中最强的年际波动。本文主要介绍了目前关于其时空复杂性的研究情况。
+
+EINino的观念已经从以往其典型的由爆发到成熟再到消亡的发展过程过渡到现在解释其时空复杂性和变化的气候影响。ENSO的复杂性体现在模态、振幅、时间演变的多样性。   
+古气候学者重构了过去一万年的ENSO现象，依然表明有很大的振幅变化，从而强调了内部气候过程在调节ENSO复杂性中的重要作用。   
+ENSO现象的重构也表明ENSO在工业革命后有加强的趋势，于是人们开始研究外部强迫（全球变暖）对ENSO演变及其强度的影响。   
 
 ## 1. A conceptual view of ENSO dynamics  
 ![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fw42bgb1kjj30j104974r.jpg)   
@@ -46,6 +53,8 @@ Assessed using coefficients representing processes in ENSO and variable (e.g. h,
 由此强调了非线性动力和热力过程在耦合气候系统中的作用。当上述模型只能模拟ENSO发展过程中的一些特点，无法解释其空间分布及遥相关类型的不同。   
 
 ## 2. Space–time complexity of ENSO   
+![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fw42onvcrnj310j08lwit.jpg)   
+为抓住ENSO的时空变化特征，对赤道海温做EOF（从左边的功率谱分析单位为年，推断此处是用冬季平均海温做的EOF），得到两个主要模态。第一模态为EP型，呈现准四年周期。第二模态呈现准两年周期。  
 
 ## 3. Seasonal ENSO dynamics  
 ## 4. ENSO predictability  
