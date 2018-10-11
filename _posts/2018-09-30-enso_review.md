@@ -37,7 +37,16 @@ Assessed using coefficients representing processes in ENSO and variable (e.g. h,
 - **Equatorial Kelvin wave**：发生在海洋表面暖水层和次表冷水层交界面、向东传播的海洋内部波动。赤道异常西风能产生向下的东传Kelvin波，使得东太平洋温跃层变厚，表层海水增暖。赤道异常东风能产生向上的东传Kelvin波，使得东太平洋温跃层变浅，表层海水变冷。
 
 ## 1. A conceptual view of ENSO dynamics  
+![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fw42bgb1kjj30j104974r.jpg)   
+从ENSO再充电机制出发，认为当**I**<sub>BJ</sub>为常数时，东太平洋海温**T**<sub>e</sub>和纬向平均温跃层厚度**h**应是线性关系，但从图2发现两者明显不是线性的。**对于为什么是线性的，不太理解，或许需要去看一下下面的出处文章**   
+> Jin, F.-F. (1997). "An Equatorial Ocean Recharge Paradigm for ENSO. Part I: Conceptual Model." Journal of the Atmospheric Sciences 54(7): 811-829.    
+> Jin, F.-F., et al. (2006). "A coupled-stability index for ENSO." Geophysical Research Letters 33(23).
+
+当**I**<sub>BJ</sub>包含大气或海洋的非线性过程或多元随机强迫时，该模式即可描述ENSO的skewness以及从中等强度到强的快速发展过程。   
+由此强调了非线性动力和热力过程在耦合气候系统中的作用。当上述模型只能模拟ENSO发展过程中的一些特点，无法解释其空间分布及遥相关类型的不同。   
+
 ## 2. Space–time complexity of ENSO   
+
 ## 3. Seasonal ENSO dynamics  
 ## 4. ENSO predictability  
 ## 5. A unifying framework  
