@@ -2,7 +2,7 @@
 layout: post
 title:  "20180130 linux常用命令整理"
 categories: linux
-tags: linux 整理
+tags: vim 文件操作 进程管理 grep
 author: renql
 ---
 
