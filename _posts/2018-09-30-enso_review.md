@@ -26,6 +26,9 @@ Assessed using coefficients representing processes in ENSO and variable (e.g. h,
 
 一般认为1997/98的EINino是最强的，其次是1982/83。
 
+
+
+
 # 二 Timmermann 2018 El Nino-Southern Oscillation complexity
 非常喜欢这篇文章的构图，很新颖。且每一幅图的信息量都比较大。  
 此外，这篇文章在第二页中有一个表格，罗列与ENSO有关的术语，个人感觉非常有用，可以说是扫盲了。现将其中一些翻译如下：
@@ -73,13 +76,13 @@ ENSO现象的重构也表明ENSO在工业革命后有加强的趋势，于是人
 ### 2.2 Conventional views of ENSO dynamics   
 主要介绍了以下四种结束ENSO现象的负反馈现象。
 
-- **2.2.1 The delayed oscillator** 有西风异常时，冷的罗斯贝波（西传）和暖的开尔文波（东传）的传播角度出发   
+- **2.2.1 The delayed oscillator** 于1987-1989年由一系列文章提出，主要有Schopf and Suarez 1987, Battisti 1988, Suarez and Schopf 1988, Battisti and Hirst 1989。有西风异常时，激发出冷的罗斯贝波（西传）和暖的开尔文波（东传），冷的罗斯贝波西传至太平洋西边界时发生反射，变成冷的东传开尔文波。当该东传冷的开尔文波到达赤道中东部海域时，使这里的海温下降。  
 
-- **2.2.2 The discharge/recharge oscillator** 赤道中太平洋西风异常及对应的（向极地的）斯韦尔德鲁普输送异常导致赤道太平洋热容量出现负异常  
+- **2.2.2 The discharge/recharge oscillator** 由Jin Fei-Fei于1997年（An equatorial ocean recharge paradigm for ENSO)提出，认为赤道中太平洋西风异常及对应的（向极地的）斯韦尔德鲁普输送异常导致赤道太平洋热容量出现负异常（放电），从而使整个赤道温跃层抬升变浅。是从Rossby波调整后对应的海洋环流热输送的观点来理解ENSO循环中的负反馈机制，优点是可以不考虑西边界的反射问题。  
 
-- **2.2.3 The western Pacific oscillator** 在正位相时，赤道外西太平洋局地海洋-大气相互作用形成反气旋，赤道有异常东风，激起东传冷的开尔文波  
+- **2.2.3 The western Pacific oscillator** 由Weisberg and Wang于1997年提出(A western Pacific oscillator paradigm for EI Nino-Southern Oscillation)。在正位相时，赤道外西太平洋局地海洋-大气相互作用形成反气旋，赤道有异常东风，激起东传冷的开尔文波  
 
-- **2.2.4 The advective-reflective oscillator** 认为与海洋波动对应的海洋环流的热平流效应会影响暖池东边界的移动，进而发生ENSO位相转换（与之相关的文章发在1997年的Science上） 
+- **2.2.4 The advective-reflective oscillator** 由Picaut于1997年发表在Science上的文章提出(An advective-reflective conceptual model for the oscillatory nature of the ENSO)，认为与海洋波动对应的海洋环流的热平流效应会影响暖池东边界的移动，进而发生ENSO位相转换   
 
 另外，还有四种激发ENSO现象的正反馈过程（这在另一偏综述文章中有介绍），其情况如下图所示，其中被广泛认可的是 **Bjerkness Feedback**。  
 ![](http://wx1.sinaimg.cn/mw690/006fa9Xlgy1fvm4epj5j6j311f0l9tjq.jpg) 
