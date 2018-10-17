@@ -32,3 +32,12 @@ author: renql
 - 该研究所采用的研究方法是否是最好最合适的方法？  
 
 这也是我今后在读文献时需要思考的问题。
+
+Next, this chapter also suggest us a good habit ———— **Free Writing** which allow us to write by mind regardless of grammer and punctuation. ok, I think it is interesting, so, let's free writing now. Forget about grammer and punctuation.
+
+As a researcher, one of our fisrt and most important tasks is selling our research problem. Reviewers are not interested in reading a solution to a problem which they do not believe exists.   
+A hero is only a hero when he can defeat a monster or solve a big problem.  
+Without bud guys, Superman is just a man in strange tight clothes who flies around.   
+So ensure that your introduction introduces your audience to the bad guys (research problems), so they will see you as a hero when you introduce your solutions.   
+
+I think the analogy is very vivid.
