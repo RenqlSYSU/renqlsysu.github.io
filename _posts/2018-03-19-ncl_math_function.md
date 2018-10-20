@@ -14,6 +14,16 @@ author: renql
 
 
 
+# 1 数学函数
+```
+a = b^2   ;平方表述
+a = fspan(start, finish, number)   ;Creates an array of evenly-spaced floating point numbers
+b = ispan(start, finish, spacing)  ;Creates an array of equally-spaced integer, long, or int64 values.
+
+c = random_normal(av, sd, (/10,100/)) ;Generates random numbers array using a normal distribution.
+c = rand() ;Returns a pseudo-random integral value in the range of 0 <= return_val <= 32766.只能生成一个数
+```
+
 # 取整函数
 ```
 floor(values)  ;Returns the largest integral value less than or equal to each input value.
@@ -42,9 +52,3 @@ round(values,opt)  ;Rounds a float or double variable to the nearest whole numbe
   x = mask(y, y.lt.100,True )   ;与上例相同，只是此时是数值大于100的被设为缺测值
 ```
 
-# 数学函数
-```
-a = b^2   ;平方表述
-a = fspan(start, finish, number)   ;Creates an array of evenly-spaced floating point numbers
-b = ispan(start, finish, spacing)  ;Creates an array of equally-spaced integer, long, or int64 values.
-```
