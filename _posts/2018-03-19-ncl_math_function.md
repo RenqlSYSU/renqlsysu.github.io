@@ -2,7 +2,7 @@
 layout: post
 title: ncl常用数学函数
 categories: ncl
-tags: ncl 整理
+tags: ncl 随机数 取整 统计
 author: renql
 ---
 
@@ -20,10 +20,20 @@ a = b^2   ;平方表述
 a = fspan(start, finish, number)   ;Creates an array of evenly-spaced floating point numbers
 b = ispan(start, finish, spacing)  ;Creates an array of equally-spaced integer, long, or int64 values.
 
+srand(seed)  ;Establishes a seed for the rand function. send is a positive integer value to use as the seed for rand.
 c = rand() ;Returns a pseudo-random integral value in the range of 0 <= return_val <= 32766.只能生成一个数
+
+random_setallseed(iseed1, iseed2) ;iseed1 and iseed2 are any integer between 1 and 2,147,483,562 (default is 1234567890).
+;Sets initial seeds for random number generators.
 c1 = random_normal(av, sd, (/10,100/)) ;Generates random numbers array using a normal distribution.
 c2 = random_normal(av, sd, (/10,100/)) ;Generates random numbers array using a normal distribution.
-```
+```    
+If the user does not explicitly set initial values for seeds via `random_setallseed`, those initial seeds will be set to default values. It is recommended that the user specify these seeds.    
+
+1. 伪随机数并不是假随机数，这里的“伪”是有规律的意思，就是计算机产生的伪随机数既是随机的又是有规律的。   
+2. 随机种子来自系统时钟，确切地说，是来自计算机主板上的定时/计数器在内存中的记数值。   
+3. 随机数是由随机种子根据一定的计算方法计算出来的数值。所以，只要计算方法一定，随机种子一定，那么产生的随机数就不会变。也就是说，伪随机数也是某种对应映射的产物，只不过这个自变量是系统的时间而已  
+4. 如果你每次调用srand()时都提供相同的种子值，那么，你将会得到相同的随机数序列   
 
 # 2 统计函数
 ```
