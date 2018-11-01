@@ -2,7 +2,7 @@
 layout: post
 title: ncl常用动力学函数整理
 categories: ncl
-tags: ncl 动力气象 整理
+tags: ncl 散度涡度 流函数势函数 经圈流函数 整层积分
 author: renql
 ---
 
@@ -67,12 +67,15 @@ copy_VarMeta(vars,sf(0,0,:,:))
 发现用该函数时，青藏高原地区都是缺测。因此准备换一种计算方法。如下所示
 
 ```
-  hyai = f->hyai
-  hybi = f->hybi
-  p0   = f->P0
-  ps   = f->PS
+  hyai = f->hyai  ;A one-dimensional array equal to the hybrid A coefficients.
+  hybi = f->hybi  ;A one-dimensional array equal to the hybrid B coefficients.
+  p0   = f->P0  ;A scalar value equal to the surface reference pressure. Must have the same units as ps.
+  ps   = f->PS  ;An array of surface pressure data in Pa or hPa (mb). The rightmost dimensions must be latitude and longitude.
+  
   dp   = dpres_hybrid_ccm (ps,p0,hyai,hybi)  
   ;Calculates the pressure differences of a hybrid coordinate system Pa [kg/(m s2)]   
+  ;the return array will have an additional level dimension compare to PS  
+  ;The size of the lev dimension is one less then the size of hyai
 
   T    = f->T                                ; K  (time,lev,lat,lon)
   cp   = 1004.                               ; J/(K kg)     [ m2/(K s2) ]
@@ -86,6 +89,17 @@ copy_VarMeta(vars,sf(0,0,:,:))
   IE@units     = "kg/s2"
 ```
 
+这里介绍模式的垂直坐标——atmosphere_hybrid_sigma_pressure_coordinate，假设垂直分层30层，则有：  
+
+- **lev（30）**：hybrid level at midpoints (1000*(A+B))，每一层的中间点  
+- **hyam（30）**：hybrid A coefficient at layer midpoints   
+- **hybm（30）**：hybrid B coefficient at layer midpoints   
+
+- **ilev（31）**：hybrid level at interfaces (1000*(A+B))，每一层的上下界面，故有31层   
+- **hyai（31）**：hybrid A coefficient at layer interfaces   
+- **hybi（31）**：hybrid B coefficient at layer interfaces   
+
+
 ```
     lev = f->lev  ; (/  1,  2,  3,  5,   7, 10, 20, 30, \
                   ;    50, 70,100,150, 200,250,300,400, \
@@ -97,7 +111,9 @@ copy_VarMeta(vars,sf(0,0,:,:))
     lev@units = "Pa"    ; to match PS
     ptop= 0             ; integrate 0==>psfc at each grid point
 
-    dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0) ;Calculates the pressure layer thicknesses of a constant pressure level coordinate system,dp(time,lev,lat,lon)
+    dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0) 
+    ;Calculates the pressure layer thicknesses of a constant pressure level coordinate system,dp(time,lev,lat,lon)
+    
                         ; latent heat of vaporization at 0C
     L   = 2.5e6         ; J/kg         [ m2/s2 ]
     g   = 9.81          ; m/s
