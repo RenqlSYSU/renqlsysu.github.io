@@ -2,7 +2,7 @@
 layout: post
 title:  "20180131 linux系统维护常用命令"
 categories: linux
-tags: linux 整理
+tags: 压缩 存储空间 编译安装
 author: renql
 ---
 
@@ -18,7 +18,7 @@ author: renql
 
 
 
-#源代码软件安装命令#
+# 源代码软件安装命令 #
 
 ./configure --prefix=/usr/local/test
 卸载程序用make uninstall
