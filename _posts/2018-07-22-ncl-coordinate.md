@@ -2,7 +2,7 @@
 layout: post
 title: ncl维度与坐标
 categories: ncl
-tags: 数组 维度 坐标
+tags: 数组 维度 坐标 ind
 author: renql
 ---
 
@@ -65,4 +65,39 @@ new_var = vinth2p(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp) ;1没有�
    ptop= 0             ; integrate 0==&gt;psfc at each grid point
    dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0) 
 ;Calculates the pressure layer thicknesses of a constant pressure level coordinate system,dp(time,lev,lat,lon)
+```
+# 返回特定的坐标位置 indices
+```
+select_time = ind( time(:,1).ge.6 ) ;ind只能用于一维数组，可以返回一个值或一维数组
+```
+
+若要对多维数组进行逻辑运算并返回位置坐标，则使用ind_resolve
+```
+a1D      = ndtooned(a) ;将多维数组转化为一维数组，与其功能相反的函数是 onedtond(a1D, dsizes_a)
+dsizes_a = dimsizes(a)
+indices  = ind_resolve( ind(a1D.gt.5), dsizes_a )
+;返回的indices是一个二维数组N*M，N代表满足逻辑运算的个数，M代表a的总维数
+
+print(indices(0,:)) ;则会返回第一个满足逻辑关系的数的坐标位置(0,1,1)
+
+返回结果如下所示：
+Variable: indices
+Type: integer
+Total Size: 108 bytes
+            27 values
+Number of Dimensions: 2
+Dimensions and sizes:   [1] x [3]
+Coordinates: 
+Number Of Attributes: 1
+  _FillValue :  -999
+(0,0)   0
+(0,1)   1
+(0,2)   1
+```
+
+对一维数组挑出特定值的坐标
+```
+year      = ispan(1870,2006,1)
+year_want = (/1870,1900, 1948, 1957, 1964, 1965, 1989, 2005, 2006/)
+i         = get1Dindex(year, year_want) ;i的个数与year_want的个数相同
 ```
