@@ -9,7 +9,10 @@ author: renql
 * content
 {:toc}
 
-#关于文档与目录的命令#
+![](http://wx1.sinaimg.cn/large/006fa9Xlgy1fwuse5urh5j30mo0w0jst.jpg)
+
+
+# 关于文档与目录的命令 #
 	
 	ls -alh # 可以将所有文件（包括隐藏文件）容量以GB,KB等列出来
 
