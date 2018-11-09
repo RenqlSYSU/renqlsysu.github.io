@@ -11,9 +11,9 @@ author: renql
 
 In fact, this is my presonal presentation in English class, which I think is important.
 
-![](http://wx1.sinaimg.cn/mw690/006fa9Xlgy1fx1lh2nbjfj30tn0i7abr.jpg)  
+![](http://wx1.sinaimg.cn/large/006fa9Xlgy1fx1lh2nbjfj30tn0i7abr.jpg)  
 
-![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1fx1lgwpmuoj30tl0ie76a.jpg)  
+![](http://wx4.sinaimg.cn/large/006fa9Xlgy1fx1lgwpmuoj30tl0ie76a.jpg)  
 
 
 
