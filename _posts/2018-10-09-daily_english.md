@@ -16,3 +16,5 @@ He is responsible, serious, and dedicated 他做事负责、认真、专注
 Seems doable
 
 to a lesser extent 在较小程度上
+
+after you 你先请
