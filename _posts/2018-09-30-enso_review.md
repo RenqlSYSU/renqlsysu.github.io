@@ -88,6 +88,7 @@ ENSO现象的重构也表明ENSO在工业革命后有加强的趋势，于是人
 ![](http://wx1.sinaimg.cn/mw690/006fa9Xlgy1fvm4epj5j6j311f0l9tjq.jpg) 
 
 ### 2.3 View on ENSO diversity  
+大概2007年的时候发现并提出CP型EINino？
 
 - **2.3.1 Displacement of the thermocline dynamics** 认为，由于赤道太平洋区域的温跃层压扁，使温跃层的上升区由太平洋东部转移到太平洋中部，从而出现CP型EI Nino。该观点认为CP型的出现并不是因为ENSO动力过程的变化，只是发生区域的转换 
 
@@ -99,11 +100,12 @@ ENSO现象的重构也表明ENSO在工业革命后有加强的趋势，于是人
 ### 3.1 ENSO teleconnections within the tropics  
 
 - **3.1.1 Atmospheric bridge and tropical tropospheric mechanisms** 能使ENSO影响印度洋和大西洋的两大机制。  
-一是与Walker环流有关的大气桥，赤道太平洋强对流活动的东移减弱了Walker环流在西太平洋的上升支，在赤道印度洋东部产生异常下沉支，并通过太阳辐射和潜热通量加热印度洋，对大西洋的作用类似，。可以看一下这篇参考文献  
+
+一是与Walker环流有关的大气桥，赤道太平洋强对流活动的东移减弱了Walker环流在西太平洋的上升支，在赤道印度洋东部产生异常下沉支，并通过太阳辐射和潜热通量加热印度洋，对大西洋的作用类似，。可以看一下这篇参考文献（截止2018年11月被引1209）  
 > Alexander, MA, Bladé, I, Newman, M et al. The atmospheric bridge: The influence of ENSO
 teleconnections on air-sea interaction over the global oceans. J Clim 2002; 15: 2205–31.   
 
-二是赤道对流层加热/冷却机制激发西传Rossby波和东传的Kelvin波，此处可以看参考文献  
+二是赤道对流层加热/冷却机制激发西传Rossby波和东传的Kelvin波（不对呀，Kelvin波不是边界波吗？大气中没有边界怎么会产生这一波动呢？），此处可以看参考文献（截止2018年11月被引322）  
 > Chiang, JCH, Sobel, AH. Tropical tropospheric temperature variations caused by ENSO and their influence on the remote tropical climate. J Clim 2002; 15: 2616–31.。  
 
 - **3.1.2 Additional mechanisms for the tropical Atlantic Ocean** EINino期间，北大西洋赤道（TNA）变暖   
