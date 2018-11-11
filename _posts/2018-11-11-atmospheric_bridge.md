@@ -72,7 +72,8 @@ Here the ENSO index is SST anomalies averaged over 5N–5S, 172E–120W
 NP-MLM 和 Control 的差值代表北太平洋局地海气相互作用的影响  
 MLM 和 NP-MLM 的差值代表其他海域的海气相互作用的影响
 
-![](https://journals.ametsoc.org/na101/home/literatum/publisher/ams/journals/content/clim/2002/15200442-15.16/1520-0442%282002%29015%3C2205%3Atabtio%3E2.0.co%3B2/production/images/large/i1520-0442-15-16-2205-f12.jpeg)
+![](https://journals.ametsoc.org/na101/home/literatum/publisher/ams/journals/content/clim/2002/15200442-15.16/1520-0442%282002%29015%3C2205%3Atabtio%3E2.0.co%3B2/production/images/large/i1520-0442-15-16-2205-f12.jpeg)  
+> Regression coefficients of monthly mean 500-mb height anomalies vs the Jan ENSO index from the previous Dec to the following Mar, for the MLM, NP–MLM, and control experiments. Contour interval is 10 m; positive (negative) contours are red (blue). The shading indicates two-tailed 95% statistical significance of the difference between coupled and uncoupled regressions.
 
 MLM由一个独立的**柱形网格模式**组成，其中包括一个多层系统之上的混合层，多层系统表示密度跃层的状况  
 该模式包括局地海气通量、穿透太阳辐射以及扰动夹带的进入混合层的水，但没有垂直运动和水平过程，因此可以认为这个海洋模式是没有海洋动力过程的  
