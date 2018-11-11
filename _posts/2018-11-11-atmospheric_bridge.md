@@ -12,9 +12,17 @@ author: renql
 这是老板2018年ENSO综述中引用的一篇介绍ENSO影响印度洋和大西洋的两大机制之一——**大气桥**的类似于综述性的文章。  
 > Alexander, M. A., et al. (2002). "The atmospheric bridge: The influence of ENSO teleconnections on air-sea interaction over the global oceans." Journal of Climate 15(16): 2205-2231.
 
-文章真的好长，竟然有27页，感觉他关于海洋的内容比较多一些。其中还涉及到一个**混合层厚度MLD**的定义（1、观测是用的温度比表面温度低1度的厚度；2、模式数据是通过湍流动能方程计算出的），和我以往了解的不一样。另外还有一个**Reemergence of SST anomalies**也是之前没有听说过的。  
+文章真的好长，竟然有27页，感觉他关于海洋的内容比较多一些。其中有以下内容是之前不了解的：
+1. **混合层厚度MLD**的定义（1、观测是用的温度比表面温度低1度的厚度；2、模式数据是通过湍流动能方程计算出的）和我之前了解的不一样，之前好像是用20摄氏度等温线的高度代表混合层厚度，如果我没有记错的话。  
+2. **Reemergence of SST anomalies**  
+3. 强表面净辐射通量分解为四个部分：短波、长波、感热、潜热。作者认为净辐射通量是大气影响海温的主要机制。  
+4. **multiple bridge**  
+5. 大气影响海温的几种途径：沿岸上升流，Ekman抽吸，表面热通量，Ekman输送，淡水通量  
+6. ENSO期间其他海域的海温变化  
+7. 模式的实验设计：可以部分海域有海气相互作用，但只是海气之间有动量、热量的交换，并没有海洋动力过程   
+8. Ensenmble之间用标准差来衡量其模式间的variance  
 
-此外，这是一篇02年的文章，距今已过去16年，感觉有些老了，不知道看这些老文章是否有意义
+此外，这是一篇02年的文章，距今已过去16年，感觉有些老了，不知道看这些老文章是否有意义。不过这篇文章还是有利于树立全球概念的
 
 ## Abstract
 ENSO事件中，大气对赤道太平洋SSTA的响应影响着全球其他海区状况, 其他海区海温的变化又会影响大气桥
@@ -64,6 +72,8 @@ Here the ENSO index is SST anomalies averaged over 5N–5S, 172E–120W
 NP-MLM 和 Control 的差值代表北太平洋局地海气相互作用的影响  
 MLM 和 NP-MLM 的差值代表其他海域的海气相互作用的影响
 
+![](https://journals.ametsoc.org/na101/home/literatum/publisher/ams/journals/content/clim/2002/15200442-15.16/1520-0442%282002%29015%3C2205%3Atabtio%3E2.0.co%3B2/production/images/large/i1520-0442-15-16-2205-f12.jpeg)
+
 MLM由一个独立的**柱形网格模式**组成，其中包括一个多层系统之上的混合层，多层系统表示密度跃层的状况  
 该模式包括局地海气通量、穿透太阳辐射以及扰动夹带的进入混合层的水，但没有垂直运动和水平过程，因此可以认为这个海洋模式是没有海洋动力过程的  
 混合层下面，热量通过翻转对流、垂直扩散及穿透的太阳辐射重新分布  
@@ -86,7 +96,9 @@ ensemble之间的差异可以通过标准差衡量，所有点的标准差都小
 - MLM模拟的西太降水异常比观测**弱**。且赤道两侧的反气旋位置**偏西**  
 
 - EINino期间，中纬度西风急流增强，在东北太平洋、加拿大、美国东部、中国南部有波状特征  
-![](https://journals.ametsoc.org/na101/home/literatum/publisher/ams/journals/content/clim/2002/15200442-15.16/1520-0442%282002%29015%3C2205%3Atabtio%3E2.0.co%3B2/production/images/large/i1520-0442-15-16-2205-f04.jpeg)
+
+![](https://journals.ametsoc.org/na101/home/literatum/publisher/ams/journals/content/clim/2002/15200442-15.16/1520-0442%282002%29015%3C2205%3Atabtio%3E2.0.co%3B2/production/images/large/i1520-0442-15-16-2205-f04.jpeg)  
+>  Regression values of precipitation and 200-mb streamfunction regressed on DJF ENSO index for DJF (1951–99). Positive (negative) extremes are associated with anomalous clockwise (counterclockwise) flows.
 
 ## 4. ENSO-related SST anomalies ##
 介绍了North Pacific, Tropical Atlantic, Indian Ocean的ENSO-related SSTA， 并着重介绍了North Pacific年际和年代际时间尺度上与ENSO相关的SSTA
