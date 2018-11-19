@@ -2,7 +2,7 @@
 layout: post
 title: Monsoons as eddy-mediated regime transitions of the tropical overturning circulation
 categories: 文献笔记
-tags: aquaplanet monsoon_causes 
+tags: aquaplanet monsoon
 author: renql
 ---
 
