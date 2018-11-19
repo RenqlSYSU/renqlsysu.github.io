@@ -2,7 +2,7 @@
 layout: post
 title: Factors contributing to the onset of the Australian summer monsoon
 categories: 文献笔记
-tags: Australian_monsoon 文献笔记
+tags: monsoon 文献笔记
 author: renql
 ---
 
