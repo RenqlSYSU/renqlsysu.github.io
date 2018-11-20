@@ -9,7 +9,9 @@ author: renql
 * content
 {:toc}
 
-> Wang, B., et al. (2000). "Pacific-East Asian teleconnection: how does ENSO affect East Asian climate?" Journal of Climate 13(9): 1517-1536.
+> Wang, B., et al. (2000). "Pacific-East Asian teleconnection: how does ENSO affect East Asian climate?" Journal of Climate 13(9): 1517-1536.  
+
+<a href="https://journals.ametsoc.org/doi/10.1175/1520-0442%282000%29013%3C1517%3APEATHD%3E2.0.CO%3B2" target="_blank">文章链接</a>
 
 这篇文章早在一年前就已经拜读过，但现在看到其他相关文献引用该文献时，才发现自己已不记得它讲了些什么内容，于是决定借着读书报告的机会再看一遍该文。  
 重读该文时获得如下感悟：  
