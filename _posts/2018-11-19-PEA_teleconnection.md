@@ -60,7 +60,7 @@ The purpose of the present study is to address the question of how the ENSO anom
  
 86/87年EINino的成熟期包含了夏季，与常规认识的EINino的年循环不同，故将单独讨论，然而我看到文章的最后也没有看到这个讨论
 
-选了6个暖事件和54个冷事件做合成分析
+选了6个暖事件和5个冷事件做合成分析
 
 ## 3. The structure of the PEA teleconnection ##  
 分析了Pacific-East Asian teleconnection的温度异常、海平面气压异常、垂直速度异常、辐散风异常、速度势异常的水平和垂直结构。
