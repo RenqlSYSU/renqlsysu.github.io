@@ -26,6 +26,7 @@ source  ~/.bashrc_cesm
 #-list后还可加[compsets, grids, machines]以列出相应参数可以有的内容是什么
 ```
 <a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/modelnl/compsets.html" target="_blank">compset name 网站超链接</a>
+<a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/modelnl/grid.html" target="_blank"> resolution 网站超链接</a>
 
 运行create_newcase后，生成的有用的文件：
 - **README.case** 写有关于你这个案例的所有设置内容，后期可手动将自己对于该案例设置的修改记录于此，以便以后查看
@@ -63,8 +64,9 @@ ATM_NCPL in env_run.xml specifies the number of coupling intervals per day betwe
 ```bash
 ./$CASENAME.build
 ```
-build过程中，1.检查模式运转时需要的输入数据，若数据缺失，build会终止并列出缺失数据，此时可用 `./check_input_data -export` 获得缺失的数据文件。
-2.创建 build/run 目录，里面放油模式运转时用到的namelist（即xxx_in），后面输出的数据文件也放于此处。    
+build过程中，   
+1. 检查模式运转时需要的输入数据，若数据缺失，build会终止并列出缺失数据，此时可用 `./check_input_data -export` 获得缺失的数据文件。   
+2. 创建 build/run 目录，里面放有模式运转时用到的namelist（即xxx_in），后面输出的数据文件也放于此处。    
 
 若build后又有修改源代码，可以直接build，不需要clean build     
 build后会在 **$RUNDIR** 生成 **xxx_in** ,不能再修改。同时这也是模式实际运行时用到的参数变量，
@@ -195,7 +197,7 @@ fi
 #--------------------------------------
 cat << EOF > run.pbs
 #!/bin/sh
-#PBS -N lzn_$CASENAME
+#PBS -N lzn_$CASENAME  # define the name of the job, remember to modify
 #PBS -q $QUENAME
 #PBS -l walltime=$WALLTIME:00:00
 #PBS -l nodes=$NNODES:ppn=16
