@@ -2,7 +2,7 @@
 layout: post
 title: cesm模式运行流程
 categories: 模式学习
-tags: 整理 气候模式
+tags: model process
 author: renql
 ---
 
