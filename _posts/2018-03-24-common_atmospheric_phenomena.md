@@ -2,7 +2,7 @@
 layout: post
 title: 大气常见现象总结
 categories: 大气科学
-tags: 整理 天气学原理
+tags: NAO AO MJO
 author: renql
 ---
 
@@ -40,6 +40,19 @@ The loading pattern of the AO is defined as the leading mode of Empirical Orthog
 ![](http://arcturan.com/wp-content/uploads/2014/10/articoscillation.png)  
 ![](https://www.daculaweather.com/images/ao_neg.png)  
 ![](https://www.daculaweather.com/images/ao_pos.png)  
+
+# 
+**Madden-Julian Oscillation**, or **MJO**， or **30- to 60-day oscillation/wave**, or **intraseasonal oscillation**，是赤道大气中的季节内振荡，是大气环流与热带深对流的大尺度耦合，于1971年被NCAR的Roland Madden and Paul Julian发现。  
+
+**the real-time multivariate MJO (RMM) index** 是描述MJO位置和强度最常用的方法
+
+- 一般在北半球晚秋、冬季和早春比较活跃。每一个MJO的循环周期穿越整个地球赤道，持续30-60天   
+- MJO通常以**4-8m/s**的速度向东传播，在西太暖池最明显，然后向东传播来到中东太平洋，当到达东太平洋的冷海水处时变得不明显。在赤道大西洋和非洲又再次出现  
+- MJO的湿位相伴随着对流与降水的增强，干位相时风暴活动被抑制，经常用**向外长波辐射OLR**来追踪MJO, **OLR**越低表明对流越强  
+- MJO在LaNina和ENSO中性年强，在EINino年弱，对EINino和LaNina的发展速度及强度有影响  
+- 对北美的降水和地表温度有影响，使得北美西海岸降水的强度和频率增大，北美东部冷空气的强度和频率增大  
+- 影响西北太平洋和北大西洋的台风生成  
+![](https://www.climate.gov/sites/default/files/styles/inline_all/public/MJOfig1.png?itok=v0KBslE6)
 
 # AMO
 
