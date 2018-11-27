@@ -44,7 +44,7 @@ The loading pattern of the AO is defined as the leading mode of Empirical Orthog
 # MJO
 **Madden-Julian Oscillation**, or **MJO**， or **30- to 60-day oscillation/wave**, or **intraseasonal oscillation**，是赤道大气中的季节内振荡，是大气环流与热带深对流的大尺度耦合，于1971年被NCAR的Roland Madden and Paul Julian发现。  
 
-**the real-time multivariate MJO (RMM) index** 是描述MJO位置和强度最常用的方法
+**the real-time multivariate MJO (RMM) index** 是描述MJO位置和强度最常用的方法，基于EOF，于2004年提出
 
 - 一般在北半球晚秋、冬季和早春比较活跃。每一个MJO的循环周期穿越整个地球赤道，持续30-60天   
 - MJO通常以**4-8m/s**的速度向东传播，在西太暖池最明显，然后向东传播来到中东太平洋，当到达东太平洋的冷海水处时变得不明显。在赤道大西洋和非洲又再次出现  
