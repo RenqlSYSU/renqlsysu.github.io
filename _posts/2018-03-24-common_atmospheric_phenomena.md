@@ -41,7 +41,7 @@ The loading pattern of the AO is defined as the leading mode of Empirical Orthog
 ![](https://www.daculaweather.com/images/ao_neg.png)  
 ![](https://www.daculaweather.com/images/ao_pos.png)  
 
-# 
+# MJO
 **Madden-Julian Oscillation**, or **MJO**， or **30- to 60-day oscillation/wave**, or **intraseasonal oscillation**，是赤道大气中的季节内振荡，是大气环流与热带深对流的大尺度耦合，于1971年被NCAR的Roland Madden and Paul Julian发现。  
 
 **the real-time multivariate MJO (RMM) index** 是描述MJO位置和强度最常用的方法
