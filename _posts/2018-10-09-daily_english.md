@@ -23,3 +23,6 @@ in its own right 凭借自身能力，独立地
 
 Use your own discretion.   
 I leave it to your discretion.  
+
+a lesser-known phenomenon 一个鲜为人知的现象  
+Let’s dig a little deeper 让我们再深入一点  
