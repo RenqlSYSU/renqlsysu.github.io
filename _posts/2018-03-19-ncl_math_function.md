@@ -2,7 +2,7 @@
 layout: post
 title: ncl常用数学函数
 categories: ncl
-tags: ncl 随机数 取整 统计
+tags: ncl 随机数 取整 统计 mask
 author: renql
 ---
 
