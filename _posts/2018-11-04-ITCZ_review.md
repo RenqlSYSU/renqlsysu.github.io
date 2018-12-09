@@ -94,7 +94,7 @@ The variations of net precipitation consist of two components:
 ### 2.1 Direct observations in the past century ###
 - EINino期间，EINino冬季赤道海洋吸收热量的纬向平均小于LaNina冬季（东太平洋变化最大，因为EINino时期东太平洋海温异常增暖，故海洋吸收热量减少），使得赤道能量输送散度**divF**增大，因此ITCZ南移
 
--1930年代以前，北半球赤道外地区比南半球暖。1950s到1970s，北半球赤道外地区比南半球冷。1970s中期以后，北半球中纬度温度又再次高于南半球。
+- 1930年代以前，北半球赤道外地区比南半球暖。1950s到1970s，北半球赤道外地区比南半球冷。1970s中期以后，北半球中纬度温度又再次高于南半球。
 
 - 当北半球副热带地区变冷时，夏季ITCZ最北的位置南移，导致非洲Sahel区域的干旱更加严重。研究表明Sahel地区降水的年代际变化与半球间的温度差有关。
 
