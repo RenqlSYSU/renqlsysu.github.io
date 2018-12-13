@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 老板在肇庆召开的973项目年会第二天
+title: 肇庆973项目年会第二天
 categories: 讲座笔记
 tags: 讲座笔记 整理 会议
 author: renql
