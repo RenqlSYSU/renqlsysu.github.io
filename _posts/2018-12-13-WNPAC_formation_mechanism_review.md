@@ -17,6 +17,9 @@ ENSO通过WNPAC影响成熟期6个月后的东亚夏季风降水，在这个报�
 ![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fy5difgtr0j30m20ckjs3.jpg)
 ![](http://wx1.sinaimg.cn/large/006fa9Xlgy1fy5d9lm0y8j30nj0i675z.jpg)
 
+
+
+
 - 印度夏季风与ENSO呈同时负相关，东亚夏季风在EINino盛期后6个月，梅雨降水显著增强。  
 - 在ENSO发展年夏季，西北太平洋是气旋，有利于西北太平洋台风的生成；衰弱年夏季是反气旋，西北太平洋台风生成数量减少。  
 
