@@ -21,6 +21,7 @@ var@units  = "mm/day"    ;获取/创建变量属性
 var!0  = "time"          ;获取/创建维度名   
 var&time = ispam(1,12,1) ;获取/创建坐标变量
 ```
+
 # 垂直坐标
 模式的垂直坐标——atmosphere_hybrid_sigma_pressure_coordinate，假设垂直分层30层，则有：
 
@@ -54,7 +55,7 @@ new_var = vinth2p(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp) ;1没有�
   ;Calculates the pressure differences of a hybrid coordinate system Pa [kg/(m s2)]   
   ;the return array will have an additional level dimension compare to PS  
   ;The size of the level dimension is one less then the size of hyai
-  
+  ;ps and p0 should have the same unit, Pa or hPa
   
   lev = (/  1,  2,  3,  5,   7, 10, 20, 30, \
            50, 70,100,150, 200,250,300,400, \
@@ -66,6 +67,8 @@ new_var = vinth2p(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp) ;1没有�
    dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0) 
 ;Calculates the pressure layer thicknesses of a constant pressure level coordinate system,dp(time,lev,lat,lon)
 ```
+
+
 # 返回特定的坐标位置 indices
 ```
 select_time = ind( time(:,1).ge.6 ) ;ind只能用于一维数组，可以返回一个值或一维数组
