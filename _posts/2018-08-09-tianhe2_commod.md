@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 天河的登录注意点与作业提交方式
-categories: 杂学
-tags: 天河 编程语法 整理
+categories: 模式学习
+tags: 天河 编程语法 
 author: renql
 ---
 
@@ -49,4 +49,14 @@ SSH原理与运用（一）：远程登录：http://www.ruanyifeng.com/blog/2011
          
   yhq    # query the situation of jobs   
 # "R" mean it is running, "CG" mean it is killed, "PD" mean it is waiting
+```
+## 四期提交CESM作业的命令：   
+四期的计算节点为曙光 TC4600 双路 CB60-G10 刀片， 共 72 片， 每块刀片均配备 2 颗主频为 2.6GHz 的 Intel 8 核 CPU， 64GB 内存； 其它节点为曙光 I620r-G10， 配备 2 颗主频为 2.6GHz 的 Intel 8 核 CPU， 32GB 内存； 文件系统采用曙光 Parastor200 并行文件系统，并行文件系统采用双副本，裸容量为 330TB。  
+所以每个计算节点有16核
+
+```bash
+./$CASENAME.run   #该脚本会通过呼叫 run.pbs 来最终提交任务
+
+# 命令提交后删除的方法
+qdel [-W delay|force] job_id
 ```
