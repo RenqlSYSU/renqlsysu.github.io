@@ -60,6 +60,8 @@ ATM_NCPL in env_run.xml specifies the number of coupling intervals per day betwe
 <a href="http://www.cesm.ucar.edu/models/cesm1.2/" target="_blank">http://www.cesm.ucar.edu/models/cesm1.2/</a>    
 可通过一开始的搜索寻找想要查找的变量名称。
 
+最常用的CAM模块的 variable namelist 的网址是 <a href="http://www.cesm.ucar.edu/cgi-bin/eaton/namelist/nldef2html-cam5_3" target="_blank">http://www.cesm.ucar.edu/cgi-bin/eaton/namelist/nldef2html-cam5_3</a> 
+
 ## 5. build ##
 ```bash
 ./$CASENAME.build
