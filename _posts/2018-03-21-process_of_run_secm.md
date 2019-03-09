@@ -1,6 +1,6 @@
 ---
 layout: post
-title: cesm模式运行流程
+title: cesm模式运行的一般流程
 categories: 模式学习
 tags: model process
 author: renql
@@ -8,6 +8,8 @@ author: renql
 
 * content
 {:toc}
+
+<a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/usersguide/book1.html" target="_blank">CESM1.2 User Guide</a>
 
 # 一、运行CESM的一般流程 #
 ## 1. 设置CESM的环境变量，否则有些命令在其他目录下无法使用
