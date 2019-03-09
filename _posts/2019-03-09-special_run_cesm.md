@@ -24,4 +24,6 @@ author: renql
 ./$casename.run
 ```
 
+此外，可以通过查看 **CaseStatus** 文件来查看目前对该case都进行过哪些操作
+
 # 2 Branch Run
