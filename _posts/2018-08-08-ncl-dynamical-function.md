@@ -37,8 +37,10 @@ author: renql
 ![](http://wx3.sinaimg.cn/large/006APL3qgy1fosp033kxoj31j60ub4qp.jpg)  
 
 # 二、流函数和速度势计算 #  
-![](http://wx2.sinaimg.cn/large/006fa9Xlgy1fu2kqef91zj30lc0clq36.jpg)   
-流函数的高值中心代表气旋，低值中心代表反气旋   
+![](http://wx4.sinaimg.cn/large/006fa9Xlgy1g19omn0hncj30ou0huwka.jpg)   
+无辐散流有**流函数**，流函数的拉普拉斯是**涡度**，流函数的高值中心代表反气旋，低值中心代表气旋    
+无旋转流有**速度势**，速度势的拉普拉斯是**散度**
+
 一般情况下，为查看风场的气旋反气旋情况，会用旋衡风分量计算流函数   
 ```
 uv2vrf(uwnd,vwnd,vort)  ;calculate the vorticity via spherical harmonics on a fixed grid   
