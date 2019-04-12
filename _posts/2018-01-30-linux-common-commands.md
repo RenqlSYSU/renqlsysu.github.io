@@ -72,5 +72,5 @@ kill -15 %n  #以正常的程序方式终止一项工作
 tree -d    	  //可查看各目录下的文件分布情况
 tail -f run.log   //可刷新查看输出结果
 qstat -u usename  //可只看到我们提交的任务
-grep -ir “snow” * //可查看文件里的内容，-i忽略大小写，-r递归
+grep -ir snow ./* //可搜索当前目录下包含“snow”的文件，-i忽略大小写，-r递归
 ```
