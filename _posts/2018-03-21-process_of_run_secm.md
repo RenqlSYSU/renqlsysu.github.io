@@ -22,7 +22,7 @@ source  ~/.bashrc_cesm
 
 ## 2. 创建案例
 ```bash
-./create_newcase -case $CASENAME -compset B1850CN -res f19_g16 -mach yellowstone
+create_newcase -case $CASENAME -compset B1850CN -res f19_g16 -mach yellowstone
 #-case（案例名称）,-compset（模块设置类型）,-res（精度）,-mach（CESM机器）这四个参数是必须的
 #./create_newcase后面可以跟-h（即help），-list（可列出后面可以跟的参数）
 #-list后还可加[compsets, grids, machines]以列出相应参数可以有的内容是什么
