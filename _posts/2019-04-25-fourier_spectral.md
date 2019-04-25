@@ -10,7 +10,8 @@ author: renql
 {:toc}
 
 # 傅里叶变换
-可以对数据做纬向傅里叶变换，也可以做时间上的傅里叶变换，常用的函数有以下三种
+可以对数据做纬向傅里叶变换，也可以做时间上的傅里叶变换，得到傅里叶系数。常用的函数有以下三种   
+除以下三种外，还有基于复数时间序列的傅里叶变换 `cfftf, cfftb `
 
 ## fourier_info
 ```
@@ -27,10 +28,25 @@ finfo = fourier_info(data, nhx, sclPhase) ;返回数组 finfo[3][...][N/2]
 
 ## ezfftf 向前快速傅里叶变换
 ```
-CF = exfftf(data) ;返回数组 [2][...][N/2]
+cf = ezfftf(data) ;返回数组 [2][...][N/2]
 ;对data最右边一维做傅里叶变换，设其最右边一维的长度为N，返回傅里叶的实部与虚部系数
 ;同时以属性 xbar 返回data最右边一维的均值，以 npts 返回data最右边一维的长度，最右边一维不需要是2的倍数
+;如果有缺测值，计算出来的傅里叶系数为0
 ```
 
 ## ezfftb 向后快速傅里叶变换
-其实就是根据傅里叶系数进行合成
+其实就是根据傅里叶系数进行合成  
+```
+data = ezfftb(cf, xbar) 
+;cf 即利用 ezfftf 生成的傅里叶系数，其最左边维的长度必须是2，且 cf(0,...) 为实部，cf(1,...) 为虚部
+;xbar 是data最右边维的平均数，可以是一个数，也可以是一维数组，长度为 data 右边维数长度的乘积
+
+;利用该函数及 ezfftf 函数可以提取出 data 前几个波数周期的合成
+;或者只提取出其中一个波动的曲线
+;设现在有一个 data (ntime, nlev, nlat, nlon)
+cf = ezfftf (data) ;得到 cf (2, ntime, nlev, nlat, nlon/2)
+cf(:,:,:,:,3:nlon/2) = 0.0
+cf@xbar = 0
+data_wave1_3 = ezfftb (cf, cf@xbar)
+```
+
