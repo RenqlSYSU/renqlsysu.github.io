@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ncl时频分析函数
+title: ncl小波分析函数
 categories: ncl
 tags: ncl 整理 小波分析
 author: renql
