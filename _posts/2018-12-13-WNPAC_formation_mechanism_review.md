@@ -39,7 +39,7 @@ ENSO通过WNPAC影响成熟期6个月后的东亚夏季风降水，在这个报�
 
 ![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1fy5hmimo13j30rx0ljmzv.jpg)
 
-### 三、 Combination Mode due to Nonlinear Interaction between ENSO and annual cycles (Stuecker, Jin, et al. 2015, J. Climate)###
+### 三、 Combination Mode due to Nonlinear Interaction between ENSO and annual cycles (Stuecker, Jin, et al. 2015, J. Climate) ###
 TimLi及WangBin等人似乎都不认同这个理论，反驳的理由如下：  
 1. C-Mode中认为存在1.2年和0.8年的显著周期，但TL及WB他们从热带中挑出六个区域做谱分析，并没有这个显著周期；此外还运用滤波的方法滤出热带地区1.2年周期的波动，发现其标准差非常地小；  
 2. C-Mode中WNPAC的爆发时间普遍晚于观测时间；   
