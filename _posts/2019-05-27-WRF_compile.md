@@ -20,6 +20,8 @@ author: renql
 # 若运行真实数据，则 case_name 为 em_real
 ```
 
+For any of the `./configure` commands, a list of choices for your computer should appear. These choices range from compiling for a single processor job (serial), to using OpenMP shared-memory (smpar), distributed-memory parallelization (dmpar) options for multiple processors, or a combination of shared-memory and distributed-memory options (dm+sm). When a selection is made, a second choice for compiling nesting will appear. 
+
 `compile` 后得到的运行程序 real.exe or ideal.exe and wrf.exe 在 `main/` 目录下(这也是检验编译是否成功的标准），并在 `test/case_name` 或 `run/` 目录下产生运行程序的链接文件，即可以在上述两个目录下运行模式。  
 
 如果编译失败，请先回到 WRFV3 目录下，输入 `./clean –a` ，再重新查找问题，重新安装
