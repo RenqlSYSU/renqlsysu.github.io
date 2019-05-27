@@ -9,10 +9,11 @@ author: renql
 * content
 {:toc}
 
-# WRF的安装与编译 
-由于跑理想实验，不需要前处理WPS，因此此处不记录关于 WPS 的内容
+# WRF编译 
+由于跑理想实验，不需要前处理WPS，因此此处不记录关于 WPS 的内容。由于所用的服务器已安装好WRF，因此这里不涉及环境变量的设置。
 
-将 WRF的整个安装包拷贝至准备跑case的目录下，然后输入以下命令
+将 WRF的整个安装包拷贝至准备跑case的目录下，解压后内部各文件的说明如下：  
+![](http://wx1.sinaimg.cn/large/006fa9Xlgy1g3g1v91cg6j30mp0dgwfd.jpg)
 
 ```bash
 ./configure  #安装
