@@ -64,7 +64,7 @@ It is recommended that an initial simulation of length 1200 days be performed to
 - 存在一个与水平扩散相关的非零的温度倾向值（DTH，不过我在CESM1.2的模式输出结果中没有找到这个变量），该倾向值包含**摩擦加热率**，该加热率与由动量水平扩散造成的动能耗散有关，另外还包含一个**修正加热率**，用以解释水平扩散应用于模型高度（不是气压高度）的这一事实。  
 - 逐6小时的瞬时场中似乎只包含了UVT三个变量
 
-官网还提供了NCL脚本来画 eddy temperature variance, northward eddy momentum flux and northward eddy heat flux，可以下载下来学习一下他们是怎么计算**涡旋通量**的。
+官网还提供了NCL脚本来画 eddy temperature variance, northward eddy momentum flux and northward eddy heat flux，这里的eddy是相对于纬向平均的异常。
 
 此外，在这个算例下面还介绍了很多如何修改默认设置的方法，竟然有动力核、地形的修改方法。
 ![](http://wx1.sinaimg.cn/mw690/006fa9Xlgy1g41p04tpk8j30gz07twer.jpg)
