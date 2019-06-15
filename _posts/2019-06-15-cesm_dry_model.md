@@ -102,7 +102,7 @@ vi $CASEDIR/SourceMods/src.cam/physpkg.F90
 ```  
 
 修改**physpkg.F90**中下面这部分代码, To turn off the energy fixer, the call to physics_update must be commented out 
-```F90
+```fortran
     !===================================================
     ! Global mean total energy fixer
     !===================================================
