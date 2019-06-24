@@ -29,7 +29,7 @@ author: renql
 ./create_newcase --compset FDABIP04 --res T42z30_T42_mg17 --case $CASEDIR 
 ./xmlchange --file env_run.xml --id STOP_N --val 12
 ./case.setup
-./case.setup
+./case.build
 ./case.submit
 ```
 
@@ -55,7 +55,7 @@ It is recommended that an initial simulation of length 1200 days be performed to
 ./xmlchange STOP_OPTION=ndays,STOP_N=1200
 ./xmlchange STOP_OPTION=ndays,STOP_N=300,RESUBMIT=3 #可以没有
 ./case.setup
-./case.setup
+./case.build
 ./case.submit
 ```
 
