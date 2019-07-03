@@ -120,6 +120,9 @@ ENSO正位相激发IOD正位相（印度洋西部比东部暖）
 ### 3.2 Downstream ENSO teleconnections to the Northern and Southern Hemispheres  
 
 - **3.2.1 The PNA and TNH wave train mechanisms in the Northern Hemisphere**  
+![](http://wx1.sinaimg.cn/large/006fa9Xlly1g4n5h5apk5j30oc0dbq88.jpg)  
+波列机制认为赤道加热或冷却可以激发出向北和向南传播的准静止波，进而影响北美、南美以及大西洋。  
+It is believed that EP ENSO excites primarily the TNH pattern while CP ENSO excites the PNA pattern. 
 - **3.2.2 The PSA wave train mechanism to the Southern Hemisphere**  
 CP对南半球的影响更剧烈  
 
