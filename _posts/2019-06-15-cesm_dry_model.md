@@ -39,9 +39,10 @@ author: renql
 > Held, I. M. and M. J. Suarez (1994). "A proposal for the intercomparison of the dynamical cores of atmospheric general circulation models." Bulletin of the American Meteorological Society 75(10): 1825-1830.
 
 该算例的默认初始场是等温、静止的状态，并通过在温度场中加入扰动来引入不稳定。生成初始场的脚本与上面那个算例的脚本写在了同一个ncl文件中。可以通过修改该文件来修改初始文件。  
+
 T42L30, T85L30 and T85L60 当采用这三种默认精度之一时，初始条件会自动设置。  
-但当采用其他精度时，则需要自己通过修改ncl文件来生成初始文件。  
-然后在 **$CASEDIR/user_nl_cam** 中加入初始文件的地址：  
+
+但当采用其他精度时，则需要自己通过修改ncl文件来生成初始文件。然后在 **$CASEDIR/user_nl_cam** 中加入初始文件的地址：  
 ```
 ncdata='myfilepath' 
 ```
