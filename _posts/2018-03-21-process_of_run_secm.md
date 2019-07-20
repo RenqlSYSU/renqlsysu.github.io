@@ -69,7 +69,7 @@ ATM_NCPL in env_run.xml specifies the number of coupling intervals per day betwe
 ./$CASENAME.build
 ```
 build过程中，   
-1. 检查模式运转时需要的输入数据，若数据缺失，build会终止并列出缺失数据，此时可用 `./check_input_data -export` 获得缺失的数据文件。   
+1. 检查模式运转时需要的输入数据，若数据缺失，build会终止并列出缺失数据，此时可用 `./check_input_data -export` 获得缺失的数据文件，然后可以用 `./check_input_data --download` 自动下载缺失文件，也可以自己去该网页下载 <a href="https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata" target="_blank">https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata</a> 。   
 2. 创建 build/run 目录，里面放有模式运转时用到的namelist（即xxx_in），后面输出的数据文件也放于此处。    
 
 若build后又有修改源代码，可以直接build，不需要clean build     
