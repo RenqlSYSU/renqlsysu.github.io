@@ -152,7 +152,6 @@ QUENAME=ys
 #*************************************************************
 
 create_newcase -case $CASENAME -compset $COMPSET -res $RES -mach sigon
-exit
 cd $CASENAME
 
 #Change compile out and run out roots
