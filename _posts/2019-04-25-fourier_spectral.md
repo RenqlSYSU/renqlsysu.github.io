@@ -69,7 +69,7 @@ data_wave1_3 = ezfftb (cf, cf@xbar)
 
 光谱估计的稳定性是**“从一个序列的不同部分计算出的谱估计在多大程度上是一致的”**或者**“周期图中不相关的精细结构被消除的程度”**。高稳定性对应于低方差的估计，是通过对多个周期图纵坐标求平均得到的。
 
-常用的函数有 `specx_anal, specxy_anal, specx_ci`
+常用的函数有 `specx_anal`, 交叉功率谱 `specxy_anal`, 功率谱显著性检验`specx_ci`
 
 # Space-time Spectral Analysis
 时空谱分析，主要用于研究热带波动。
@@ -80,8 +80,8 @@ bw_bandpass_filter ( x, fca, fcb, opt, dims )
 - fca和fcb是滤波范围，一般是时间段的倒数，且两个都必须要小于0.5，按理来说fcb要大于fca，但大小关系反一下问题也不大
 - opt是选项，默认情况下是用6阶滤波（opt@m=6），时间间隔为1（opt@dt=1），减去平均值（opt@remove_mean=True），输出滤波后的时间序列（opt@return_filtered=True），不输出滤波后的波包（opt@return_envelope=True）
 
-
-	ua    = f->U_anom(:,{LAT},{LON})   ; ua(time), read from one grid point
+```
+    ua    = f->U_anom(:,{LAT},{LON})   ; ua(time), read from one grid point
 
     ca    = 50.0        ; band start (longer period)
     cb    = 40.0        ; band end （时间间隔不能等于2）
@@ -97,6 +97,7 @@ bw_bandpass_filter ( x, fca, fcb, opt, dims )
     ua_bf = bw_bandpass_filter (ua,fca,fcb,opt,dims)       ; (ua,fca,fcb,opt,dims)
     copy_VarMeta(ua, ua_bf)
     ua_bf@long_name = "Band Pass: "+cb+"-"+ca+" day"
+```
 
 计算得到的结果示意如下，其中上图是原始序列，下图是滤波后的时间序列（蓝色）与波包（红色）  
 ![](https://www.ncl.ucar.edu/Document/Functions/Images/dim_bfband_20-100.ex01.png)
