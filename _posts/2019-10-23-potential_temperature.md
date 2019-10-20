@@ -67,13 +67,13 @@ theta_e = pot_temp_equiv(pres_Pa, temp_K, water, dim, humVarType)
 ```
 
 因此，计算假相当位温需要变量：**气压**、**温度**、**混合比**（可以用比湿换算）。   
-关于各水汽变量的概念，参考这篇博文<a href="https://renqlsysu.github.io/2018/02/23/about-water-vapour/" target="_blank">https://renqlsysu.github.io/2018/02/23/about-water-vapour/</a>
+关于各水汽变量的概念，参考这篇博文 <a href="https://renqlsysu.github.io/2018/02/23/about-water-vapour/" target="_blank">https://renqlsysu.github.io/2018/02/23/about-water-vapour/</a>
 
 ## 饱和相当位温 Saturation equivalent potential temperature ##
-当空气处于饱和状态时计算得到的相当位温。
+当空气处于饱和状态时计算得到的相当位温。在相同温度和压强情况下，饱和相当位温大于相当位温。
 
 ## 广义位温 ##
-位温适用于干空气，相当位温适用于饱和湿空气，那么广义位温适用于未饱和的湿空气状态，由曹洁和高守亭于2008年提出，计算公式如下：
+位温适用于干空气，相当位温适用于饱和湿空气，那么广义位温适用于未饱和的湿空气状态，由曹洁和高守亭于2008年提出，计算公式如下：   
 ![](https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/cf1b9d16fdfaaf51a3dc8800885494eef01f7a55.jpg)
 
 感觉这个不如**假相当位温**好用
