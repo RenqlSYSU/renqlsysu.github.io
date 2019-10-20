@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Wave Activity Flux
-categories: 大气科学
-tags: 波能量传播 扰动 ncl
+categories: ncl 大气科学
+tags: 诊断量
 author: renql
 ---
 
