@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ncl相关函数
+title: ncl相关系数的计算函数
 categories: ncl
 tags: ncl
 author: renql
