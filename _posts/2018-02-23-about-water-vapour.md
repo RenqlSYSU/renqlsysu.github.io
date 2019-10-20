@@ -10,9 +10,9 @@ author: renql
 {:toc}
 
 # 比湿 Specific humidity #
-湿空气中的水汽质量与湿空气的总质量之比，单位g/kg或g/g，通常大气中比湿都小于40g/kg。用字母**q**表示。
-![](https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/b17eca8065380cd7998acfd0a844ad3459828172.jpg)
-![](https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/d6ca7bcb0a46f21f5cb7326eff246b600c33ae08.jpg)
+湿空气中的水汽质量与湿空气的总质量之比，单位g/kg或g/g，通常大气中比湿都小于40g/kg。用字母**q**表示。    
+![](https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/b17eca8065380cd7998acfd0a844ad3459828172.jpg)   
+![](https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/d6ca7bcb0a46f21f5cb7326eff246b600c33ae08.jpg)   
 式中气压（P）和水汽压（e）须采用相同单位（hPa），比湿q的单位是g/g。
 
 # 水汽混合比 mixing ratio #
@@ -32,7 +32,7 @@ ncl中有专门的函数将**Specific humidity**和**mixing ratio**进行转换:
 
 
 
-# 相对湿度 Relative humidity#
+# 相对湿度 Relative humidity #
 空气中水汽压与相同温度下饱和水汽压的百分比，或湿空气的绝对湿度与相同温度下可能达到的最大绝对湿度之比。
 
 # 水汽通量 #
