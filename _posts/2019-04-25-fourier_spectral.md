@@ -75,6 +75,46 @@ data_wave1_3 = ezfftb (cf, cf@xbar)
 时空谱分析，主要用于研究热带波动。
 
 # 带通滤波
+ncl中的滤波主要有三种：  
+- **权重因子加滑动平均**：用 ` filwgts_lanczos `函数产生权重，然后用` wgt_runave_n_Wrap `结合上面产生的权重来进行滑动平均滤波。**这种方法可以用于处理含缺测的数据，难点在于如何确定权重数的个数（必须是奇数）。**当滤出的波段频率越低，需要的权重点数就越多，但这样会导致首尾的缺测数增多。因此可能需要重复计算以找出最佳的权重个数  
+- **Butterworth带通滤波器**：另一种是直接利用Butterworth带通滤波器` bw_bandpass_filter `，这是一种信号处理滤波器，其设计目标是在通频带内具有尽可能平坦的频率响应。**但该函数不能处理含缺测值的数据，因为它会把缺测值当正常数据处理，导致数值偏大最后超出数据范围。**因此在使用该函数前，可以用` linmsg_n `函数，把缺测值都补上  
+- **利用傅里叶变换滤波**：先用向前快速傅里叶变换` ezfftf `函数得到傅里叶系数，然后将不需要的波段的系数设为0，再利用向后快速傅里叶变换` ezfftb `重构数据。**该方法不会在首尾处产生全册。但它无法对含有缺测值的序列进行运算。**
+
+此外还有专门用于空间滤波的函数` smth9 ` 
+
+## 权重因子加滑动平均 ##
+利用 ` filwgts_lanczos `产生对称的权重因子时，该函数会以属性形式 wgt@freq, wgt@resp （一维数组，长度为 2*权重因子数nwgt+3） 返回该权重因子滤波的响应函数。响应函数图的绘制代码：
+
+```
+  xyres = True
+  xyres@gsnMaximize    = True
+  xyres@gsnFrame       = False
+  xyres@tiMainString   = "Band Pass: 20-100 srate=1: sigma = " + sigma
+  xyres@tiXAxisString  = "frequency"
+  xyres@tiYAxisString  = "response"
+  xyres@gsnLeftString  = "fca=" + fca + "; fcb=" + fcb
+  xyres@gsnRightString = nWgt
+  xyres@trXMaxF        = 0.1
+  xyres@trYMaxF        = 1.1
+  xyres@trYMinF        = -0.1
+  plot = gsn_csm_xy(wks, wgt@freq, wgt@resp, xyres)
+
+  X = (/0.0, fca, fca, fcb, fcb, 0.1/)      ; ideal filter
+  Y = (/0.0, 0.0, 1.0, 1.0, 0.0,  0.0 /) 
+  resGs = True
+  resGs@gsLineThicknessF = 1.0
+  gsn_polyline(wks,plot,X,Y,resGs)
+```
+
+不同权重因子数量对应的响应函数分布，其中矩形曲线即理想型的响应函数
+![](http://www.ncl.ucar.edu/Applications/Images/filters_8_2_lg.png)
+
+不同权重因子数的对比，蓝线（nwgt=49）和红线（nwgt=121）是24个月的滤波结果，绿线（nwgt=121）和黑线（nwgt=241）是120个月的低通滤波结果。
+![](http://www.ncl.ucar.edu/Applications/Images/filters_2_lg.png)
+
+当第一种方法所使用的权重因子数越多，其结果与第二种带通滤波的结果类似，但会在首尾处产生很多缺测。
+
+## Butterworth带通滤波器 ##
 bw_bandpass_filter ( x, fca, fcb, opt, dims )  
 - x是需要滤波的数据列，可以是多维数组  
 - fca和fcb是滤波范围，一般是时间段的倒数，且两个都必须要小于0.5，按理来说fcb要大于fca，但大小关系反一下问题也不大
@@ -106,3 +146,6 @@ bw_bandpass_filter ( x, fca, fcb, opt, dims )
 ![](https://www.ncl.ucar.edu/Document/Functions/Images/dim_bfband_40-50.ex01.png)
 
 http://www.seismosoc.org/Publications/BSSA_html/bssa_96-2/05055-esupp/
+
+## 利用傅里叶变换滤波 ##
+见第一小节
