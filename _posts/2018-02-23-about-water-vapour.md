@@ -2,23 +2,26 @@
 layout: post
 title: 关于水汽概念的整理
 categories: 大气科学
-tags: 动力气象 整理
+tags: 诊断量
 author: renql
 ---
 
 * content
 {:toc}
 
-# 比湿 shum #
-湿空气中的水汽质量与湿空气的总质量之比，单位g/kg或g/g，通常大气中比湿都小于40g/kg。
+# 比湿 Specific humidity #
+湿空气中的水汽质量与湿空气的总质量之比，单位g/kg或g/g，通常大气中比湿都小于40g/kg。也可用**mixing ratio**表示
+![](https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/b17eca8065380cd7998acfd0a844ad3459828172.jpg)
+![](https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/d6ca7bcb0a46f21f5cb7326eff246b600c33ae08.jpg)
+式中气压（P）和水汽压（e）须采用相同单位（hPa），比湿q的单位是g/g。
 
-# 绝对湿度 #
+# 绝对湿度  Absolute humidity #
 标准状况下，每立方米湿空气中所含水蒸气的质量，单位g/m^3
 
 
 
 
-# 相对湿度 #
+# 相对湿度 Relative humidity#
 空气中水汽压与相同温度下饱和水汽压的百分比，或湿空气的绝对湿度与相同温度下可能达到的最大绝对湿度之比。
 
 # 水汽通量 #
