@@ -23,6 +23,30 @@ var!0  = "time"          ;获取/创建维度名
 var&time = ispam(1,12,1) ;获取/创建坐标变量
 ```
 
+# 改变数组的维数
+```
+dpC = conform (x, dp, (/0,1/))
+;表示将二维数组dp(time,lev)扩展成和x(time,lev,lat,lon)一样维数的数组dpC，最后一个参数表示dp与x中的哪几维相同。
+;注意dp的维数必须小于x，即dp必须是x的子集
+;若dp是一个数，此时最后一维可以写-1
+
+x = (/1,2,3,4,5/)
+xc1 = conform_dims((/3,5/),x,1)
+xc2 = conform_dims((/5,3/),x,0)
+;该函数用法同conform，只是把第一参数改为维数而不是一个数组
+
+nyears = ntim/12
+x4d  = reshape(x,(/nyears,12,nlat,nlon/))
+xjfm = reshape(x4d(:,0:2,:,:),(/nyears*3,nlat,nlon/))
+;reshape可以把一个多维数组转变成另一个多维数组
+;在该例子中，x(ntim，nlat，nlon)的多维数组，该例子提取出了每年1-3月的数据并组成一个序列
+
+nyears = ntim/12
+x1d     = ndtooned(x) ;将多维数组转换成一维数组，这里x依然是(ntim，nlat，nlon)的多维数组
+x4d     = onedtond(x1d,(/nyears,12,nlat,nlon/)) ；将一维数组转换成多维数组
+;将ndtooned和onedtond配合使用的效果同reshape
+```
+
 # 垂直坐标
 模式的垂直坐标——atmosphere_hybrid_sigma_pressure_coordinate，假设垂直分层30层，则有：
 
