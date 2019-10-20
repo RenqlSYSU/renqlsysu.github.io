@@ -2,7 +2,7 @@
 layout: post
 title: 大气视热源
 categories: 大气科学
-tags: 热力 
+tags: 诊断量
 author: renql
 ---
 
