@@ -60,7 +60,7 @@ fbindirwrite(path,var)  ;var可以是任意维度,若写入的数据文件之前
 ```
 
 若输出的二进制文件想要被grads读取，也可用此函数，并运用循环，将每个时次每个变量各个高度的场依次输出，用Fortran写的函数例子为：
-```f
+```F90
     program text1
 	 parameter(nx=144,ny=73,nz=17,nt=12)
 	 real u(nx,ny,nz,nt)
