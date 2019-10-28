@@ -54,6 +54,10 @@ write_matrix(data,fmtf,opt)		;data只能是二维的，fmtf是打印的格式如
 # 输出数据到二进制文件，可用Fortran读取
 关于ncl、Fortran、grads对二进制文件的处理区别介绍博客：<a href="http://bbs.06climate.com/home.php?do=blog&id=3487&mod=space&uid=12776" target="_blank"> http://bbs.06climate.com/home.php?do=blog&id=3487&mod=space&uid=12776 </a>
 
+最近发现这篇博文在介绍跨平台数据传输也说得挺好的 <a href="https://ncllearning.blogspot.com/2015/03/binary.html" target="_blank"> https://ncllearning.blogspot.com/2015/03/binary.html </a>。  
+
+总结一下，在要跨平台应用数据时，存储时都统一用直接存取方式 **direct access**。
+
 1.  直接写入二进制文件，类似于fortran中的"form=unformatted,access=direct"
 ```
 fbindirwrite(path,var)  ;var可以是任意维度,若写入的数据文件之前就存在，新写入的数据将写在后面，而不是覆盖
