@@ -52,45 +52,68 @@ write_matrix(data,fmtf,opt)		;data只能是二维的，fmtf是打印的格式如
 ```
 
 # 输出数据到二进制文件，可用Fortran读取
+
 关于ncl、Fortran、grads对二进制文件的处理区别介绍博客：<a href="http://bbs.06climate.com/home.php?do=blog&id=3487&mod=space&uid=12776" target="_blank"> http://bbs.06climate.com/home.php?do=blog&id=3487&mod=space&uid=12776 </a>
 
 最近发现这篇博文在介绍跨平台数据传输也说得挺好的 <a href="https://ncllearning.blogspot.com/2015/03/binary.html" target="_blank"> https://ncllearning.blogspot.com/2015/03/binary.html </a>。  
 
 总结一下，在要跨平台应用数据时，存储时都统一用直接存取方式 **direct access**。
 
-1.  直接写入二进制文件，类似于fortran中的"form=unformatted,access=direct"
+ncl输出dat文件，类似于fortran中的"form=binary,access=direct"
+```xml
+etfileoption("bin","WriteByteOrder","LittleEndian")
+system("rm -f " + fileout(nf))
+
+do nv = 0, nvar-1, 1
+do nt = 0, ntime-1, 1
+do nl = 0, nlev-1, 1
+    fbindirwrite(fileout(nf),forc(nv,nt,nl,:,:)) ；若写入的数据文件之前就存在，新写入的数据将写在后面，而不是覆盖
+end do
+end do
+end do
 ```
-fbindirwrite(path,var)  ;var可以是任意维度,若写入的数据文件之前就存在，新写入的数据将写在后面，而不是覆盖
+一条数据的长度为 precision*nlat*nlon，如果是单精度浮点，为4字节，如果为双精度浮点，为8字节。可以通过查看输出的dat文件大小来检查输出是否正确，例如这里输出的dat文件大小应该为（假设是双精度浮点）：`8*nlat*nlon*nlev*ntime*nvar/1024/1024/1024 GB`
+
+用ncl读取上述dat文件
+```xml
+etfileoption("bin","ReadByteOrder","LittleEndian")
+irec = 0
+do nv = 0, nvar-1, 1
+do nt = 0, ntime-1, 1
+do nl = 0, nlev-1, 1
+    dzdt(nv,nt,nz,:,:) = fbindirread(filedat(nf),irec,(/nlat,nlon/),"double")
+    irec = irec + 1
+end do
+end do
+end do
 ```
 
-若输出的二进制文件想要被grads读取，也可用此函数，并运用循环，将每个时次每个变量各个高度的场依次输出，用Fortran写的函数例子为：
+用Fortran读取上述dat文件，并重新输出。
 ```fortran
     program text1
 	 parameter(nx=144,ny=73,nz=17,nt=12)
 	 real u(nx,ny,nz,nt)
 	 real v(nx,ny,nz,nt)    
-	 open(unit=1,file='E:\ftp\GrADS\uwnd.dat',form="binary",access="direct",recl=4*nx*ny)
-	 open(unit=2,file='E:\ftp\GrADS\vwnd.dat',form="binary",access="direct",recl=4*nx*ny)
-	 open(unit=3,file='E:\ftp\GrADS\uvwnd.dat',form="binary",access="direct",recl=4*nx*ny)
+	 open(unit=1,file='E:\ftp\GrADS\uwnd.dat',status='old',form="binary",convert='LITTLE_ENDIAN',access="direct",recl=4*nx*ny)
 	 irec=1
 	 do it=1,nt
-	  do iz=1,nz
+	 do iz=1,nz
 	   read(1,rec=irec) ((u(i,j,iz,it),i=1,nx),j=1,ny)
-	   read(2,rec=irec) ((v(i,j,iz,it),i=1,nx),j=1,ny)
 	   irec=irec+1
-	  end do 
+	 end do 
 	 end do 
 	 
+	 open(unit=3,file='E:\ftp\GrADS\u.dat',status='replace',form="binary",convert='LITTLE_ENDIAN',access="direct",recl=4*nx*ny)
 	 irec=1
 	 do it=1,nt 
-	  do iz=1,nz
+	 do iz=1,nz
 	   write(3,rec=irec) ((u(i,j,iz,it),i=1,nx),j=1,ny)
 	   irec=irec+1
-	  end do 
-	  do iz=1,nz
+	 end do 
+	 do iz=1,nz
 	   write(3,rec=irec) ((v(i,j,iz,it),i=1,nx),j=1,ny)
 	   irec=irec+1
-	  end do 
+	 end do 
 	 end do
 	 end 
 ```
