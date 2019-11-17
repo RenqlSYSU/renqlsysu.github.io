@@ -37,11 +37,21 @@ If the user does not explicitly set initial values for seeds via `random_setalls
 
 # 2 统计函数
 ```
+;计算相关系数
 corr = esccr(c1, c2, mxlag)    ;Computes sample cross-correlations on the rightmost dimension
 cova = esccv(c1, c2, mxlag)    ;Computes sample cross-covariances on the rightmost dimension.
 auto_corr = esacr(c1, mxlag)   ;Computes sample auto-correlations on the rightmost dimension
 auto_cova = esacv(c1, mxlag)   ;Computes sample auto-covariances on the rightmost dimension
 ；以上函数返回值的最右边维的数量变为（mxlag+1）
+
+;序列标准化
+avar = dim_standardize_n(var,opt,dim) ;得到标准化序列，忽略缺测
+;opt = 1 用the population standard deviation（除以不包含缺测的样本总数）计算
+;opt = 0 用the sample standard deviation（除以不包含缺测的样本总数-1）计算
+
+;计算标准差方差
+stdd = dim_stddev_n(var,dim)   ;计算样本标准差，即除以不包含缺测的样本总数-1
+vari = dim_variance_n(var,dim) ;计算无偏差估计的方差 the unbiased estimates of the variance，即除以不包含缺测的样本总数-1
 ```
 
 # 3 取整函数
