@@ -71,6 +71,11 @@ data_wave1_3 = ezfftb (cf, cf@xbar)
 
 常用的函数有 `specx_anal`, 交叉功率谱 `specxy_anal`, 功率谱显著性检验`specx_ci`
 
+在ncl中用 `specx_anal` 计算得到的功率谱值spcx随频率的积分等于序列方差，如下所示 (N是样本数，df=1/N是频率间隔）  
+```
+(spcx(0)+spcx(N/2-1))*(df/2) + SUM{spcx(1:N/2-2)*df} = variance of the series 
+```
+
 # Space-time Spectral Analysis
 时空谱分析，主要用于研究热带波动。
 
