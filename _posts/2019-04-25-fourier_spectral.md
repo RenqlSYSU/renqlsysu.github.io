@@ -48,15 +48,17 @@ cf = ezfftf(data) ;返回数组 [2][...][N/2]
 ```
 data = ezfftb(cf, xbar) 
 ;cf 即利用 ezfftf 生成的傅里叶系数，其最左边维的长度必须是2，且 cf(0,...) 为实部，cf(1,...) 为虚部
-;xbar 是data最右边维的平均数，可以是一个数，也可以是一维数组，长度为 data 右边维数长度的乘积
+;xbar 是data最右边维的平均数，可以是一个数，也可以是一维数组，长度为 data 左边维数长度的乘积
 
 ;利用该函数及 ezfftf 函数可以提取出 data 前几个波数周期的合成
 ;或者只提取出其中一个波动的曲线
 ;设现在有一个 data (ntime, nlev, nlat, nlon)
 cf = ezfftf (data) ;得到 cf (2, ntime, nlev, nlat, nlon/2)
 cf(:,:,:,:,3:nlon/2) = 0.0
-cf@xbar = 0
+data_wave1_3 = ezfftb (cf, 0)
+;重构的data_wave1-3的平均数为0
 data_wave1_3 = ezfftb (cf, cf@xbar)
+;重构的data_wave1-3的平均数为cf@xbar
 ```
 
 # 功率谱分析
