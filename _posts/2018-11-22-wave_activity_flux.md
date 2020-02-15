@@ -26,6 +26,10 @@ author: renql
 ![](https://wx2.sinaimg.cn/large/006fa9Xlly1gbx3b92r69j30qo04eacr.jpg)
 ![](https://wx3.sinaimg.cn/large/006fa9Xlly1gbx3bkejpij30ph0k5gvj.jpg)
 
+参考来源：
+1. Gu, S., Zhang, Y., Wu, Q., & Yang, X.‐Q. ( 2018). The linkage between arctic sea ice and midlatitude weather: In the perspective of energy. Journal of Geophysical Research: Atmospheres, 123, 11,536– 11,550. https://doi.org/10.1029/2018JD028743
+2. 贺海晏 2010年 《动力气象学》 
+
 ## 波活动通量算法参考
 Nowadays，I am studying how to calculate the wave activity flux by ncl and the its theory as well as its hypothesis.   
 
