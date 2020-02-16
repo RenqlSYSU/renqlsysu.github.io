@@ -45,12 +45,13 @@ nohup command > myout.file 2>&1 &
 关于screen的进一步了解可以参考这篇博文 。<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-screen/" target="_blank">https://www.ibm.com/developerworks/cn/linux/l-cn-screen/</a>
 
 ```bash
-screen -dmS session_name # 建立一个处于断开模式下的会话（并指定其会话名），最好给每个会话命名，便于区分
+# 最好给每个会话命名，便于区分
+screen -dmS session_name # 建立一个一开始便处于断开模式下的会话（-S 表示创建screen会话时为会话指定一个名字）
+screen -r session_name # 重新连接指定会话
+screen -d session_name # 断开其他正在运行的screen会话
 
 screen -list # 列出所有会话名、状态
 screen -wipe # 会清除会话状态为 dead 的会话
-
-screen -r session_name # 重新连接指定会话
 
 # 进入会话后，可用快捷键CTRL-a d 来暂时断开当前会话，此时对话里的任务不会终端
 # 进入会话后，若选择输入 exit 来退出当前会话，则该会话就会被删除
