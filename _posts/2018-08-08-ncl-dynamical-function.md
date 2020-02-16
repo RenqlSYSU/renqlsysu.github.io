@@ -55,7 +55,8 @@ dv2uvf (divg,ud,vd)      ;calculate the divergent wind components via spherical 
 ;ud and vd are the return data 
 
 ;the data used by these function must be on a global grid and no missing values    
-; If any missing values are encountered in a particular 2D input grid, then all of the values in the corresponding output grids will be set to the missing value
+;If any missing values are encountered in a particular 2D input grid, 
+;then all of the values in the corresponding output grids will be set to the missing value
 ;if there are missing values, you can make the missing value zero by this method
 uwnd = where(ismissing(uwnd),0,uwnd)
 
@@ -66,8 +67,8 @@ copy_VarMeta(vars,sf(0,0,:,:))
 # 三、经圈质量流函数 #  
 ![](https://image2.slideserve.com/4148663/slide12-n.jpg)    
 上图显示的是全球纬向平均的经圈质量流函数的推导过程，一般常用该流函数来研究Hadley环流。其具体计算方案及计算结果如下图所示。   
-![]()
-![]()
+![](https://wx2.sinaimg.cn/large/006fa9Xlly1gbycmhtxtwj30u10migqo.jpg)
+![](https://wx3.sinaimg.cn/large/006fa9Xlly1gbycmdte9lj30tz0ml4di.jpg)
 
 综上，研究Hadley环流的诊断量有以下三种：   
 1. 利用径向风计算的全球纬向平均的经圈质量流函数，但它忽略了热带大气环流的区域多样性  
