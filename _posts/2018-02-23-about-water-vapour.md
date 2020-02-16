@@ -57,3 +57,60 @@ ncl中有专门的函数将**Specific humidity**和**mixing ratio**进行转换:
 ![](http://wx2.sinaimg.cn/small/006APL3qgy1foqqy1ys0ej308z05sjrb.jpg)
 
 一地区较大的降水量一般远远超过该地区的可降水量，因为由其他地区的水汽向这里输送。
+
+```
+	flux = wgt_vert_avg_beta ( shum&level, shum, pres_sfc, punits, opt ) / g ；将比湿垂直积分得到该地区可降水量
+	;punits = 0表明shum&level和pres.sfc的单位为hPa或mb；1表明单位为Pa
+	;opt = 0 计算各气压层之和；1则计算平均值
+```
+发现用该函数时，青藏高原地区都是缺测。因此准备换一种计算方法。如下所示
+
+```
+  hyai = f->hyai  ;A one-dimensional array equal to the hybrid A coefficients.
+  hybi = f->hybi  ;A one-dimensional array equal to the hybrid B coefficients.
+  p0   = f->P0  ;A scalar value equal to the surface reference pressure. Must have the same units as ps.
+  ps   = f->PS  ;An array of surface pressure data in Pa or hPa (mb). The rightmost dimensions must be latitude and longitude.
+  
+  dp   = dpres_hybrid_ccm (ps,p0,hyai,hybi)  
+  ;Calculates the pressure differences of a hybrid coordinate system Pa [kg/(m s2)]   
+  ;the return array will have an additional level dimension compare to PS  
+  ;The size of the lev dimension is one less then the size of hyai
+
+  T    = f->T                                ; K  (time,lev,lat,lon)
+  cp   = 1004.                               ; J/(K kg)     [ m2/(K s2) ]
+  g    = 9.81                                ; m/s
+  
+  Tdp  = T*dp                                ; [K kg/(m s2)]   (temporary variable)
+  copy_VarCoords(T, Tdp)
+  IE   = dim_sum_n_Wrap( Tdp, 1) 	     ;Vertically Integrated Internal Energy (time,lat,lon)
+  IE   = cp*IE/g                             ; kg/s2  
+  IE@long_name = "Vertically Integrated Internal Energy"
+  IE@units     = "kg/s2"
+```
+
+```
+    lev = f->lev  ; (/  1,  2,  3,  5,   7, 10, 20, 30, \
+                  ;    50, 70,100,150, 200,250,300,400, \
+                  ;   500,600,700,775, 850,925,1000 /)
+
+    Q   = f->Q    ; kg/kg      (time,lev,lat,lon)
+    psfc= f->PS   ; PA         (time,lat,lon)
+    lev = lev*100
+    lev@units = "Pa"    ; to match PS
+    ptop= 0             ; integrate 0==>psfc at each grid point
+
+    dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0) 
+    ;Calculates the pressure layer thicknesses of a constant pressure level coordinate system,dp(time,lev,lat,lon)
+    
+                        ; latent heat of vaporization at 0C
+    L   = 2.5e6         ; J/kg         [ m2/s2 ]
+    g   = 9.81          ; m/s
+    
+    Qdp = Q*dp          ; temporary variable               
+    copy_VarCoords(Q, Qdp)                   
+    LE  = dim_sum_n_Wrap( Qdp,1 )   ; integrate vertically [level dimension = 1],  LE(ntim,nlat,mlon)
+    LE  = (L/GR)*LE     ; (time,lat,lon)
+    LE@long_name = "Latent Energy:  SUM[L*Q*dp]/g"
+    LE@units     = "kg/s2"
+```
+
