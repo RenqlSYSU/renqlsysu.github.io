@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ncl维度与坐标
+title: ncl维度与垂直坐标
 categories: ncl
-tags: 数组 维度 坐标 ind
+tags: 数组 垂直坐标
 author: renql
 ---
 
@@ -10,7 +10,6 @@ author: renql
 {:toc}
 
 # 数组维度命名、取用
-nc文件中数据存储纬度是 **（时间，高度，纬度，经度）**   
 ```
 var(0:12:3, {lats:latn}, ::-1)     ;大括号内是变量的坐标值,将最后一维倒序    
 var({lat|:}, {lon|:}, {time|:})    ;用维度名调换维度顺序，注意此时必须每一个维度都有名字，否则报错  
@@ -22,6 +21,10 @@ var@units  = "mm/day"    ;获取/创建变量属性
 var!0  = "time"          ;获取/创建维度名   
 var&time = ispam(1,12,1) ;获取/创建坐标变量
 ```
+nc文件中数据存储纬度是 **（时间，高度，纬度，经度）**   
+
+
+
 
 # 改变数组的维数
 ```
@@ -46,6 +49,7 @@ x1d     = ndtooned(x) ;将多维数组转换成一维数组，这里x依然是(n
 x4d     = onedtond(x1d,(/nyears,12,nlat,nlon/)) ；将一维数组转换成多维数组
 ;将ndtooned和onedtond配合使用的效果同reshape
 ```
+多用于ncl加减乘除时。
 
 # 垂直坐标
 模式的垂直坐标——atmosphere_hybrid_sigma_pressure_coordinate，假设垂直分层30层，则有：
@@ -89,9 +93,13 @@ new_var = vinth2p(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp) ;1没有�
    lev = lev*100
    lev@units = "Pa"    ; to match PS
    ptop= 0             ; integrate 0==&gt;psfc at each grid point
-   dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0) 
-;Calculates the pressure layer thicknesses of a constant pressure level coordinate system,dp(time,lev,lat,lon)
+   dp  = dpres_plevel_Wrap(lev, psfc, ptop, 0)  ;dp(time,lev,lat,lon)
+;Calculates the pressure layer thicknesses of a constant pressure level coordinate system
+;lev, psfc 及 ptop 的单位必须一致
 ```
+计算各层气压厚度主要用于垂直积分。
+
+## 几类ncl的垂直积分函数
 
 
 # 返回特定的坐标位置 indices
