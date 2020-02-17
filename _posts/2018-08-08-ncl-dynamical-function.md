@@ -75,7 +75,7 @@ copy_VarMeta(vars,sf(0,0,:,:))
 2. The vertical shear of the meridional wind between 200 and 850 hPa (V200–V850)，可以用于研究Hadley环流强度的纬向变化，已有学者利用该诊断量研究Hadley环流的多尺度变率及其与其他气候现象（如ENSO）间的关系。但无法用该指数精确定义Hadley环流的南北边界  
 3. 利用辐散风的径向风分量计算的区域纬向平均的经圈流函数，即可以研究Hadley环流的纬向变化，又可以确定Hadley环流的强度及南北范围。但该指数只用到了环流的辐散风分量，无法全面描述环流整体的变化。  
 
-据参考文献3介绍，如果把全球分成三个不同经度的区域分别计算区域纬向平均经圈流函数，那么这三个区域的经圈流函数加起来等于全球纬向平均的质量流函数。
+此外，用纬向风的辐散分量计算全球纬向平均经圈质量流函数同用原始纬向风的计算结果。
 
 参考文献：
 1. Zhang, G. and Z. Wang, 2013: Interannual Variability of the Atlantic Hadley Circulation in Boreal Summer and Its Impacts on Tropical Cyclone Activity. J. Climate, 26, 8529–8544, https://doi.org/10.1175/JCLI-D-12-00802.1   
@@ -83,8 +83,9 @@ copy_VarMeta(vars,sf(0,0,:,:))
 3. Nguyen, H., Hendon, H.H., Lim, E.P. et al. 2017: Variability of the extent of the Hadley circulation in the southern hemisphere: a regional perspective. Clim Dyn, 50: 129. https://doi.org/10.1007/s00382-017-3592-2
 
 ncl计算方案大约有两种：
-1. 直接用ncl自带的函数计算 <a href="https://www.ncl.ucar.edu/Document/Functions/Built-in/zonal_mpsi.shtml" target="_blank">zonal_mpsi (v,lat,p,ps) </a> ，但该函数只能计算经圈流函数，且若计算区域经圈环流，需先将径向风的辐散分量计算出来，再利用该函数。  
-2. 自己做垂直积分计算。这样还可以用于计算纬圈流函数。
+1. 直接用ncl自带的函数计算 <a href="https://www.ncl.ucar.edu/Document/Functions/Built-in/zonal_mpsi.shtml" target="_blank">zonal_mpsi (v,lat,p,ps) </a> ，但该函数只能计算经圈流函数，且若计算区域经圈环流，需先将径向风的辐散分量计算出来，再利用该函数。   
+2. 自己做垂直积分计算。这样还可以用于计算纬圈流函数。  
+经检验，两种计算结果类似。
 
 ```
 v   = new((/nlev,nlat,nlon/),float)
@@ -102,7 +103,6 @@ pi = atan(1.0)*4
 lat  = vars&lat
 ptop = 0
 iopt = 0
-
 dp  := dpres_plevel(plev*100,ps,ptop,iopt)
 dpm = dim_avg_n(dp,2)
 v_m = dim_avg_n(v,2)
