@@ -100,7 +100,11 @@ new_var = vinth2p(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp) ;1没有�
 计算各层气压厚度主要用于垂直积分。
 
 ## 几类ncl的垂直积分函数
-
+ncl垂直积分的几种函数：
+1. <a href="https://www.ncl.ucar.edu/Document/Functions/Built-in/wgt_vert_avg_beta.shtml" target="_blank">wgt_vert_avg_beta (plev,data,psfc,punits,opt)</a>，利用气压厚度及beta因子计算data（3维或4维）的垂直积分（opt=0）或垂直平均（opt=1），若opt=（/0，650，900/）表示计算650hPa到900hPa之间的垂直积分。但**若data底层数据有缺测，会导致整层积分的结果也缺测**。  
+2. <a href="https://www.ncl.ucar.edu/Document/Functions/Contributed/wgt_vertical_n.shtml" target="_blank">wgt_vertical_n (data,dp,iopt,dim)</a>，方法同方案4，此处data维数不限，**但不能有缺测**。  
+3. <a href="https://www.ncl.ucar.edu/Document/Functions/Built-in/vibeta.shtml" target="_blank">vibeta (plev,data,linlog,psfc,pbot,ptop)</a>, 利用beta因子计算data的在ptop到pbot或psfc之间的垂直积分。根据官网的例子，该函数的计算结果同方案4。  
+4. 先利用 `dpres_hybrid_ccm (psfc,p0,hyai,hybi)` 或`dpres_plevel_Wrap(plev, psfc, ptop, 0)` 计算各层气压厚度，在利用`intEKE = dim_sum_n(EKE*dp,dim_lev)`计算垂直积分。目前来看，这一种是最常用的。
 
 # 返回特定的坐标位置 indices
 ```
