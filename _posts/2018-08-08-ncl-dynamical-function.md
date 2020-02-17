@@ -82,7 +82,36 @@ copy_VarMeta(vars,sf(0,0,:,:))
 2. Sun, Y., Li, L.Z.X., Ramstein, G. et al. 2019: Regional meridional cells governing the interannual variability of the Hadley circulation in boreal winter. Clim Dyn, 52: 831. https://doi.org/10.1007/s00382-018-4263-7  
 3. Nguyen, H., Hendon, H.H., Lim, E.P. et al. 2017: Variability of the extent of the Hadley circulation in the southern hemisphere: a regional perspective. Clim Dyn, 50: 129. https://doi.org/10.1007/s00382-017-3592-2
 
-ncl计算方法大约有两种：
+ncl计算方案大约有两种：
 1. 直接用ncl自带的函数计算 <a href="https://www.ncl.ucar.edu/Document/Functions/Built-in/zonal_mpsi.shtml" target="_blank">zonal_mpsi (v,lat,p,ps) </a> ，但该函数只能计算经圈流函数，且若计算区域经圈环流，需先将径向风的辐散分量计算出来，再利用该函数。  
-2. 自己做垂直积分计算。
+2. 自己做垂直积分计算。这样还可以用于计算纬圈流函数。
+
+```
+v   = new((/nlev,nlat,nlon/),float)
+ps  = new((/nlev,nlat,nlon/),float)
+msf = new((/nlev,nlat/),float)
+
+;方案1
+msf   = zonal_mpsi_Wrap(v(::-1,:,:),v&lat,plev(::-1)*100,ps)
+msf_m = msf(::-1,:) 
+
+;方案2
+g  = 9.8 ;m/(s*s)
+a  = 6378388 ;the radius of earth, m
+pi = atan(1.0)*4
+lat  = vars&lat
+ptop = 0
+iopt = 0
+
+dp  := dpres_plevel(plev*100,ps,ptop,iopt)
+dpm = dim_avg_n(dp,2)
+v_m = dim_avg_n(v,2)
+do inl = 0, unlev-1, 1
+    msf_m(inl,:) = dim_sum_n(v_m(inl:nlev-1,:)*dpm(inl:nlev-1,:),0)
+    msf_m(inl,:) = msf_m(inl,:)*2*pi*cos(lat*pi/180.0)*a/g
+end do
+
+msf_m = msf_m/10^10
+copy_VarMeta(v(:,:,0),msf_m)
+```
 
