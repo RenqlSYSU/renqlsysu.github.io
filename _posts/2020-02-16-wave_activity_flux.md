@@ -9,6 +9,22 @@ author: renql
 * content
 {:toc}
 
+## 折射指数
+![](https://wx4.sinaimg.cn/large/006fa9Xlly1gc4xx7pcj1j30p30hp43v.jpg)
+
+在**折射指数为正**的区域，**波动传播**。   
+在**折射指数为负**的地方，**波动容易消散**。  
+且波动倾向于往正反射指数大的区域传播。  
+
+上面图a与图b分别显示的是不同情况下的纬向平均U风和折射指数的合成图。  
+**在high index时，急流强度减弱且变得更宽**，此时波动向赤道移动，离开了波动源（即eddy-driven jet区域），有利于产生eddy momentum fluxes，进而通过波流相互作用维持西风急流异常。  
+**在low index时，急流变窄且增强**，此时折射指数在波动源区达到最大，意味着波动难以离开波源，不利于eddy momentum fluxes的产生，使得波流相互作用减弱，难以维持西风急流异常。
+此时若计算两种情况下的eddy momentum fluxes，会发现high index的eddy momentum fluxes高于low index。该图也表明，**当急流过强时，它就像一个波导，减弱了波动的径向传播，波流相互作用减弱。**
+
+
+
+
+
 ## 瞬变涡旋诊断量意义
 1. **涡旋能量**是一个客观、具有物理动力意义的诊断量，包含**瞬变涡旋动能EKE**和**瞬变涡旋有效位能EAPE**。其中EKE可以直接反应涡旋环流变率，而EAPE则代表了与气象事件有关的温度波动。
 2. **EP通量**只能用于全球纬向平均的二维平面上，等于Rossby群速乘以波活动密度，其辐合辐散也代表局地波活动密度的增加减少。此外，其辐合辐散也可以代表由eddy贡献的纬向平均的径向位涡通量，在EP通量辐合处，有向南的异常位涡的异常输送。**由于EP通量可以表示波活动密度的传播，其中eddy heat flux与波活动的垂直通量成正比，因此可以用底层eddy heat flux来表征垂直波活动通量的变化。而时间平均的eddy动量通量散度的变化可能是因为地表向上的波活动通量减少或者从波源向外传播的波活动减弱。**
@@ -22,9 +38,9 @@ author: renql
 在一个斜压波的生命周期内，在**eddy初期**，有扰动温度通量，能量从平均有效位能向扰动有效位能转化。在**eddy后期**，扰动动量通量强，能量从扰动动能向平均动能转化，急流增强。
 
 下面是各诊断量的计算公式及效果图  
-![](https://wx4.sinaimg.cn/mw690/006fa9Xlly1gbx3bgpzpuj30tm0lswj5.jpg)
-![](https://wx2.sinaimg.cn/mw690/006fa9Xlly1gbx3b92r69j30qo04eacr.jpg)
-![](https://wx3.sinaimg.cn/mw690/006fa9Xlly1gbx3bkejpij30ph0k5gvj.jpg)
+![](https://wx4.sinaimg.cn/large/006fa9Xlly1gbx3bgpzpuj30tm0lswj5.jpg)
+![](https://wx2.sinaimg.cn/large/006fa9Xlly1gbx3b92r69j30qo04eacr.jpg)
+![](https://wx3.sinaimg.cn/large/006fa9Xlly1gbx3bkejpij30ph0k5gvj.jpg)
 
 参考来源：
 1. Gu, S., Zhang, Y., Wu, Q., & Yang, X.‐Q. ( 2018). The linkage between arctic sea ice and midlatitude weather: In the perspective of energy. Journal of Geophysical Research: Atmospheres, 123, 11,536– 11,550. https://doi.org/10.1029/2018JD028743  
