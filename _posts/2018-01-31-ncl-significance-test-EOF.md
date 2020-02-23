@@ -61,7 +61,7 @@ F统计值的计算方法如下：
 optEOF 		= True
 optEOF@jopt = 1 #1表示用相关矩阵计算EOFs，0表示用协方差矩阵计算EOFs（默认）
 neval		= n #计算前n个EOFs模态
-eof	        = eofunc_n_Wrap(data,neval,optEIF,dim) #计算data的前neval个空间模态
+eof	        = eofunc_n_Wrap(data,neval,optEOF,dim) #计算data的前neval个空间模态
 ```
 若输入的 data 为（time,nlat,nlon),则得到的为 eof(neval,nlat,nlon),且 eof 是标准化变量（每一空间模态的平方和=1），故空间模态的数值与变量本身的数值大小无关，即空间模态的数值本身无意义，一般只看其分布型。若想使其数值有意义，可通过乘上相应特征值的开方去标准化，对应的时间系数除以相应特征值的开方。
 
@@ -78,7 +78,7 @@ eof	        = eofunc_n_Wrap(data,neval,optEIF,dim) #计算data的前neval个空�
 
 ## 2、计算EOF各模态对应的时间系数 ##
 ```
-eof			= eofunc_n_Wrap(data,neval,optEIF,dim)
+eof			= eofunc_n_Wrap(data,neval,optEOF,dim)
 optETS		= True
 optETS@jopt = 1 #指使用标准化数据矩阵计算时间序列，默认使用输入的data和eof（此时可设为False）
 eof_ts		= eofunc_ts_n_Wrap(data,eof,optETS,dim) #计算与eof对应的时间序列
