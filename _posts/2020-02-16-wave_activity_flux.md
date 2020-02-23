@@ -10,7 +10,7 @@ author: renql
 {:toc}
 
 ## 折射指数
-![](https://wx4.sinaimg.cn/large/006fa9Xlly1gc4xx7pcj1j30p30hp43v.jpg)
+![](https://wx4.sinaimg.cn/mw690/006fa9Xlly1gc4xx7pcj1j30p30hp43v.jpg)
 
 在**折射指数为正**的区域，**波动传播**。   
 在**折射指数为负**的地方，**波动容易消散**。  
@@ -38,9 +38,9 @@ author: renql
 在一个斜压波的生命周期内，在**eddy初期**，有扰动温度通量，能量从平均有效位能向扰动有效位能转化。在**eddy后期**，扰动动量通量强，能量从扰动动能向平均动能转化，急流增强。
 
 下面是各诊断量的计算公式及效果图  
-![](https://wx4.sinaimg.cn/large/006fa9Xlly1gbx3bgpzpuj30tm0lswj5.jpg)
-![](https://wx2.sinaimg.cn/large/006fa9Xlly1gbx3b92r69j30qo04eacr.jpg)
-![](https://wx3.sinaimg.cn/large/006fa9Xlly1gbx3bkejpij30ph0k5gvj.jpg)
+![](https://wx4.sinaimg.cn/mw690/006fa9Xlly1gbx3bgpzpuj30tm0lswj5.jpg)
+![](https://wx2.sinaimg.cn/mw690/006fa9Xlly1gbx3b92r69j30qo04eacr.jpg)
+![](https://wx3.sinaimg.cn/mw690/006fa9Xlly1gbx3bkejpij30ph0k5gvj.jpg)
 
 参考来源：
 1. Gu, S., Zhang, Y., Wu, Q., & Yang, X.‐Q. ( 2018). The linkage between arctic sea ice and midlatitude weather: In the perspective of energy. Journal of Geophysical Research: Atmospheres, 123, 11,536– 11,550. https://doi.org/10.1029/2018JD028743  
