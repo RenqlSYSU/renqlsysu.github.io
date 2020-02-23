@@ -59,11 +59,35 @@ F统计值的计算方法如下：
 ## 1、计算EOF特征空间模态 ##
 ```
 optEOF 		= True
-optEOF@jopt = 1 #1表示用相关矩阵计算EOFs，0表示用协方差矩阵计算EOFs（默认）
+optEOF@jopt = 1    # 1表示用相关矩阵计算EOFs，0表示用协方差矩阵计算EOFs（默认）
+optEOF@pcrit= 50.0 # 0到100的浮点数
+# 用以表示某一点的时间序列中的非缺测值需要达到50%以上才能计算EOF，否则该点设为缺测。
+# 该值默认为50%。表明使用该函数可以有缺测。
+
 neval		= n #计算前n个EOFs模态
 eof	        = eofunc_n_Wrap(data,neval,optEOF,dim) #计算data的前neval个空间模态
+# 该函数中的data可以是多维数组，除dim维外，其他维均会参与EOF。
+
+# 假设现在有data(ntime,nlev,nlat,nlon)，若需要对每一层数据做EOF，则需要设置循环
+eof     = new((/nlev,neval,nlat,nlon/),float)
+eof_ts  = new((/nlev,neval,ntime/),float)
+pcvar   = new((/nlev,neval/),float)
+eval    = new((/nlev,neval/),float)
+ts_mean = new((/nlev,neval/),float)
+do nl = 0, nlev-1, 1
+    eof_temp	= eofunc_n_Wrap(data(:,nl,:,:),neval,optEOF,0)
+    eof_ts_temp = eofunc_ts_n_Wrap(data(:,nl,:,:),eof_temp,False,0) ;get the (neval,ntime)
+    sig         = eofunc_north(eof_temp@pcvar,ntime,True)
+    eof(nl,:,:,:)   = eof_temp                                 ;get the (nlev,neval,nlat,nlon) 
+    eof_ts(nl,:,:) = dim_standardize_n_Wrap(eof_ts_temp,1,1)   ;get the (nlev,neval,ntime)
+    pcvar(nl,:)    = eof_temp@pcvar
+    eval(nl,:)     = eof_temp@eval
+    ts_mean(nl,:)  = eof_ts_temp@ts_mean
+end do
 ```
 若输入的 data 为（time,nlat,nlon),则得到的为 eof(neval,nlat,nlon),且 eof 是标准化变量（每一空间模态的平方和=1），故空间模态的数值与变量本身的数值大小无关，即空间模态的数值本身无意义，一般只看其分布型。若想使其数值有意义，可通过乘上相应特征值的开方去标准化，对应的时间系数除以相应特征值的开方。
+
+为了提高计算效率，该函数可能会将输入的数组先转置再计算EOF，然后再对计算结果进行线性转化后输出
 
 同时，该函数还会以属性形式返回：**eval** 特征值（一维数组），**pcvar** 特征值方差贡献（一维数组）。某一模态的特征值即该模态所有格点的方差和（用某格点数值乘以时间系数再求方差，然后所有格点求和），所有特征值之和就是原始场所有格点的方差和。   
 此外，还有一个概念————**模态局地方差贡献**，就是某一模态在某个格点上的方差（用重构方法计算，不同格点的方差不同）对原始场该格点方差的比值。
