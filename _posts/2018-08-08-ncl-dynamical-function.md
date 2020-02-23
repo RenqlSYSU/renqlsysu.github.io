@@ -67,8 +67,8 @@ copy_VarMeta(vars,sf(0,0,:,:))
 # 三、经圈质量流函数 #  
 ![](https://image2.slideserve.com/4148663/slide12-n.jpg)    
 上图显示的是全球纬向平均的经圈质量流函数的推导过程，一般常用该流函数来研究Hadley环流。其具体计算方案及计算结果如下图所示。   
-![](https://wx2.sinaimg.cn/large/006fa9Xlly1gbycmhtxtwj30u10migqo.jpg)
-![](https://wx3.sinaimg.cn/large/006fa9Xlly1gbycmdte9lj30tz0ml4di.jpg)
+![](https://wx2.sinaimg.cn/mw690/006fa9Xlly1gbycmhtxtwj30u10migqo.jpg)
+![](https://wx3.sinaimg.cn/mw690/006fa9Xlly1gbycmdte9lj30tz0ml4di.jpg)
 
 综上，研究Hadley环流的诊断量有以下三种：   
 1. 利用径向风计算的全球纬向平均的经圈质量流函数，但它忽略了热带大气环流的区域多样性  
