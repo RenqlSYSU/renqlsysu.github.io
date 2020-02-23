@@ -57,11 +57,12 @@ F统计值的计算方法如下：
 
 # 计算EOF的函数 #
 ## 1、计算EOF特征空间模态 ##
-    optEOF 		= True
-    optEOF@jopt = 1 #1表示用相关矩阵计算EOFs，0表示用协方差矩阵计算EOFs（默认）
-    neval		= n #计算前n个EOFs模态
-    eof			= eofunc_n_Wrap(data,neval,optEIF,dim) #计算data的前neval个空间模态
-
+```
+optEOF 		= True
+optEOF@jopt = 1 #1表示用相关矩阵计算EOFs，0表示用协方差矩阵计算EOFs（默认）
+neval		= n #计算前n个EOFs模态
+eof	        = eofunc_n_Wrap(data,neval,optEIF,dim) #计算data的前neval个空间模态
+```
 若输入的 data 为（time,nlat,nlon),则得到的为 eof(neval,nlat,nlon),且 eof 是标准化变量（每一空间模态的平方和=1），故空间模态的数值与变量本身的数值大小无关，即空间模态的数值本身无意义，一般只看其分布型。若想使其数值有意义，可通过乘上相应特征值的开方去标准化，对应的时间系数除以相应特征值的开方。
 
 同时，该函数还会以属性形式返回：**eval** 特征值（一维数组），**pcvar** 特征值方差贡献（一维数组）。某一模态的特征值即该模态所有格点的方差和（用某格点数值乘以时间系数再求方差，然后所有格点求和），所有特征值之和就是原始场所有格点的方差和。   
@@ -76,11 +77,12 @@ F统计值的计算方法如下：
 - 当用原始数据计算EOF时，主要空间分布型反映了平均状况，就相当于平均值，因此很少用原始数据做EOF，故该函数中也无这一选项
 
 ## 2、计算EOF各模态对应的时间系数 ##
-    eof			= eofunc_n_Wrap(data,neval,optEIF,dim)
-    optETS		= True
-    optETS@jopt = 1 #指使用标准化数据矩阵计算时间序列，默认使用输入的data和eof（此时可设为False）
-    eof_ts		= eofunc_ts_n_Wrap(data,eof,optETS,dim) #计算与eof对应的时间序列
-
+```
+eof			= eofunc_n_Wrap(data,neval,optEIF,dim)
+optETS		= True
+optETS@jopt = 1 #指使用标准化数据矩阵计算时间序列，默认使用输入的data和eof（此时可设为False）
+eof_ts		= eofunc_ts_n_Wrap(data,eof,optETS,dim) #计算与eof对应的时间序列
+```
 若输入的 **data** 为 **(time,nlat,nlon)**, **eof(neval,nlat,nlon)**,则得到 **eof_ts（neval，time）** (减去均值后的值），同时以属性的形式返回 **ts_mean(neval)**,是 **eof_ts** 的均值
 
 一般可以用这个时间序列做突变检验、功率谱分析、小波分析、趋势分析、相关计算等等，以衡量该典型空间场的时间变化特征。
