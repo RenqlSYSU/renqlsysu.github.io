@@ -118,11 +118,18 @@ eof_ts		= eofunc_ts_n_Wrap(data,eof,optETS,dim) #计算与eof对应的时间序�
 一般可以用这个时间序列做突变检验、功率谱分析、小波分析、趋势分析、相关计算等等，以衡量该典型空间场的时间变化特征。
 
 ## 3、检验各模态的特征值是否显著与其他特征值分离 ##
-    sig		= eofunc_north(eval特征值，时间样本数，prinfo) #也可用特征值的方差贡献pcvar做检验
+``
+sig		= eofunc_north(eval特征值，时间样本数，prinfo) #也可用特征值的方差贡献pcvar做检验
+```
 
 **prinfo = True** 时，打印计算所得的 delta lambda、特征值、最低和最高界限以及分离的显著性
 
 输入的eval或者pcvar只能是一维数组，返回一维逻辑型数组，表示特征值是否显著与其他特征值分离
+
+基于North. et al (1982): Sampling Errors in the Estimation of Empirical Orthogonal Functions.的文章对EOF模态进行显著性检验。公式如下
+![](https://www.ncl.ucar.edu/Document/Functions/Images/north24.png)
+lambda是特征值，N是数据的有效自由度，delta lambda是特征值的误差，将特征值加上或减去delta lambda得到特征值的误差范围，若前后两个特征值的误差范围有重叠，那么这两个特征值没有通过显著性检验。  
+函数`eofunc_north`打印出的最后两个数据就是特征值误差范围的最低和最高界限。
 
 ## 4、其他
 EOF气象要素场重构的目的：  
