@@ -122,7 +122,7 @@ eof_ts		= eofunc_ts_n_Wrap(data,eof,optETS,dim) #计算与eof对应的时间序�
 sig		= eofunc_north(eval特征值，时间样本数，prinfo) #也可用特征值的方差贡献pcvar做检验
 ```
 
-**prinfo = True** 时，打印计算所得的 delta lambda、特征值、最低和最高界限以及分离的显著性
+**prinfo = True** 时，依次打印计算所得的 delta lambda、特征值误差范围的最低界限、特征值、特征值误差范围的最高界限以及分离的显著性
 
 输入的eval或者pcvar只能是一维数组，返回一维逻辑型数组，表示特征值是否显著与其他特征值分离
 
