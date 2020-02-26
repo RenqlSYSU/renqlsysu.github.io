@@ -15,6 +15,48 @@ author: renql
 ```
 
 # 显著性检验函数 #
+## 0、Student's t-distribution
+下面的相关系数检验与样本均值检验都用到了学生t分布，都是先计算t统计量，然后根据t分布的概率密度函数计算 a two-tailed probability (prob)，若prob小于0.01，则说明其通过99%的显著性检验。
+
+但当例如ncl的 `regCoef_n` 函数计算回归系数时，会将t统计量作为属性输出，此时若要对回归系数做显著性检验，就需要根据t统计量计算a two-tailed probability (prob)。
+
+t分布的概率密度函数是： ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/8b31572d6695ae230cbfb09a14d07aafb7a73587) ，其中参数v是自由度（一般等于样本数减2）。  
+T的概率密度函数的形状类似于均值为0方差为1的正态分布，但更低更宽。随着自由度的增加，则越来越接近均值为0方差为1的正态分布。
+
+a two-tailed probability等于将t分布的概率密度函数从负无穷积到-t值得积分值加上从t积到正无穷的积分值。如下图阴影区域所示。  
+![](https://www.itl.nist.gov/div898/handbook/eda/section3/gif/tpdftb.gif)  
+为此，ncl有两个函数来计算t统计值或probability。  
+
+```
+; Calculates the t-value given the one-sided probability and the degrees of freedom.
+     df = 16     ; t-value, 标量或数组
+     p  = 0.025  ; degrees of freedom, 标量或与t相同维数的数组
+     T = cdft_t(p, df)    ; T = -2.12
+     p  = 0.975
+     T = cdft_t(p, df)    ; T =  2.12
+
+; Calculates the one-sided probability given a t-value and the degrees of freedom.
+	t  = 2.12 ; t-value, 标量或数组
+	df = 16   ; degrees of freedom, 标量或与t相同维数的数组
+	P = cdft_p(-t, df)   ; P = 0.025  
+	P = cdft_p( t, df)   ; P = 0.975 
+	prob = 2*cdft_p(-t, df) ; a two-tailed probability
+```
+
+如果得到的t统计量是一个很大的数组且不确定其正负，此时可以用**不完全beta函数**计算。  
+![](https://wx3.sinaimg.cn/mw690/006fa9Xlly1gc9x820a8qj30fd07hglx.jpg)  
+```
+; betainc(x,a,b) calculates the incomplete beta function ratio, which is the probability 
+; that a random variable from a beta distribution having parameters a and b 
+; will be less than or equal to x.
+
+	t  = 2.12 ; t-value, 标量或数组
+	df = 16   ; degrees of freedom, 标量或与t相同维数的数组
+	prob = betainc( df/(df+t^2), df/2.0, 0.5)    ; prob=0.05
+
+; betainc中输入的三个参数的维数要相同。
+; 当输入的第一个参数有缺测时，得到的prob相应位置也是缺测
+```
 
 
 
