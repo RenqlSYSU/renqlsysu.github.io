@@ -36,14 +36,28 @@ If the user does not explicitly set initial values for seeds via `random_setalls
 4. 如果你每次调用srand()时都提供相同的种子值，那么，你将会得到相同的随机数序列   
 
 # 2 统计函数
+## 2.1 相关系数
+`esccr(x,y,mxlag) or cova = esccv(x,y,mxlag)` 计算x和y最右边维的交叉时滞相关或协方差，0 <= mxlag <= N/4。如果要算超前滞后相关，需要进行两次运算，如下所示：  
 ```
-;计算相关系数
-corr = esccr(c1, c2, mxlag)    ;Computes sample cross-correlations on the rightmost dimension
-cova = esccv(c1, c2, mxlag)    ;Computes sample cross-covariances on the rightmost dimension.
-auto_corr = esacr(c1, mxlag)   ;Computes sample auto-correlations on the rightmost dimension
-auto_cova = esacv(c1, mxlag)   ;Computes sample auto-covariances on the rightmost dimension
-；以上函数返回值的最右边维的数量变为（mxlag+1）
+mxlag    = 9
+x_Lead_y = esccr(x,y,mxlag)
+y_Lead_x = esccr(y,x,mxlag)    ; switch the order of the series
 
+ccr = new ( 2*mxlag+1, float)    
+ccr(0:mxlag-1) = y_Lead_x(1:mxlag:-1)  ; "negative lag", -1 reverses order
+ccr(mxlag:)    = x_Lead_y(0:mxlag)     ; "positive lag"
+```
+
+`escorc(x,y)`，只能计算Pearson同时线性交叉相关
+
+`run_cor(x,y,time,wSize)`,计算滑动相关。使用该函数需要调用一个脚本：  
+```
+load "$NCARG_ROOT/lib/ncarg/nclscripts/contrib/run_cor.ncl"
+```
+## 2.2 回归系数
+
+## 2.3 方差与标准化
+```
 ;序列标准化
 avar = dim_standardize_n(var,opt,dim) ;得到标准化序列，忽略缺测
 ;opt = 1 用the population standard deviation（除以不包含缺测的样本总数）计算
