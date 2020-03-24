@@ -45,6 +45,7 @@ a two-tailed probability等于将t分布的概率密度函数从负无穷积到-
 
 如果得到的t统计量是一个很大的数组且不确定其正负，此时可以用**不完全beta函数**计算。  
 ![](https://wx3.sinaimg.cn/mw690/006fa9Xlly1gc9x820a8qj30fd07hglx.jpg)  
+
 ```
 ; betainc(x,a,b) calculates the incomplete beta function ratio, which is the probability 
 ; that a random variable from a beta distribution having parameters a and b 
@@ -138,7 +139,7 @@ eof	 = eofunc_n_Wrap(data, neval, optEOF, dim)
 ```
 若输入的 data 为（time,nlat,nlon),则得到的为 eof(neval,nlat,nlon),且 eof 是标准化变量（每一空间模态的平方和=1），故空间模态的数值与变量本身的数值大小无关，即空间模态的数值本身无意义，一般只看其分布型。若想使其数值有意义，可通过乘上相应特征值的开方去标准化 `eof(ne,:,:) = eof(ne,:,:)*sqrt( eof@eval(ne) )  ; units same as data` ，对应的时间系数除以相应特征值的开方。
 
-同时，该函数还会以属性形式返回：**eval** 特征值（一维数组），**pcvar** 特征值方差贡献（一维数组）。某一模态的特征值即该模态所有格点的方差和（用某格点数值乘以时间系数再求方差，然后所有格点求和），所有特征值之和就是原始场所有格点的方差和。   
+同时，该函数还会以属性形式返回：**eval** 特征值（一维数组），**pcvar** 特征值方差贡献（一维数组）。某一模态的特征值即该模态所有格点的方差和（用某格点数值乘以时间系数再求方差，然后所有格点求和），所有特征值之和就是原始场所有格点的方差和，也是时间系数（主分量）的方差。   
 此外，还有一个概念————**模态局地方差贡献**，就是某一模态在某个格点上的方差（用重构方法计算，不同格点的方差不同）对原始场该格点方差的比值。
 
 用**原始数据**、**距平值**、**标准化变量**做EOF，得到的结果都不一样的。用相关矩阵计算EOFs得到的各模态特征值比用协方差矩阵计算得到的小很多，且两者的特征值方差贡献也完全不一样。一般ENSO的辨认是用距平值做EOF，也就是协方差矩阵。
