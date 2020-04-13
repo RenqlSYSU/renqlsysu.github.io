@@ -37,6 +37,9 @@ NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有
 3. 全球气象数据下载总结-CRU数据，ERA数据&NCEP-2数据 https://blog.csdn.net/Shirley_hetao/article/details/102954425
 4. python下载脚本中各参数的说明 https://confluence.ecmwf.int/display/UDOC/Identification+keywords#Identificationkeywords-param
 
+欧洲中心数据概览：
+![](http://q8pw4981h.bkt.clouddn.com/ERA_data.png)
+
 ## KNMI气候研究
 http://climexp.knmi.nl，可提供各气候系统指数
 
