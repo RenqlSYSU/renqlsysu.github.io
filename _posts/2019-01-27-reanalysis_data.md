@@ -38,7 +38,7 @@ NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有
 4. python下载脚本中各参数的说明 https://confluence.ecmwf.int/display/UDOC/Identification+keywords#Identificationkeywords-param
 
 欧洲中心数据概览：
-![](http://q8pw4981h.bkt.clouddn.com/ERA_data.png)
+![](https://s1.ax1x.com/2020/04/13/Gvm874.png)
 
 ## KNMI气候研究
 http://climexp.knmi.nl，可提供各气候系统指数
