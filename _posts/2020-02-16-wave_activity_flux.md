@@ -10,7 +10,7 @@ author: renql
 {:toc}
 
 ## 折射指数
-![](https://s1.ax1x.com/2020/04/13/GvA6bj.jpg)
+![](https://s1.ax1x.com/2020/04/13/GvA6bj.md.jpg)
 
 在**折射指数为正**的区域，**波动传播**。   
 在**折射指数为负**的地方，**波动容易消散**。  
@@ -46,9 +46,9 @@ author: renql
 在一个斜压波的生命周期内，在**eddy初期**，有扰动温度通量，能量从平均有效位能向扰动有效位能转化。在**eddy后期**，扰动动量通量强，能量从扰动动能向平均动能转化，急流增强。
 
 下面是各诊断量的计算公式及效果图  
-![](https://s1.ax1x.com/2020/04/13/GvAB28.jpg)
-![](https://s1.ax1x.com/2020/04/13/GvtZrj.jpg)
-![](https://s1.ax1x.com/2020/04/13/GvAsKg.jpg)
+![](https://s1.ax1x.com/2020/04/13/GvAB28.md.jpg)
+![](https://s1.ax1x.com/2020/04/13/GvtZrj.md.jpg)
+![](https://s1.ax1x.com/2020/04/13/GvAsKg.md.jpg)
 
 
 参考来源：
