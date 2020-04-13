@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "20180131 ncl显著性检验函数和EOF函数"
+title:  "ncl显著性检验函数和EOF函数"
 categories: ncl
 tags: copyVarMeta EOF sig_test
 author: renql
@@ -44,7 +44,7 @@ a two-tailed probability等于将t分布的概率密度函数从负无穷积到-
 ```
 
 如果得到的t统计量是一个很大的数组且不确定其正负，此时可以用**不完全beta函数**计算。  
-![](https://wx3.sinaimg.cn/mw690/006fa9Xlly1gc9x820a8qj30fd07hglx.jpg)  
+![](https://s1.ax1x.com/2020/04/13/GvAyrQ.jpg)  
 
 ```
 ; betainc(x,a,b) calculates the incomplete beta function ratio, which is the probability 
