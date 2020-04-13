@@ -29,6 +29,6 @@ author: renql
 load "$NCARG_ROOT/lib/ncarg/nclscripts/contrib/run_cor.ncl"
 ```
 
-![](https://wx1.sinaimg.cn/large/006fa9Xlly1g84mcjve3cj30r30esgod.jpg)
+![](https://s1.ax1x.com/2020/04/13/Gvm1nU.jpg)
 
 <a href="https://wenku.baidu.com/view/fdfece05a6c30c2259019eed.html" target="_blank">更详细版相关系数检验临界值表</a>
