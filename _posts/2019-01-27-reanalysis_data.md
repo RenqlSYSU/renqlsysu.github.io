@@ -31,9 +31,11 @@ NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有
 - TP的温度场和风场比**NECP-NCAR reanalysis**和**ERA-40**较准确 (WangMeiRong 2015, QBWO);  
 - 全球季风降水的气候态、长期趋势及年际变化的代表性都较好 (WangMeiRong 2015, QBWO);  
 
-数据介绍及批量下载方法：  
-http://blog.sciencenet.cn/blog-430991-888904.html  
-http://www.clarmy.net/2018/09/16/how-to-download-data-from-ecmwf-in-batch/  
+参考资料：
+1. ERA-Interim数据介绍 http://blog.sciencenet.cn/blog-430991-888904.html
+2. 批量下载ECMWF数据的正确姿势 http://www.clarmy.net/2018/09/16/how-to-download-data-from-ecmwf-in-batch/
+3. 全球气象数据下载总结-CRU数据，ERA数据&NCEP-2数据 https://blog.csdn.net/Shirley_hetao/article/details/102954425
+4. python下载脚本中各参数的说明 https://confluence.ecmwf.int/display/UDOC/Identification+keywords#Identificationkeywords-param
 
 ## KNMI气候研究
 http://climexp.knmi.nl，可提供各气候系统指数
