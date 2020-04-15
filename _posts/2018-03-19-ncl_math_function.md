@@ -63,6 +63,27 @@ load "$NCARG_ROOT/lib/ncarg/nclscripts/contrib/run_cor.ncl"
 <a href="https://wenku.baidu.com/view/fdfece05a6c30c2259019eed.html" target="_blank">更详细版相关系数检验临界值表</a>
 
 ## 2.2 回归系数
+利用 ` regCoef_n ( ts, vars, dim_ts, dim_vars ) ` 函数计算线性回归系数（利用最小二乘法），允许缺测，会将 t 统计量作为属性输出，此时若要对回归系数做显著性检验，就需要根据t统计量计算 a two-tailed probability (prob)，<a href="https://renqlsysu.github.io/2018/01/31/ncl-significance-test-EOF/#0students-t-distribution" target="_blank">关于该检验的具体介绍 </a>。   
+
+该函数会以属性形式返回四个参数：截距 **yintercept**, 用于显著性检验的t统计量 **tval**, 估计回归系数的标准误差 **rstd**， 样本数 **nptxy** 
+
+如果时间序列 ts 的单位为 K， 回归场 vars 的单位为 m，那么回归系数的单位是 m/k。该函数在计算回归系数前不会讲时间序列标准化，如果需要标准化，则需要作者自己处理。
+
+```
+; 数据维数介绍：ts(6,neval,nyear), vars(nyear,nlat,nlon), var(6,neval,nlat,nlon)
+var := regCoef_n(ts, vars, 2, 0) ;关于时间维做回归
+copy_VarCoords(vars(0,:,:), var(0,0,:,:))
+printVarSummary(var)
+
+; 回归系数的显著性检验
+tval  := onedtond(var@tval ,(/6,neval,nlat,nlon/)) ;t统计量
+df    := onedtond(var@nptxy,(/6,neval,nlat,nlon/)) ;样本数
+b = tval
+b = 0.5
+prob  := betainc( df/(df+tval^2), df/2.0, b )
+prob  := mask(prob,prob.lt.siglvl,True)
+copy_VarCoords(vars(0,:,:), prob(0,0,:,:))
+```
 
 ## 2.3 方差与标准化
 ```
