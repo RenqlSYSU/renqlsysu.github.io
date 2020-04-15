@@ -9,7 +9,8 @@ author: renql
 * content
 {:toc}
 
-整理ncl中的常用数学函数，如取整、平均、标准化
+整理ncl中的常用数学函数，如取整、平均、标准化  
+在ncl中进行计算时，注意缺测和小数。例如 `a=1/12344` 得到的结果是整数0，但如果是 `a=1.0/123456` 得到的则是浮点数，结果不为0.
 
 
 
@@ -47,6 +48,7 @@ ccr = new ( 2*mxlag+1, float)
 ccr(0:mxlag-1) = y_Lead_x(1:mxlag:-1)  ; "negative lag", -1 reverses order
 ccr(mxlag:)    = x_Lead_y(0:mxlag)     ; "positive lag"
 ```
+`esacr(x,mxlag)` ，计算时滞自相关系数
 
 `escorc(x,y)`，只能计算Pearson同时线性交叉相关
 
@@ -54,6 +56,12 @@ ccr(mxlag:)    = x_Lead_y(0:mxlag)     ; "positive lag"
 ```
 load "$NCARG_ROOT/lib/ncarg/nclscripts/contrib/run_cor.ncl"
 ```
+<a href="https://renqlsysu.github.io/2018/01/31/ncl-significance-test-EOF/#1%E6%A3%80%E9%AA%8C%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%BE%E8%91%97" target="_blank">相关系数的检验</a>
+
+![](https://s1.ax1x.com/2020/04/13/Gvm1nU.jpg)
+
+<a href="https://wenku.baidu.com/view/fdfece05a6c30c2259019eed.html" target="_blank">更详细版相关系数检验临界值表</a>
+
 ## 2.2 回归系数
 
 ## 2.3 方差与标准化
