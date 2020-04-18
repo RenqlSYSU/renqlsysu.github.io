@@ -24,7 +24,7 @@ times daily format and as daily averages.
 NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有24小时的，也有月平均的数据，另外NECP2 的数据一般都是short类型。
 
 ## 1.3 ERA-Interim
-全称：European Centre for Medium-Range Weather Forecasts (ECMWF) interim reanalysis
+全称：European Centre for Medium-Range Weather Forecasts (ECMWF) Interim Re-Analysis
 有subdaily，daily，monthly，   
 
 优点：  
