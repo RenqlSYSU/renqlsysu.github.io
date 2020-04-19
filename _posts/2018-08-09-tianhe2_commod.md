@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 天河的登录注意点与作业提交方式
-categories: 模式学习
-tags: 天河 编程语法 
+title: 天河登录注意点与作业提交方式
+categories: 模式学习 linux
+tags: 天河
 author: renql
 ---
 
