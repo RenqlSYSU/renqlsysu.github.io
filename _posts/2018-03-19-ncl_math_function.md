@@ -121,7 +121,8 @@ round(values,opt)  ;Rounds a float or double variable to the nearest whole numbe
 
 # 4 标记函数
 ```
-  x = mask(y, y.lt.100,False)   ;会得到一个和y数组一样大小的x数组，x中相应位置上的y数值若小于100会被设为缺测值，若大于100则是y中该数字
-  x = mask(y, y.lt.100,True )   ;与上例相同，只是此时是数值大于100的被设为缺测值
+  x = mask(y, y.lt.100,False)   ;会得到一个和y数组一样大小的x数组，x中相应位置上的y数值若小于100会被设为缺测值，若大于100则是y中该数字。
+  x = mask(y, y.lt.100,True )   ;与上例相同，只是此时是数值大于100的被设为缺测值。
 ```
+`mask` 函数最后一个逻辑值为False，表示保留逻辑运算为False的数字。True则为保留逻辑运算为True的数字
 
