@@ -71,7 +71,15 @@ new_var = vinth2p(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp) ;1没有�
 ;ps,地面气压，单位Pa，与var有相同的维度，CESM输出的PS的单位正好为Pa
 ;intyp,代表插值方法，1=linear，2=log，3=loglog，一般取为2
 ;p0，参考地面气压，单位mb，一般为1000mb
-;extrp为False时，当plev超出ps时不采用外推插值，一般设为Fasle
+;extrp为False时，当plev超出ps时不采用外推插值。为True时，则会将地表以下的数值也插值。
+
+new_var = vinth2p_ecmwf(var, hbcofa, hbcofb, plev, ps, intyp, p0, 1, extrp, varflg, tbot, phis) 
+;当extrp=False时，该函数同vinth2p，都是将CESM模式的混合坐标插值到气压坐标上。
+;当extrp=True时，会利用ECMWF的公式来插值地表以下温度和气压，而其他变量则同模式最底层的值。
+;比vinth2p多了三个参数varflg, tbot, phis，用来设置插值地表以下数值时需要用到的变量
+;varflg, 1 表明插值的变量是温度, -1是位势高度, 0 表示插值的是其他变量。
+;tbot维数同地表气压ps，表示最底层的温度 T(:,0,:,:)。只有当 varflg=-1时才会用到该变量，但任何情况下都要提供该变量
+;phis，地表位势高度（m^2/sec^2）最右边两维同地表气压ps
 ```
 但之前在用这个函数时，好像并没有特别注意方向问题，var，hyam，hybm都是读出来就直接用于计算了，并没有检查其方向，plev也是从下到上。  
 目前没有出现过问题说明这个应该没有问题。  
