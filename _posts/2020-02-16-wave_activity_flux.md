@@ -2,7 +2,7 @@
 layout: post
 title: 瞬变涡旋诊断量
 categories: ncl 大气科学
-tags: 诊断量
+tags: 诊断量 eddy
 author: renql
 ---
 
