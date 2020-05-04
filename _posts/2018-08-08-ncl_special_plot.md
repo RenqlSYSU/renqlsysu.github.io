@@ -27,10 +27,18 @@ plot = gsn_contour_shade(plot, lowval, highval, res )  ;lowval和highval都是�
 ```
 ## 只画通过显著性检验的数据
 ```
-var(var,prob.lt.siglvl,True) ;prob是统计概率值，维数与var相同，若siglvl为0.05，则未通过95%显著性检验的数据将被设置为缺测值
+var = mask(var,prob.lt.siglvl,True) ;prob是统计概率值，维数与var相同，若siglvl为0.05，则未通过95%显著性检验的数据将被设置为缺测值
 ```
 
 在用prob画显著性区域时，一定要先设置prob的lat和lon坐标，否则显著性区域会与实际不符 ``` copy_VarMate(var,prob) ```
+
+画风场时，一般认为径向风和纬向风中只要有一个方向通过显著性检验则认为过检。若要在全风场中将过检验的矢量换一种颜色表示，可以将过显著的风和没过显著的风分开画   
+```
+u_unsig = mask(u,((probu.lt.siglvl).or.(probv.lt.siglvl)),False) ;保留没过显著的风
+v_unsig = mask(u,((probu.lt.siglvl).or.(probv.lt.siglvl)),False)
+u_sig = mask(u,((probu.lt.siglvl).or.(probv.lt.siglvl)),True) ;保留过显著的风
+v_sig = mask(u,((probu.lt.siglvl).or.(probv.lt.siglvl)),True)
+```
 
 ## 负值等值线和正值等值线线型颜色不同 ##
 ```
