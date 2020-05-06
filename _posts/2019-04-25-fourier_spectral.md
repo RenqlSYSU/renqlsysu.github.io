@@ -125,7 +125,7 @@ ncl中的滤波主要有三种：
 bw_bandpass_filter ( x, fca, fcb, opt, dims )  
 - x是需要滤波的数据列，可以是多维数组  
 - fca和fcb是滤波范围，一般是时间段的倒数，且两个都必须要小于0.5，按理来说fcb要大于fca，但大小关系反一下问题也不大
-- opt是选项，默认情况下是用6阶滤波（opt@m=6），时间间隔为1（opt@dt=1），减去平均值（opt@remove_mean=True），输出滤波后的时间序列（opt@return_filtered=True），不输出滤波后的波包（opt@return_envelope=True）
+- opt是选项，默认情况下是用6阶滤波（opt@m=6），时间间隔为1（opt@dt=1），减去平均值（opt@remove_mean=True），输出滤波后的时间序列（opt@return_filtered=True），不输出滤波后的波包（opt@return_envelope=False）
 
 不能处理含有缺测值的数据
 
