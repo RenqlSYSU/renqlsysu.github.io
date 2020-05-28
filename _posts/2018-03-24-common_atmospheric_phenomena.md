@@ -54,8 +54,6 @@ The loading pattern of the AO is defined as the leading mode of Empirical Orthog
 - 影响西北太平洋和北大西洋的台风生成  
 ![](https://www.climate.gov/sites/default/files/styles/inline_all/public/MJOfig1.png?itok=v0KBslE6)
 
-# AMO
-
 # Northern Annular Mode (NAM) 北半球环状模
 
 # Atlantic Multidecadal Oscillation (AMO) 大西洋多年代际振荡
