@@ -46,7 +46,7 @@ create_newcase -case $CASENAME -compset B1850CN -res f19_g16 -mach yellowstone
 <a href="http://www.cesm.ucar.edu/models/cesm1.2/cesm/doc/modelnl/env_run.html" target="_blank">env_run.xml variables 超链接</a>
 
 在env_run.xml中也可设置积分步长，不过是通过设置**ATM_NCPL**值来决定积分步长（dtime）。    
-ATM_NCPL in env_run.xml specifies the number of coupling intervals per day between the atmosphere/land and the coupled system. Based on ATM_NCPL, the scripts will automa4cally compute the 4mestep for the atmosphere and land (DTIME) and populate the namelist files accordingly.  
+ATM_NCPL in env_run.xml specifies the number of coupling intervals per day between the atmosphere/land and the coupled system. Based on ATM_NCPL, the scripts will automatically compute the timestep for the atmosphere and land (DTIME) and populate the namelist files accordingly.  
 
 ## 4. setup ##
 ```bash
