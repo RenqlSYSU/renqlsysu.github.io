@@ -85,9 +85,11 @@ theta_e = pot_temp_equiv(pres_Pa, temp_K, water, dim, humVarType)
 ```
 sopt = 1
 s1   = static_stability(press_Pa, temp_K, dim, sopt)
-S1_s     = S1[0]   ; explicitly extract each variable from the list
-S1_pt    = S1[1]   ; not necessary but clearer
-S1_dthdp = S1[2]
+
+; explicitly extract each variable from the list
+S1_s     = S1[0]   ; static stability
+S1_pt    = S1[1]   ; theta
+S1_dthdp = S1[2]   ; d(theta)dp
 
 ;The dimension of temp_K which corresponds to pres_Pa
 ;sopt=0, Return static stability only
