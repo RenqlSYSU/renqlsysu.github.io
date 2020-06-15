@@ -27,6 +27,8 @@ NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有
 全称：European Centre for Medium-Range Weather Forecasts (ECMWF) Interim Re-Analysis
 有subdaily，daily，monthly，   
 
+由于该机构位于欧洲，因此这里的中心只能用英式英语的centre，不能用美式英语的center
+
 优点：  
 - TP的温度场和风场比**NECP-NCAR reanalysis**和**ERA-40**较准确 (WangMeiRong 2015, QBWO);  
 - 全球季风降水的气候态、长期趋势及年际变化的代表性都较好 (WangMeiRong 2015, QBWO);  
