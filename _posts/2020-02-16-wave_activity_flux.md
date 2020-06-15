@@ -24,7 +24,7 @@ author: renql
 
 
 
-## eddy的几种计算：
+## eddy的几种计算
 1. 逐日数据减去**当年季节平均**或**当年月平均**，这样处理的异常包含2-90天或2-30天的瞬变波动  
 2. 逐日数据减去**气候态季节平均**或**气候态月平均**，或者**气候态逐日年循环**（用气候态年平均值+气候态逐日年循环的前四个Fourier谐波分量）。这样的瞬变异常中可能还包含年际异常，但该异常与瞬变异常相比较弱很多。也包含高低频瞬变波动  
 3. 2-10天或2-7天滤波得到高频天气尺度瞬变，10-90天滤波得到低频波动。该滤波可以基于原始数据（滤波时会减去平均值），或者方法1方法2计算得到的anomaly
@@ -54,6 +54,54 @@ author: renql
 参考来源：
 1. Gu, S., Zhang, Y., Wu, Q., & Yang, X.‐Q. ( 2018). The linkage between arctic sea ice and midlatitude weather: In the perspective of energy. Journal of Geophysical Research: Atmospheres, 123, 11,536– 11,550. https://doi.org/10.1029/2018JD028743  
 2. 贺海晏 2010年 《动力气象学》 第十章
+
+## Eady growth rate
+**Eady growth rate** 是斜压最不稳定模态的线性增长速率，是衡量斜压性或涡旋增长速率的一个常用指标，从Eady model (1949) 推导出来。其倒数一般与中纬度气旋的特征生命长度相吻合。其数值大小**与静力稳定度成反比**，**与纬向风速的垂直切变即径向温度梯度成正比**。
+
+ncl有直接计算该诊断量的函数 `eady_growth_rate (th, uwnd, hgt, lat, opt, lev_dim)` ，但只适用于 ncl6.4.0版本及其以后，其计算公式如下：
+
+```
+eady_growth_rate = 0.3098*g*abs(f)*abs(du/dz)/N  
+
+N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere
+```
+
+![](http://glossary.ametsoc.org/w/images/thumb/f/fa/Brunt_V_final.png/170px-Brunt_V_final.png)
+
+由于**Eady growth rate**是一个非线性量，因此不能用月平均或年平均的量来直接计算。如果需要气候态的**EGR**，需要先用高频的变量（例如逐3h，逐6h，daily）来计算**EGR**，然后再算气候态。
+
+发现用ncl的函数计算EGR和自己编程计算得到的对流层底层EGR结果类似，但高层自己编程写的大很多。
+
+```
+; 用ncl自带的函数 eady_growth_rate 计算
+
+opt = 0 ;opt=0, Return the Eady growth rate
+;opt=1, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz)
+;opt=2, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz) and the Brunt-Vaisala frequency
+
+lev_dim = 1
+lat = conform(air,vars&lat,2)
+hgt = hgt/9.8 ;convert unit from m2/s2 to m
+th  = pot_temp(lev*100, air, lev_dim, False) ；calc potential temperature
+EGR = eady_growth_rate(th, uwnd, hgt, lat, opt, lev_dim)
+
+
+
+; 根据公式自己写，结果几乎一样，表明 the Brunt-Vaisala frequency of atmosphere 与静力稳定度的计算类似。
+lev_dim = 1
+lat = conform(air,vars&lat,2)
+pi = atan(1.0)*4
+f0  = 2*(2*pi/24.0/3600.0)*sin(lat*pi/180.0)
+
+static = static_stability(lev*100, air, lev_dim, 0)
+static = conform(air,dim_avg_n(static,0),(/1,2,3/))
+static = where(abs(static).lt.0.0000000001, 0.000001, static)
+
+opt    = 0     ;used by center_finite_diff_n, no meanging
+cyclic = False ;used by center_finite_diff_n
+hgt = hgt/9.8 ;convert unit from m2/s2 to m
+EGR  = 0.3098*(f0/static)*center_finite_diff_n(uwnd, hgt, cyclic, opt, lev_dim)
+```
 
 ## 波活动通量算法参考
 Nowadays，I am studying how to calculate the wave activity flux by ncl and the its theory as well as its hypothesis.   
