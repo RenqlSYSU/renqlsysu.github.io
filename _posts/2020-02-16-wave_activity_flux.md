@@ -56,14 +56,15 @@ author: renql
 2. 贺海晏 2010年 《动力气象学》 第十章
 
 ## Eady growth rate
-**Eady growth rate** 是斜压最不稳定模态的线性增长速率，是衡量斜压性或涡旋增长速率的一个常用指标，从Eady model (1949) 推导出来。其倒数一般与中纬度气旋的特征生命长度相吻合。其数值大小**与静力稳定度成反比**，**与纬向风速的垂直切变即径向温度梯度成正比**。
+**Eady growth rate** 是斜压最不稳定模态的线性增长速率，是衡量斜压性或涡旋增长速率的一个常用指标，从Eady model (1949) 推导出来。其量级一般在 3x10^-6 s^-1 倒数一般与中纬度气旋的特征生命长度相吻合。其数值大小**与静力稳定度成反比**，**与纬向风速的垂直切变即径向温度梯度成正比**。
 
 ncl有直接计算该诊断量的函数 `eady_growth_rate (th, uwnd, hgt, lat, opt, lev_dim)` ，但只适用于 ncl6.4.0版本及其以后，其计算公式如下：
 
 ```
 eady_growth_rate = 0.3098*g*abs(f)*abs(du/dz)/N  
 
-N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere
+N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere，
+;也有文章认为这是大气静力稳定度，N^2 的量级 10^-4 s^-1
 ```
 
 ![](http://glossary.ametsoc.org/w/images/thumb/f/fa/Brunt_V_final.png/170px-Brunt_V_final.png)
@@ -77,7 +78,8 @@ N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere
 
 opt = 0 ;opt=0, Return the Eady growth rate
 ;opt=1, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz)
-;opt=2, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz) and the Brunt-Vaisala frequency
+;opt=2, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz) 
+;        and the Brunt-Vaisala frequency
 
 lev_dim = 1
 lat = conform(air,vars&lat,2)
