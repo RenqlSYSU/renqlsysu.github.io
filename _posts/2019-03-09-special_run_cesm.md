@@ -19,6 +19,9 @@ author: renql
 但是上述两种操作，都需要有restart file（文件名中带有“.r.”）。restart files的输出用 **REST_OPTION** 和 **REST_N** 来设置。因此如果模式运行所需时间较长，最好设置这两项，防止因断电等不可抗因素使模式运行到一半中断后需要重头积分。
 **Restart files** allow the model to stop and then start again with **bit-for-bit** exact capability (i.e. the model output is exactly the same as if it had never been stopped).
 
+用`CONTINUE_RUN = TRUE`继续跑一个模式时，输出的信息：  
+![](https://s1.ax1x.com/2020/07/01/NT18ET.png)
+
 若在继续积分的同时，需要修改计算的节点数，则需要修改 **env_mach_pes.xml** 中的 **NTASKS**等参数，可以直接从其他case中复制相应的 **env_mach_pes.xml**，但随后需要做如下操作，才会生效  
 ```bash
 ./cesm_setup -clean
