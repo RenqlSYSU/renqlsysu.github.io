@@ -56,26 +56,35 @@ author: renql
 2. 贺海晏 2010年 《动力气象学》 第十章
 
 ## Eady growth rate
-**Eady growth rate** 是斜压最不稳定模态的线性增长速率，是衡量斜压性或涡旋增长速率的一个常用指标，从Eady model (1949) 推导出来。其量级一般在 3x10^-6 s^-1 倒数一般与中纬度气旋的特征生命长度相吻合。其数值大小**与静力稳定度成反比**，**与纬向风速的垂直切变即径向温度梯度成正比**。
+**Eady growth rate** 是斜压最不稳定模态的线性增长速率，单位：**1/s**，也可转换为 **1/day**，是衡量斜压性或涡旋增长速率的一个常用指标，从Eady model (1949) 推导出来。其量级一般在 3x10^-6 s^-1 倒数一般与中纬度气旋的特征生命长度相吻合。其数值大小**与静力稳定度成反比**，**与纬向风速的垂直切变即径向温度梯度成正比**。
 
 ncl有直接计算该诊断量的函数 `eady_growth_rate (th, uwnd, hgt, lat, opt, lev_dim)` ，但只适用于 ncl6.4.0版本及其以后，其计算公式如下：
 
 ```
 eady_growth_rate = 0.3098*g*abs(f)*abs(du/dz)/N  
 
-N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere，
-;也有文章认为这是大气静力稳定度，N^2 的量级 10^-4 s^-1
+N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere，also called buoyancy frequency
+;当气块受到垂直扰动时，该气块振荡的频率，可以用来衡量稳定度
+;当N**2大于0时，大气稳定；N**2小于0时，大气不稳定；N**2等于0时，大气中性
+;大气重力内波的频率一般不会超过 local Brunt–Väisälä frequency
+;也有文章认为这是大气静力稳定度，但个人觉得两者还是有些差别的，
+;首先静力稳定度的单位是K/Pa，而N**2的单位是 s^-2
+;N^2 的量级 10^-4 s^-2
+
+;ncl有专门的计算Brunt-Vaisala frequency的函数
+brunt = brunt_vaisala_atm(th, hgt, opt, ndim)
+;hgt的单位是m，输出的结果是N（单位：1/s）
 ```
 
 ![](http://glossary.ametsoc.org/w/images/thumb/f/fa/Brunt_V_final.png/170px-Brunt_V_final.png)
+![](http://glossary.ametsoc.org/w/images/c/c0/Ams2001glos-Be26.gif)
 
 由于**Eady growth rate**是一个非线性量，因此不能用月平均或年平均的量来直接计算。如果需要气候态的**EGR**，需要先用高频的变量（例如逐3h，逐6h，daily）来计算**EGR**，然后再算气候态。
 
-发现用ncl的函数计算EGR和自己编程计算得到的对流层底层EGR结果类似，但高层自己编程写的大很多。
+发现用ncl的函数计算EGR和自己编程计算得到的对流层底层EGR结果类似。若用静力稳定度代替浮力频率，则高层EGR会大很多。
 
 ```
 ; 用ncl自带的函数 eady_growth_rate 计算
-
 opt = 0 ;opt=0, Return the Eady growth rate
 ;opt=1, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz)
 ;opt=2, Return the Eady growth rate and the vertical gradient of the zonal wind (du/dz) 
@@ -89,20 +98,23 @@ EGR = eady_growth_rate(th, uwnd, hgt, lat, opt, lev_dim)
 
 
 
-; 根据公式自己写，结果几乎一样，表明 the Brunt-Vaisala frequency of atmosphere 与静力稳定度的计算类似。
+; 根据公式自己写，结果几乎一样
 lev_dim = 1
 lat = conform(air,vars&lat,2)
 pi = atan(1.0)*4
 f0  = 2*(2*pi/24.0/3600.0)*sin(lat*pi/180.0)
 
-static = static_stability(lev*100, air, lev_dim, 0)
-static = conform(air,dim_avg_n(static,0),(/1,2,3/))
-static = where(abs(static).lt.0.0000000001, 0.000001, static)
+;static = static_stability(lev*100, air, lev_dim, 0)
+;static = conform(air,dim_avg_n(static,0),(/1,2,3/))
+;static = where(abs(static).lt.0.0000000001, 0.000001, static)
+
+hgt   = hgt/9.8 ;convert unit from m2/s2 to m
+theta = pot_temp(lev*100, air, lev_dim, opt)
+brunt = brunt_vaisala_atm(theta, hgt, opt, lev_dim)
 
 opt    = 0     ;used by center_finite_diff_n, no meanging
 cyclic = False ;used by center_finite_diff_n
-hgt = hgt/9.8 ;convert unit from m2/s2 to m
-EGR  = 0.3098*(f0/static)*center_finite_diff_n(uwnd, hgt, cyclic, opt, lev_dim)
+EGR  = 0.3098*(f0/brunt)*center_finite_diff_n(uwnd, hgt, cyclic, opt, lev_dim)
 ```
 
 ## 波活动通量算法参考
