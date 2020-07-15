@@ -16,7 +16,7 @@ author: renql
 ## ncl中关于缺测的处理
 ncl中的缺测值用 var@_FillValue 表示。
 ```
-;缺测值赋值，气象中常用的缺测值还有-999
+;缺测值赋值，气象中常用的缺测值还有-999，9.969209968386869e+36，9.96921e+36
 if (any(brunt.eq.0)) then
    if (.not.isatt(brunt,"_FillValue")) then
       if (typeof(brunt).eq."double") then
