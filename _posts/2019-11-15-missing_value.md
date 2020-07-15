@@ -16,6 +16,19 @@ author: renql
 ## ncl中关于缺测的处理
 ncl中的缺测值用 var@_FillValue 表示。
 ```
+;缺测值赋值，气象中常用的缺测值还有-999
+if (any(brunt.eq.0)) then
+   if (.not.isatt(brunt,"_FillValue")) then
+      if (typeof(brunt).eq."double") then
+         brunt@_FillValue = 1d20
+      else
+         brunt@_FillValue = 1e20
+      end if
+   end if
+   brunt = where(brunt.eq.0, brunt@_FillValue, brunt)
+end if
+
+
 b = ismissing(a) ;当数组a中含有缺测值时，相应位置就会返回 True
 c = where( ismissing(a), 0, a ) ;把数组a中的缺测值用0代换
 c = where( a.eq.a@_FillValue, 0, a )  ;按理来说效果同上，但实践证明这样不行
