@@ -61,7 +61,7 @@ author: renql
 ncl有直接计算该诊断量的函数 `eady_growth_rate (th, uwnd, hgt, lat, opt, lev_dim)` ，但只适用于 ncl6.4.0版本及其以后，其计算公式如下：
 
 ```
-eady_growth_rate = 0.3098*g*abs(f)*abs(du/dz)/N  
+eady_growth_rate = 0.3098*abs(f)*abs(du/dz)/N  
 
 N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere，also called buoyancy frequency
 ;当气块受到垂直扰动时，该气块振荡的频率，可以用来衡量稳定度
