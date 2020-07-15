@@ -74,15 +74,19 @@ N**2 = g[d(lnθ)/dz] ;the Brunt-Vaisala frequency of atmosphere，also called bu
 ;ncl有专门的计算Brunt-Vaisala frequency的函数
 brunt = brunt_vaisala_atm(th, hgt, opt, ndim)
 ;hgt的单位是m，输出的结果是N（单位：1/s）
+;opt=0, Return only the Brunt-Vaisala frequency as a regular variable.
+;opt=1, Return the Brunt-Vaisala frequency and d(theta)/dz
+;但用该函数计算得到的N可能为负，但这是不可能的，所以需要用下面的函数判断一下
+brunt = where(brunt.lt.0.00000000001,0.00001,brunt)
 ```
 
 ![](http://glossary.ametsoc.org/w/images/thumb/f/fa/Brunt_V_final.png/170px-Brunt_V_final.png)
 ![](http://glossary.ametsoc.org/w/images/c/c0/Ams2001glos-Be26.gif)
+![](https://s1.ax1x.com/2020/07/15/Uaz3HP.md.png)
 
 由于**Eady growth rate**是一个非线性量，因此不能用月平均或年平均的量来直接计算。如果需要气候态的**EGR**，需要先用高频的变量（例如逐3h，逐6h，daily）来计算**EGR**，然后再算气候态。
 
-发现用ncl的函数计算EGR和自己编程计算得到的对流层底层EGR结果类似。若用静力稳定度代替浮力频率，则高层EGR会大很多。
-
+发现用ncl的函数计算EGR和自己编程计算得到的对流层底层EGR结果类似。
 ```
 ; 用ncl自带的函数 eady_growth_rate 计算
 opt = 0 ;opt=0, Return the Eady growth rate
@@ -106,11 +110,12 @@ f0  = 2*(2*pi/24.0/3600.0)*sin(lat*pi/180.0)
 
 ;static = static_stability(lev*100, air, lev_dim, 0)
 ;static = conform(air,dim_avg_n(static,0),(/1,2,3/))
-;static = where(abs(static).lt.0.0000000001, 0.000001, static)
+;static = where(static.lt.0.0000000001, 0.000001, static)
 
 hgt   = hgt/9.8 ;convert unit from m2/s2 to m
 theta = pot_temp(lev*100, air, lev_dim, opt)
-brunt = brunt_vaisala_atm(theta, hgt, opt, lev_dim)
+brunt = brunt_vaisala_atm(theta, hgt, 0, lev_dim)
+brunt = where(brunt.lt.0.00000000001,0.00001,brunt)
 
 opt    = 0     ;used by center_finite_diff_n, no meanging
 cyclic = False ;used by center_finite_diff_n
