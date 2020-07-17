@@ -16,15 +16,18 @@ author: renql
 位温的垂直分布：在对流层内，一般大气的垂直减温率小于干绝热减温率，所以位温随高度增加而增加。
 
 未饱和湿空气的位温计算公式：  
-![](https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/a2cc7cd98d1001e9769209b0bc0e7bec55e797e6.jpg)
-![](https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/79f0f736afc37931c2c29e96efc4b74542a911e2.jpg)
+![](https://bkimg.cdn.bcebos.com/formula/49e8570d7afca501a865e6831de84f0d.svg)
 
 ncl的计算：
 ```
 opt   = False
 theta = pot_temp(pres_Pa, temp_K, dim, opt)
-;The dimension of temp_K which corresponds to pres_Pa
+;dim, The dimension of temp_K which corresponds to pres_Pa
+;pres_Pa的单位用Pa
 ;opt这个选项目前还没有开发到，直接设为 False
+
+;计算公式：theta = temp_K*(p0/conform(temp_K,pres_Pa,dim))^0.286
+;p0=100000.0
 ```
 使用该函数的时候，记得检查各变量的单位，必须使用函数要求的单位（Pa和K）。
 
