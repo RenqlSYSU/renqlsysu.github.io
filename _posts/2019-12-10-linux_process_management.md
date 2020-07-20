@@ -49,6 +49,7 @@ nohup command > myout.file 2>&1 &
 screen -dmS session_name # 建立一个一开始便处于断开模式下的会话（-S 表示创建screen会话时为会话指定一个名字）
 screen -r session_name # 重新连接指定会话
 screen -d session_name # 断开其他正在运行的screen会话
+screen -S session_name -X quit # 删除一个会话
 
 screen -list # 列出所有会话名、状态
 screen -wipe # 会清除会话状态为 dead 的会话
