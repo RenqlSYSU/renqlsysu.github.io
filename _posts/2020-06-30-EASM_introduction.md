@@ -91,7 +91,7 @@ EASM的温带斜压性在梅雨降水最大值的锋面上表现得很明显。*
 
 为了解决这些问题，该文对中国东部异常强的季风南风时间进行了超前滞后的合成分析。
 
-## Chen et al,2016, Impacts of Anomalous Midlatitude Cyclone Activity over East Asia during Summer on the Decadal Mode of EASM
+## Chen et al,2017, Impacts of Anomalous Midlatitude Cyclone Activity over East Asia during Summer on the Decadal Mode of EASM
 第一段简要描述了东亚夏季风的年代际变化情况.
 
 尽管在理解EASM的变化方面取得了重大进展，但由于其内在的复杂性，其机制仍远未被充分理解。**EASM不仅受到热带和副热带季风环流的影响，同时也受中高纬度环流及相关冷空气活动的影响**。从外部大气强迫的角度来看，气候系统的其他组成部分(如海洋和陆地表面)也与EASM变率密切相关。
