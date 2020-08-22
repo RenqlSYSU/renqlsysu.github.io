@@ -2,7 +2,7 @@
 layout: post
 title:  github博客搭建过程
 categories: 杂学
-tags:  linux github
+tags:  博客
 author: renql
 ---
 
