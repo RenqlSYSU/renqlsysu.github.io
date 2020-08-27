@@ -126,7 +126,7 @@ EGR  = 0.3098*(f0/brunt)*center_finite_diff_n(uwnd, hgt, cyclic, opt, lev_dim)
 ```
 
 ## 波活动通量算法参考
-Nowadays，I am studying how to calculate the wave activity flux by ncl and the its theory as well as its hypothesis.   
+Nowadays，I am studying how to calculate the wave activity flux by ncl and its theory as well as its hypothesis.   
 
 Recommended by classmate，there is <a href="http://www.atmos.rcast.u-tokyo.ac.jp/nishii/programs/index.html" target="_blank">a website introducing the algorithm and procedure</a>.  
 
@@ -157,7 +157,7 @@ pi = atan(1.0)*4.
 coslat = cos(lat(:)*pi/180.)
 ```
 
-准定常波活动通量的激发源主有三个：  
+准定常波活动通量的激发源主要有三个：  
 1. 大地形扰动  
 2. 绝热加热  
 3. 与瞬变涡流相互作用，导致热量和动量的传输 
