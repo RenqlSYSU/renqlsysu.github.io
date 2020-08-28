@@ -22,6 +22,7 @@ author: renql
 
 
 # 链接文件 #
+```
     cp -l source destination # 创建硬连接，用ls -al查看时，无箭头指向源文件，当源文件被删除时，该链接仍然有效
 
     cp -s source destination # 创建软连接，这是最常用的，当源文件被删除时，该链接失效
@@ -30,7 +31,8 @@ author: renql
 
     ln -s source destination # 创建软连接  
     
-    rm destination  #删除软连接目录时，目录名后不能有/，否则将删除原目录下的文档
+    rm destination  #删除软连接目录时，目录名后不能有/，否则将删除原目录下的文件
+```
     
 
 # vim中的常用命令 #
