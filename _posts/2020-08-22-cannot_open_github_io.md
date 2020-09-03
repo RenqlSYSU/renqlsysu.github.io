@@ -23,3 +23,9 @@ author: renql
 3. 打开dos窗口，执行：ipconfig /flushdns，来刷新网络DNS缓存。
 
 然后就可以访问了。但如果要访问别人的github.io，就需要再添加相应的ip地址。感觉还是不太方便，不知道什么时候可以正常访问任意的 github.io 呢？
+
+20200903 updated
+
+最近经同学推荐，发现可以通过修改IPv4的DNS服务器地址来访问任意的 github.io。具体可以看这一篇博文 <a href="https://blog.csdn.net/nima1994/article/details/107985198" target="_blank">DNS修改方法</a> 
+
+据了解，此处修改的的这个DNS是阿里的，可能是因为他们的hosts比较全，公网的host配置中如果某些地址被删除的话，就会无法访问那些网站。
