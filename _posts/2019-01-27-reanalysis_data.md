@@ -9,12 +9,12 @@ author: renql
 * content
 {:toc}
 
-# 一、再分析资料 #
-## 1.1 NCEP/NCAR reanalysis：NMC reanalysis (1949-now)
+## 一、再分析资料 ##
+### 1.1 NCEP/NCAR reanalysis：NMC reanalysis (1949-now)
 A state-of-the-art analysis/forecast system is used to perform data assimilation using data from 1948 to the 
 present.
 
-## 1.2 NCEP/DOE reanalysis 2 ：(1979-now)
+### 1.2 NCEP/DOE reanalysis 2 ：(1979-now)
 NCEP-DOE Reanalysis 2 is an improved version of the NCEP Reanalysis I model that fixed errors and updated paramterizations of physical processes.
 
 A state-of-the-art analysis/forecast system is used to perform data assimilation using data from 1979 
@@ -23,7 +23,7 @@ times daily format and as daily averages.
 
 NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有24小时的，也有月平均的数据，另外NECP2 的数据一般都是short类型。
 
-## 1.3 ERA-Interim
+### 1.3 ERA-Interim
 全称：European Centre for Medium-Range Weather Forecasts (ECMWF) Interim Re-Analysis
 有subdaily，daily，monthly，   
 
@@ -45,12 +45,12 @@ NECPI和NECP2 只有起始时间不同，精度都为2.5*2.5，有6h的，也有
 ## KNMI气候研究
 http://climexp.knmi.nl，可提供各气候系统指数
 
-# 二、降水资料 #
-## 2.1 Global Precipitation Climatology Project (GPCP) ##
+## 二、降水资料 ##
+### 2.1 Global Precipitation Climatology Project (GPCP) 
 - 综合了卫星数据和雨量筒数据，海洋和陆地上的数据都有，有各种空间和时间（逐日、逐侯、逐月）分辨率的数据集，daily的数据从1996年10月开始，monthly的数据从1979年1月开始  
 - 以往研究表明GPCP的降水数据在中国区域的偏差比CMAP的小(WangMeiRong 2015, QBWO)  
  
-## 2.2 Global Precipitation Climatology Centre (GPCC) ##
+### 2.2 Global Precipitation Climatology Centre (GPCC) 
 - 由全球的站点观测数据得到的**逐月**降水数据，只有陆地上的，从1901年1月到现在  
 - 看了官网介绍，好像也有**逐日**的数据资料，是2018年刚发布的，时间从1982年1月到2016年12月  
 - 在<a href="https://www.dwd.de/EN/ourservices/gpcc/gpcc.html" target="_blank">GPCC Website</a>发现一个有趣的线上软件<a href="https://kunden.dwd.de/GPCC/Visualizer" target="_blank">GPCC Visualizer</a>，可以自己选择时间和月份画降水分布图
@@ -58,5 +58,17 @@ http://climexp.knmi.nl，可提供各气候系统指数
 The precipitation data are from the Tropical Rainfall Measuring Mission (TRMM) Multisatellite 
 Precipitation Analysis
 
-降水数据：Climate Prediction Center (CPC) Merged Analysis of Precipitation (CMAP) dataset
+### CPC Merged Analysis of Precipitation (CMAP) ###
+Climate Prediction Center (CPC) Merged Analysis of Precipitation (CMAP) dataset
+- 分辨率2.5°，逐月或逐候，1979年1月-present
+- 综合了雨量筒观测、极地轨道和地球同步卫星的微波和红外观测。包含陆地和海洋
 
+## Outgoing Longwave Radiation
+输出长波辐射是对地球表面、海洋和大气释放到太空的能量的一种测量，是地球辐射收支中的一个重要组成成分。由于云顶温度是云高的一个指标（云越高，云顶温度越低），因此OLR可以表征热带和副热带区域的对流强度（OLR越小，对流越强）。
+
+### NOAA Interpolated OLR ###
+- 观测数据来源于Advanced Very High Resolution Radiometer (AVHRR) instrument aboard the NOAA polar orbiting spacecraft
+- 分辨率：2.5°，1974年6月-present，有逐月、逐日、次日等多种时间分辨率
+
+### HIRS outgoing longwave radiation ###
+分辨率：1°
