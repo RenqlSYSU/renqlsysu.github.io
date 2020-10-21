@@ -27,7 +27,12 @@ plot = gsn_contour_shade(plot, lowval, highval, res )  ;lowval和highval都是�
 ```
 ## 只画通过显著性检验的数据
 ```
-var = mask(var,prob.lt.siglvl,True) ;prob是统计概率值，维数与var相同，若siglvl为0.05，则未通过95%显著性检验的数据将被设置为缺测值
+;mask(array, marray, mvalue)，当marray某些位置上的值同mvalue时，mask会保留array数组中相应位置上的数值，其余设为缺测
+var = mask(var,prob.lt.siglvl,True) ;prob是统计概率值，维数与var相同。该函数会保留prob小于siglvl的值。
+;若siglvl为0.05，则未通过95%显著性检验的数据将被设置为缺测值
+
+;where函数与mask有些类似，但他是替换数据，将满足条件的设为一个值，不满足条件的设为另外一个值
+y = where(y.ne.0, y, y@_FillValue) ;保留y不等于0的数值，将y等于0的设为缺测。
 ```
 
 在用prob画显著性区域时，一定要先设置prob的lat和lon坐标，否则显著性区域会与实际不符 ``` copy_VarMate(var,prob) ```
