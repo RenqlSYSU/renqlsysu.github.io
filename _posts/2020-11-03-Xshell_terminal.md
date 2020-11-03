@@ -1,3 +1,4 @@
+---
 layout: post
 title: Xshell的terminal修改
 categories: linux
@@ -7,6 +8,7 @@ author: renql
 
 * content
 {:toc}
+
 ## Terminal Size
 最近用Xshell远程linux服务器时，发现使用screen命令后会改变terminal窗口大小，令人感觉很不爽。之前使用putty时就没有遇到这种情况，于是上网搜解决方案，希望terminal窗口大小不会随screen的使用而改变。
 
