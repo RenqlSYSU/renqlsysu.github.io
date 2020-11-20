@@ -28,6 +28,10 @@ author: renql
 - EKE收支方程中的各项均存在很强的年际变率。在EINino年，高频EKE在北太平洋呈现偶极子异常，在北大西洋呈现三级子异常。斜压转换是引起该变化的主要原因，但正压转换、高低频相互作用及能量通量的作用也不可忽视。
 - 在EINino年，中间频率涡旋在北太平洋减少、北大西洋增强，这主要是因为斜压转换以及由于北太平洋IF和LF、北大西洋HF和IF、IF和LF的相互作用控制的EKE转换。
 
+
+
+
+
 ## Xie et al.,2019, Planetary and synoptic-scale dynamic control of extreme cold wave patterns over the United States ##
 极端冷事件**Extreme cold wave events（ECW）**的特征是快速、强烈的温度下降，伴随有显著的社会经济后果。在全球变暖背景下，ECW的发生、强度、空间范围及持续事件都有显著增长。基于其重要性，关于ECW的科学研究显著增多，主要强调其长期变化及其与行星尺度气候模态（例如ENSO、PDO、NAO）的关系。尽管已经从统计上确认了行星尺度气候模态对区域ECW频率的显著调制作用，但人们还意识到ECW与区域大尺度气象模式（LMPs）的关系比与行星尺度气候模态的关系更直接。
 
