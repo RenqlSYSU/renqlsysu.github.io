@@ -13,8 +13,8 @@ author: renql
 
 the vertically integrated atmospheric apparent heat source 整层积分的大气视热源
 
-![](http://wx1.sinaimg.cn/mw690/006fa9Xlgy1fzqrjucw2oj30d40fsn0e.jpg)  
-![](http://wx2.sinaimg.cn/mw690/006fa9Xlgy1fzqrjoh6q9j305g03amx4.jpg)
+![](https://s3.ax1x.com/2020/12/04/Dq0Uc8.jpg)  
+![](https://s3.ax1x.com/2020/12/04/Dq0N1f.jpg)
 
 上述公式1是用可观测的变量去估算**垂直扩散加热(感热加热)，大气潜热加热，辐射加热（包括长波短波）**，进而算得大气视热源。因为无法观测到上述三个加热过程，因此需要用可以观测到的风场、温度场去估算。其中垂直速度是p坐标系下的垂直速度（单位Pa/s)。Cp一般取 **1004.0 J/(K kg)** ，所以计算得到的视热源单位 **W/kg**，整层积分后的单位是 **W/m2**。
 
