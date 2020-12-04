@@ -46,5 +46,5 @@ N = num(.not.ismissing(data)) ;统计非缺测值数量，同理也可统计缺�
 ```
 
 使用ncl函数时一定要看清楚该函数对缺测值的处理方法。   
-- 自动忽略缺测值的函数： `dim_avg_n, dim_sum_n`    
-- 把缺测值当正常值处理的函数：ncl的加减乘除、 `bw_bandpass_filter` 
+- 自动忽略缺测值的函数： `dim_avg_n, dim_sum_n`、ncl的加减乘除    
+- 把缺测值当正常值处理的函数：`bw_bandpass_filter` 
