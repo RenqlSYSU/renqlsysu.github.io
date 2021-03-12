@@ -9,10 +9,10 @@ author: renql
 * content
 {:toc}
 
-最近，经常接触**视热源**的这个物理量。例如用**视热源**做滤波及EOF来衡量季节内振荡的传播过程，用**视热源**来衡量TP的热力作用。但始终不知道他是如何计算的，以及为什么要这么做。咨询了师兄师姐后，理解如下：
+最近，经常接触**视热源**这个物理量。例如用**视热源**做滤波及EOF来衡量季节内振荡的传播过程，用**视热源**来衡量TP的热力作用。但始终不知道他是如何计算的，以及为什么要这么做。咨询了师兄师姐后，理解如下：
 
-the vertically integrated atmospheric apparent heat source 整层积分的大气视热源
-
+the vertically integrated atmospheric apparent heat source 整层积分的大气视热源  
+下图选自论文《Interactions between boreal summer intraseasonal oscillations and synoptic-scale disturbances over the western North Pacific. Part II: Apparent heat and moisture sources and eddy momentum transport》  
 ![](https://s3.ax1x.com/2020/12/04/Dq0Uc8.jpg)  
 ![](https://s3.ax1x.com/2020/12/04/Dq0N1f.jpg)
 
@@ -51,3 +51,11 @@ CESM会默认输出月平均的上述三个加热过程的物理量，如下所�
         DTV:long_name = "T vertical diffusion" ;
         DTV:cell_methods = "time: mean" ;
 ```
+
+两种计算方法的对比
+![](https://s3.ax1x.com/2021/03/12/6UOx5q.png)
+
+他们的垂直分布如下（第一张图是模式输出资料，第二张图是由温度和风场反算的结果，色标一致，均未乘Cp）   
+![](https://s3.ax1x.com/2021/03/12/6UOvan.png)  
+![](https://s3.ax1x.com/2021/03/12/6UOjVs.png)  
+
