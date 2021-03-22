@@ -49,10 +49,12 @@ create_newcase -case $CASENAME -compset B1850CN -res f19_g16 -mach yellowstone
 ATM_NCPL in env_run.xml specifies the number of coupling intervals per day between the atmosphere/land and the coupled system. Based on ATM_NCPL, the scripts will automatically compute the timestep for the atmosphere and land (DTIME) and populate the namelist files accordingly.  
 
 ## 4. setup ##
+setup前需要修改**env_mach_pes.xml**，设置跑模式用的节点数。
+
 ```bash
 ./cesm_setup
 ```
-可修改源代码（如加nudg，修改后的代码放在Sourcemod相应模块下）  
+
 该操作后生成的有用的文件有：  
 - **user_nl_xxx** 修改输入模式中的一些变量如CO2浓度、太阳辐射、海温资料、植被资料等等，也可设定输出数据的频率和类型（至于是否修改成功可通过运行preview_namelists来查看，可修改的常量在CaseDocs/xxx_in），在build前修改即可  
 - **CaseDocs** 存放有各模块在run时需要用到的变量名，供参考  
@@ -65,6 +67,8 @@ ATM_NCPL in env_run.xml specifies the number of coupling intervals per day betwe
 最常用的CAM模块的 variable namelist 的网址是 <a href="http://www.cesm.ucar.edu/cgi-bin/eaton/namelist/nldef2html-cam5_3" target="_blank">http://www.cesm.ucar.edu/cgi-bin/eaton/namelist/nldef2html-cam5_3</a> 
 
 ## 5. build ##
+build前需要做的：**修改env_build.xml, user_nl_xxx**(修改输入模式中的一些变量如CO2浓度、太阳辐射、海温资料、植被资料等等，也可设定输出数据的频率和类型），**在SourceMods中修改源代码**
+
 ```bash
 ./$CASENAME.build
 ```
@@ -79,10 +83,15 @@ build后会在 **$RUNDIR** 生成 **xxx_in** ,不能再修改。同时这也是�
 另外，$casename/Buildconf/XXX.input_data_list 文件列出了模式在运行中所需要的外部输入文件。
 
 ## 6. run ##
+run前需要做的：**修改env_run.xml**（经常修改的有 RUNTYPE(hybrid,branch,startup), STOP_OPTION, STOP_N, REST_OPTION, REST_N，CONTINUE_RUN，SST强迫的文件路径）
+
+在天河，需要通过修改 AMIP_CAM5_NG4550.run 来修改提交任务的名字，可在vim中通过搜索`yhbatch`来修改。AMIP_CAM5_NG4550.sh中的任务名字没有影响。
+
 ```bash
 ./$CASENAME.run
 ```
 提交作业，该命令在四期会通过运行run.pbs来提交作业至集群系统中的多个节点。
+
 ```bash
 if ( "$MPILIB" == "mpi-serial" ) then
     $EXEROOT/cesm.exe >&! cesm.log.$LID
