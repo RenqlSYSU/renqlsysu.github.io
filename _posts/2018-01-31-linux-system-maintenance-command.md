@@ -41,6 +41,7 @@ https://www.cnblogs.com/yuandonghua/p/10254288.html
 ```bash
     df -h #将以人类可以阅读的容量格式显示各挂载点的存储空间使用情况
     du -h --max-depth=1 /path # 表示显示 path 路径下只深入到第一层子目录的各文件夹大小
+    du -s directory  #查看某一文件夹的大小
     free -h #将以人类可以阅读的容量格式显示内存使用情况
     fdisk -l #查看硬盘及分区情况
 ```
