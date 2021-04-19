@@ -78,6 +78,52 @@ data_wave1_3 = ezfftb (cf, cf@xbar)
 (spcx(0)+spcx(N/2-1))*(df/2) + SUM{spcx(1:N/2-2)*df} = variance of the series 
 ```
 
+如果需要对27年每年夏季功率谱做气候态平均，此时马尔可夫显著线不是简单的27年的马尔可夫线平均，而是需要通过如下算法去计算（该算法摘自官网）:  
+
+```
+d   = 0     ; detrending opt: 0=>remove mean 1=>remove mean + detrend
+sm  = 1     ; smooth: should be at least 3 and odd; if small than 3, it would do no smoothing
+pct = 0.10  ; percent taper: (0.0 <= pct <= 1.0) 0.10 common. If pct =0.0, no tapering will be done. If pct = 1.0, the whole series is affected
+
+  ;************************************************
+  ; calculate mean spectrum spectrum and lag1 auto cor
+  ;************************************************
+  
+  ; loop over each segment of length ntim
+  
+   spcavg = new ( ntim/2, typeof(x))
+   spcavg = 0.0
+  
+   r1zsum = 0.0
+  
+   do nt=0,nyear-1
+      dof    = specx_anal(x(nt,:),d,sm,pct)      ; current segment spc
+      spcavg = spcavg + dof@spcx                ; sum spc of each segment
+      r1     = dof@xlag1                        ; extract segment lag-1
+      r1zsum = r1zsum  + 0.5*(log((1+r1)/(1-r1)) ; sum the Fischer Z
+   end do
+  
+   r1z  = r1zsum/nyear                          ; average r1z
+   r1   = (exp(2*r1z)-1)/(exp(2*r1z)+1)         ; transform back
+                                                ; this is the mean r1
+   spcavg  = spcavg/nyear                       ; average spectrum
+  
+  ;************************************************
+  ; Assign mean spectrum to data object
+  ;************************************************
+  
+   df      = 2.0*nyear   ; deg of freedom
+   df@spcx = spcavg      ; assign the mean spc
+   df@frq  = dof@frq
+   df@xlag1= r1          ; assign mean lag-1
+  
+   splt = specx_ci(df, 0.05, 0.95)   ; confidence interval
+
+;splt(4,ntim/2) including input spectrum (indx=0), Markov Red Noise spectrum (indx=1), 
+;lower confidence bound for Markov (indx=2), upper confidence bound for Markov (indx=3)
+```
+
+
 # Space-time Spectral Analysis
 时空谱分析，主要用于研究热带波动。
 
