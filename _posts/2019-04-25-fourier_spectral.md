@@ -100,7 +100,7 @@ pct = 0.10  ; percent taper: (0.0 <= pct <= 1.0) 0.10 common. If pct =0.0, no ta
       dof    = specx_anal(x(nt,:),d,sm,pct)      ; current segment spc
       spcavg = spcavg + dof@spcx                ; sum spc of each segment
       r1     = dof@xlag1                        ; extract segment lag-1
-      r1zsum = r1zsum  + 0.5*(log((1+r1)/(1-r1)) ; sum the Fischer Z
+      r1zsum = r1zsum  + 0.5*log((1+r1)/(1-r1)) ; sum the Fischer Z
    end do
   
    r1z  = r1zsum/nyear                          ; average r1z
