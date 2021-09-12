@@ -17,7 +17,8 @@ author: renql
 
 # 1 数学函数
 ```
-a = b^2   ;平方表述
+a = b^2      ;平方表述
+a = sqrt(b)  ;计算开方
 a = fspan(start, finish, number)   ;Creates an array of evenly-spaced floating point numbers
 b = ispan(start, finish, spacing)  ;Creates an array of equally-spaced integer, long, or int64 values.
 
@@ -95,6 +96,15 @@ avar = dim_standardize_n(var,opt,dim) ;得到标准化序列，忽略缺测
 ;计算标准差方差
 stdd = dim_stddev_n(var,dim)   ;计算样本标准差，即除以不包含缺测的样本总数-1
 vari = dim_variance_n(var,dim) ;计算无偏差估计的方差 the unbiased estimates of the variance，即除以不包含缺测的样本总数-1
+
+; 上述计算的方差和标准差都是无偏差估计的方差，如果想要计算方差（直接除以样本总数）
+opt  = 1
+avar = dim_standardize_n(var,opt,dim) ;得到标准化序列，忽略缺测
+vari = dim_avg_n(avar^2,dim)  ;标准化序列的方差是1
+
+depart = var-conform(var,dim_avg_n(var,dim),(/1,2,3/))
+vari = dim_avg_n((depart)^2,dim)
+avar = depart/sqrt(vari) ;得到标准化序列
 ```
 
 # 3 取整函数
