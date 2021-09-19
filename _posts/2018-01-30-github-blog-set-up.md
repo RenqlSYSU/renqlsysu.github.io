@@ -13,9 +13,7 @@ author: renql
 
 本来想把笔记放在CSDN上，但发现CSDN上的广告太多了，界面也不像振宁师兄的那个Github博客友好，因此也准备在Github上搭一个博客。本想在自己的笔记本上搭，但发现要装的软件太多了（git，ruby，jekyll），懒得搞这些的我，准备直接在服务器上clone师兄的代码，然后直接推送到Github上，不准备在本地试运行了。
 
-# 现把搭建过程记录如下： #
-
-
+# 搭建过程记录： #
 
 
 
@@ -29,6 +27,7 @@ git clone git@github.com:RenqlSYSU/Novarizark.github.io.git
 ```
 - 修改 _config.yml 中的参数和网站小图favicon.ico
 - _posts 目录下存放文章信息，文章头部注明 layout(布局)、title、date、categories、tags、author(可选)、mathjax(可选，是插入数学公式用的)，如下：
+
 `---
 layout: post
 title:  "山东半岛预报系统搭建"
@@ -36,7 +35,8 @@ categories: modeling linux
 tags:  WRF forecast&nbsp;system
 author: LZN
 ---`
-# 放了一篇博客到 _post 上，发现不经过jekyll编译，github不会生成网页，因此还是准备装一下jekyll#
+
+放了一篇博客到 _post 上，发现不经过jekyll编译，github不会生成网页，因此还是准备装一下jekyll    
 虽然说Windows上也可以安装jekyll，但更想在linux上装，因此在sony笔记本上安装了ubuntu，安装分区如下
 
 |目录|大小|格式|描述|
@@ -75,6 +75,11 @@ cd xxx.github.io
 git init
 git remote add origin git@github.com:xxxx/xxx.github.io
 git pull origin master #下载仓库中的代码
+
+# get 恢复某一文件，有很多选项，具体可参考下面这个链接：
+https://www.cnblogs.com/polk6/p/git-checkoutFile.html
+
+get checkout file-name
 
 ```
 
