@@ -2,7 +2,7 @@
 layout: post
 title: python文件操作
 categories: python
-tags: python
+tags: read write
 author: renql
 ---
 
