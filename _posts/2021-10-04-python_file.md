@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python文件操作
+title: python文本文件操作
 categories: python
 tags: read write
 author: renql
@@ -8,6 +8,10 @@ author: renql
 
 * content
 {:toc}
+
+python读取文件时,返回的都是字符串.同时,不管哪种方法读取,都会读入换行符,此时可利用strip()函数删去字符串开头和末尾的空格与换行符.如果需要处理数值数据,也需要自己转为 int 或 float.
+
+写入文件时也只能写入字符串,int, float, list, array 都无法直接写入,需要转为str才可以.写入的时候可以使用格式化输出格式.
 
 # 三种方法读取
 ```python
