@@ -30,7 +30,7 @@ python的变量不需要提前申明，直接赋值就可以了，且可以随�
 
 数据处理：   
 - **WRF-python**：主要用于wrf数据的读取，https://wrf-python.readthedocs.io/en/latest/basic_usage.html   
-- **Numpy**（数组与矩阵运算）：https://www.runoob.com/numpy/numpy-tutorial.html  
+- **Numpy**: 数组与矩阵运算，主要数据结构就是N维同类型数组array，可以用array.shape, array.dtype查看数组结构和类型，https://www.runoob.com/numpy/numpy-tutorial.html  
 - **Pandas**：基于Numpy的结构化数据分析工具，可以从 CSV、JSON、SQL、Microsoft Excel 导入数据，主要数据结构是 Series （一维数据）与 DataFrame（二维数据，是一个表格型的数据结构））  
 - **Xarray**：主要数据结构 Variable, DataArray, Dataset， http://xarray.pydata.org/en/stable/user-guide/indexing.html 
 
@@ -44,4 +44,4 @@ python的变量不需要提前申明，直接赋值就可以了，且可以随�
 cfplot：查看文件变量的方法 cfa  
 
 # 网上的学习例子
-matplotlib简要介绍 https://blog.mazhangjing.com/2018/02/28/learn_matplotlib/#1-matplotlib%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D
+matplotlib简要介绍: https://blog.mazhangjing.com/2018/02/28/learn_matplotlib/#1-matplotlib%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D
