@@ -14,7 +14,7 @@ author: renql
 
 python中的日期有两种类型：  
 - **时间戳**：以自 1970 年 1 月 1 日午夜（历元）后经过的浮点秒数来表示  
-- **时间元组**：time.struct_time(tm_year=2016, tm_mon=4, tm_mday=7, tm_hour=10, tm_min=28, tm_sec=49, tm_wday=3, tm_yday=98, tm_isdst=0)，一共9组数字，分别表示年、月、日、小时（0~23）、分钟、秒、一周第几日（0~6，0是周一）、一年第几日（1~366）、是否为夏令时（1夏令时、0不是夏令时、-1未知，默认-1）
+- **时间元组**：time.struct_time(tm_year=2016, tm_mon=4, tm_mday=7, tm_hour=10, tm_min=28, tm_sec=49, tm_wday=3, tm_yday=98, tm_isdst=0)，一共9组数字，分别表示年、月、日、小时（0\~23）、分钟、秒、一周第几日（0\~6，0是周一）、一年第几日（1~366）、是否为夏令时（1夏令时、0不是夏令时、-1未知，默认-1）
 
 ```python
 import time
