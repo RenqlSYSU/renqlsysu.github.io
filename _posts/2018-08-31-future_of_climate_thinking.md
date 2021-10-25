@@ -65,7 +65,7 @@ author: renql
   
 4. **用 “开源精神” 集中散户力量抗衡大数据公司的 OpenWeather Map**  
 
-![](http://wx4.sinaimg.cn/mw690/006fa9Xlgy1fuuyaa1qxkj30ex0bo3zm.jpg) 
+![](https://z3.ax1x.com/2021/10/25/55VHuF.jpg) 
 
 ## 气候变化与国家安全战略问题
 朱定真的讲座开始的大部分时间都在围绕天气预报展开，最后才点了一下气候的重要性。
