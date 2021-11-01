@@ -23,16 +23,16 @@ python的变量不需要提前申明，直接赋值就可以了，且可以随�
 但真的开始用python后，发现他虽然有很多软件包，但把每个包的主要功能了解清楚后，好像也没有那么难了。加上python的网上教程非常多，遇到什么问题，上网一搜就有答案。这一方面还是很好的
 
 绘图：   
-- **Cartopy**：地图投影、经纬度坐标、地图信息，搭配Matplotlib使用。 https://scitools.org.uk/cartopy/docs/latest/  
-- **Matplotlib**：最常用的主要绘图包。 https://matplotlib.org/stable/gallery/index.html  
+- **Cartopy**：地图投影、经纬度坐标、地图信息，搭配Matplotlib使用。<a href="https://scitools.org.uk/cartopy/docs/latest/" target="_blank">https://scitools.org.uk/cartopy/docs/latest/</a>   
+- **Matplotlib**：最常用的主要绘图包。<a href="https://matplotlib.org/stable/gallery/index.html" target="_blank">https://matplotlib.org/stable/gallery/index.html</a>   
 - **pillow**: 图像处理库，可以打开一张图片，对其进行裁剪、缩放、旋转、像素值处理等操作，我常用该函数制作gif动画。  
-- **cmaps**: 提供ncl色标. https://github.com/hhuangwx/cmaps  
+- **cmaps**: 提供ncl色标. <a href="https://github.com/hhuangwx/cmaps" target="_blank">https://github.com/hhuangwx/cmaps</a>   
 
 数据处理：   
-- **WRF-python**：主要用于wrf数据的读取，https://wrf-python.readthedocs.io/en/latest/basic_usage.html   
-- **Numpy**: 数组与矩阵运算，主要数据结构就是N维同类型数组array，可以用array.shape, array.dtype查看数组结构和类型，https://www.runoob.com/numpy/numpy-tutorial.html  
+- **WRF-python**：主要用于wrf数据的读取，<a href="https://wrf-python.readthedocs.io/en/latest/basic_usage.html" target="_blank">https://wrf-python.readthedocs.io/en/latest/basic_usage.html</a>    
+- **Numpy**: 数组与矩阵运算，主要数据结构就是N维同类型数组array，可以用array.shape, array.dtype查看数组结构和类型，<a href="https://www.runoob.com/numpy/numpy-tutorial.html" target="_blank">https://www.runoob.com/numpy/numpy-tutorial.html</a>   
 - **Pandas**：基于Numpy的结构化数据分析工具，可以从 CSV、JSON、SQL、Microsoft Excel 导入数据，主要数据结构是 Series （一维数据）与 DataFrame（二维数据，是一个表格型的数据结构））  
-- **Xarray**：主要数据结构 Variable, DataArray, Dataset， http://xarray.pydata.org/en/stable/user-guide/indexing.html 
+- **Xarray**：主要数据结构 Variable, DataArray, Dataset， <a href="http://xarray.pydata.org/en/stable/user-guide/indexing.html" target="_blank">http://xarray.pydata.org/en/stable/user-guide/indexing.html</a>  
 
 另外一些比较小众的气象软件包：
 - **Iris**：https://scitools-iris.readthedocs.io/en/latest/index.html ， https://scitools.org.uk/iris/docs/v2.4.0/userguide/index.html  
