@@ -63,8 +63,12 @@ H<sub>2</sub>O  CO<sub>2</sub>  注意：第二个sub前有斜杠
 样本量的变化：$M_n=M_{n-1}+m_n$  
 
 \begin{split}
-\bar E_n &= \frac{(M_n-m_n)\bar E_{n-1} + \sum_{i=1}^{m_n} a_i}{M_n}  
+\bar E_n &= \frac{(M_n-m_n)\bar E_{n-1} + \sum_{i=1}^{m_n} a_i}{M_n}\\\\  
 &=\bar E_{n-1} + \frac{\sum_{i=1}^{m_n} a_i - m_n\bar E_{n-1}}{M_n}
+\end{split}
+
+\begin{split}
+V_n &= \frac{M_{n-1}\{V_{n-1}+(\bar E_{n}-\bar E_{n-1})^2\}+ \sum_{i=1}^{m_{n}} (a_{i}-\bar E_n)^2}{M_n}
 \end{split}
 
 # 分类 categories
