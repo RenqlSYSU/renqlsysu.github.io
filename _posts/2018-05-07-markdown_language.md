@@ -1,3 +1,13 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 ---
 layout: post
 title: Markdown 常用语法记录
@@ -43,6 +53,17 @@ H<sub>2</sub>O  CO<sub>2</sub>  注意：第二个sub前有斜杠
 
 > H<sub>2</sub>O  CO<sub>2</sub>     
 > 爆米<sup>TM</sup>
+
+5. 数学公式   
+据说目前github的markdown不支持公式渲染，因此如果需要插入公式可以借助外部网站，使用方法见下面这个文档。  
+<a href="https://slowlythinking.github.io/2019/07/BlogWriting_Equations_in_Markdown/" target="_blank">https://slowlythinking.github.io/2019/07/BlogWriting_Equations_in_Markdown/</a> 
+
+样本量的变化：$M_n=M_{n-1}+m_n$  
+
+\begin{split}
+\bar E_n &= \frac{(M_n-m_n)\bar E_{n-1} + \sum_{i=1}^{m_n} a_i}{M_n} \\
+&=\bar E_{n-1} + \frac{\sum_{i=1}^{m_n} a_i - m_n\bar E_{n-1}}{M_n}
+\end{split}
 
 # 分类 categories
 发现博客中如果分类或者标签太多，则会显得有些混乱，因此将目前有的分类整理如下。    
