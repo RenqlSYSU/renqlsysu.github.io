@@ -58,7 +58,7 @@ H<sub>2</sub>O  CO<sub>2</sub>  注意：第二个sub前有斜杠
 据说目前github的markdown不支持公式渲染，因此如果需要插入公式可以借助外部网站，使用方法见下面这个文档。  
 <a href="https://slowlythinking.github.io/2019/07/BlogWriting_Equations_in_Markdown/" target="_blank">https://slowlythinking.github.io/2019/07/BlogWriting_Equations_in_Markdown/</a> 
 
-尝试了第一种方案 Script+MathJax，确实可以。但此时原来'\\'的换行符号失效，需要使用四条斜杠'\\\\'才可以。举例如下：
+尝试了第一种方案 Script+MathJax，确实可以。但此时原来`\\`的换行符号失效，需要使用四条斜杠`\\\\`才可以。举例如下：
 
 样本量的变化：$M_n=M_{n-1}+m_n$  
 
