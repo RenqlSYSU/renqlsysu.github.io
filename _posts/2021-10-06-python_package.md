@@ -33,6 +33,10 @@ python的变量不需要提前申明，直接赋值就可以了，且可以随�
 - **Numpy**: 数组与矩阵运算，主要数据结构就是N维同类型数组array，可以用array.shape, array.dtype查看数组结构和类型，<a href="https://www.runoob.com/numpy/numpy-tutorial.html" target="_blank">https://www.runoob.com/numpy/numpy-tutorial.html</a>   
 - **Pandas**：基于Numpy的结构化数据分析工具，可以从 CSV、JSON、SQL、Microsoft Excel 导入数据，主要数据结构是 Series （一维数据）与 DataFrame（二维数据，是一个表格型的数据结构））  
 - **Xarray**：主要数据结构 Variable, DataArray, Dataset， <a href="http://xarray.pydata.org/en/stable/user-guide/indexing.html" target="_blank">http://xarray.pydata.org/en/stable/user-guide/indexing.html</a>  
+- **SciPy**是一个依赖于Numpy的高端科学计算工具包，用于数学、科学、工程学等领域，包含的功能：最优化、线性代数、积分、插值、拟合、特殊函数、快速傅里叶变换、信号处理、图像处理、常微分方程求解器等
+<a href="https://docs.scipy.org/doc/scipy/reference/tutorial/index.html" target="_blank">官网User Guide</a>，
+<a href="https://www.cjavapy.com/article/1132/" target="_blank">中文教程</a>，
+<a href="https://github.com/scipy/scipy/tree/135b734994a512334055a97a0f2fae8f0990887b" target="_blank">源代码</a>
 
 另外一些比较小众的气象软件包：
 - **Iris**：https://scitools-iris.readthedocs.io/en/latest/index.html ， https://scitools.org.uk/iris/docs/v2.4.0/userguide/index.html  
