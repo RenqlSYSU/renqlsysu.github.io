@@ -60,6 +60,18 @@ H<sub>2</sub>O  CO<sub>2</sub>  注意：第二个sub前有斜杠
 
 尝试了第一种方案 Script+MathJax，确实可以。但此时原来`\\`的换行符号失效，需要使用四条斜杠`\\\\`才可以。举例如下：
 
+```
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+```
+
 样本量的变化：$M_n=M_{n-1}+m_n$  
 
 \begin{split}
