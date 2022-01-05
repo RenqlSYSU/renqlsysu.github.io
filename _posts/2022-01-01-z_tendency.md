@@ -39,17 +39,16 @@ author: renql
 ![](https://s4.ax1x.com/2022/01/05/TXEio6.png)
 
 缺点：  
-1. 只能衡量局地强迫的作用，难以查看遥相关的作用。除非相关回归。  
+1. 强迫对局地环流的影响最大，随距离增大，强迫影响减弱。因此在局地强迫强的情况下，主要体现局地强迫的作用，难以查看遥相关的作用。或许相关回归可以。  
 2. 计算得到的气候态结果（尤其热力强迫项驱动的位势倾向）对上下边界条件敏感，但若看其回归场之类的结果还可以。
 
 # 方程及推导过程
-![](https://s4.ax1x.com/2022/01/05/TXEAJO.png)
-![](https://s4.ax1x.com/2022/01/05/TXEnOA.png)
-
 \begin{split}
 \bar \sigma_0 = \frac{R}{C_p} \frac{\bar T}{p} - \frac{\partial \bar T}{\partial p} \\\\  
 \bar \sigma_1 = \frac{R \bar \sigma_0}{p}
 \end{split}
+![](https://s4.ax1x.com/2022/01/05/TXEAJO.png)
+![](https://s4.ax1x.com/2022/01/05/TXEnOA.png)
 
 # 计算结果
 ![](https://s4.ax1x.com/2022/01/05/TXEEWD.png)
