@@ -170,7 +170,7 @@ eof_ts		= eofunc_ts_n_Wrap(data,eof,optETS,dim) #计算与eof对应的时间序�
 
 ## 3、检验各模态的特征值是否显著与其他特征值分离 ##
 ``
-sig		= eofunc_north(eval特征值，时间样本数，prinfo) #也可用特征值的方差贡献pcvar做检验
+sig		= eofunc_north(eval特征值，时间样本数，prinfo) #也可用特征值的方差贡献pcvar做检验  
 ```
 
 **prinfo = True** 时，依次打印计算所得的 delta lambda、特征值误差范围的**最低界限**、特征值、特征值误差范围的**最高界限**以及分离的显著性
@@ -193,4 +193,4 @@ EOF气象要素场重构的应用：
 
 此外，除了对水平场做EOF外，也可以对垂直积分的水平场、纬向平均的垂直剖面或者纬向平均垂直平均的一维径向分布做EOF。还有将多个变量组合在一起做EOF的情况，例如MJO指数就是将近赤道径向平均的850 hPa、200hPa纬向风和OLR数据的组合场做EOF分析得到的第一模态和第二模态的主分量，且做EOF前已剔除年周期和年际变化分量。  
 
-![](http://wx3.sinaimg.cn/large/006fa9Xlgy1fya0vow5f9j30ph0hbzm5.jpg)
+![](https://s4.ax1x.com/2022/01/11/7ZQmKP.jpg)
