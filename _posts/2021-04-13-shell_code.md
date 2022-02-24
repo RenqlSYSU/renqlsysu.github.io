@@ -55,3 +55,19 @@ done
 https://blog.csdn.net/dehailiu/article/details/10479527?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=1328665.18784.16160313276179911&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control
 
 路径分割得到路径和文件名 https://blog.csdn.net/Choice_JJ/article/details/8766335
+
+## 交互式运行程序
+想要在bash脚本中实现交互式运行命令，主要借助输入重定向操作符 << 来实现，举例如下
+```bash
+for nl in {0..2};do
+	utils/bin/box << EOF
+n
+y
+EOF
+	mv output.file output.nc
+done
+# 此处 n 和 y 是传递给 utils/bin/box 的两个参数
+```
+Shell中通常将EOF与 << 结合使用，表示后续的输入作为子命令或子Shell的输入，直到遇到EOF为止，再返回到主调Shell。
+
+此处，EOF是一个分界符，在该分界符以后的内容都被当作输入（包括空格），直到shell又看到该分界符(位于单独一行的开头)。这个分界符可以是你所定义的任何字符串。
