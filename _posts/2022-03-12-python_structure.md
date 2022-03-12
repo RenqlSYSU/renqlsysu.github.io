@@ -1,8 +1,8 @@
 ---
 layout: post
 title: python的主要结构
-categories: 类别
-tags: 标签，可有多个，每个标签之间用空格隔开
+categories: python
+tags: python
 author: renql
 ---
 
