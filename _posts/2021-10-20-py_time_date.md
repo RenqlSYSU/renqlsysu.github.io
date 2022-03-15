@@ -135,13 +135,30 @@ Attributes:
     long_name:  time
 '''
 
+# 挑选特定时间段的数据
+# 方法一：使用datetime
 from datetime import datetime
 strt=["1989120206","1989120312"]
 tim=[]
 for str1 in strt:
-    tim.append(datetime.strptime(str1, '%Y%m%d%H'))
-    
+    tim.append(datetime.strptime(str1, '%Y%m%d%H')) 
 var = ds['t'].sel(level=250,time=tim)
+
+# 方法二：使用isin，生成逻辑数组
+stime = np.array([ds.time.dt.year.isin([1989,1981]), 
+      ds.time.dt.dayofyear.isin([185,186,187])]).all(axis=0)
+var= ds['t'].sel(time=stime)
+```
+
+由于用xarray打开netcdf文件得到的时间维是一个元素类型为 datetime64[ns] 的 xarray.DataArray数据，因此无法使用 strftime("%Y-%m-%d_%H:00") 将其转换其他格式的时间字符串。
+此时可以使用 np.datetime_as_string(ds.time) 将其转换为字符串元素的 numpy.ndarray，然后用 pd.to_datetime() 将其转换为 pandas 的数据类型，具体如下：
+```py
+from datetime import datetime
+time = pd.to_datetime(np.datetime_as_string(ds.time,unit='h'),format='%Y-%m-%dT%H')
+
+# 如果只转换一个时刻
+str_time = datetime.strptime(np.datetime_as_string(var.time[0]), 
+      '%Y-%m-%dT%H:00:00.000000000').strftime('%b %d')
 ```
 
 
