@@ -66,6 +66,8 @@ author: renql
 4. 在计算强迫项和迭代系数时，**是否固定科式参数**会对低纬地区的解存在一定影响。从10N度开始迭代，需要固定科式参数，热力强迫出的位势倾向才会具有斜压结构。但若从15N度开始迭代，不固定科式参数也能出现斜压结构。目前来看，还是尽量不要固定科式参数。
 
 # 参考文献
-1. Lau, N. C., and E. O. Holopainen, 1984: Transient eddy forcing of the time-mean flow as identified by geopotential tendencies. J. Atmos. Sci., https://doi.org/10.1175/1520-0469(1984)041<0313:TEFOTT>2.0.CO;2.
-2. Fang, J., and X. Q. Yang, 2016: Structure and dynamics of decadal anomalies in the wintertime midlatitude North Pacific ocean–atmosphere system. Clim. Dyn., https://doi.org/10.1007/s00382-015-2946-x.
-3. 李蕊. 瞬变强迫在北半球冬季环状模变异中的作用[D].南京大学,2013.
+1. Lau, N. C., and E. O. Holopainen, 1984: Transient eddy forcing of the time-mean flow as identified by geopotential tendencies. J. Atmos. Sci., https://doi.org/10.1175/1520-0469(1984)041<0313:TEFOTT>2.0.CO;2.  
+2. Fang, J., and X. Q. Yang, 2016: Structure and dynamics of decadal anomalies in the wintertime midlatitude North Pacific ocean–atmosphere system. Clim. Dyn., https://doi.org/10.1007/s00382-015-2946-x.  
+3. 李蕊. 瞬变强迫在北半球冬季环状模变异中的作用[D].南京大学,2013.  
+4. Ren, Q., X. Jiang, Y. Zhang, Z. Li, and S. Yang, 2021: Effects of Suppressed Transient Eddies by the Tibetan Plateau on the East Asian Summer Monsoon. J. Climate, https://doi.org/10.1175/jcli-d-20-0646.1. 用位势倾向方程诊断东亚夏季的气候态环流变化原因  
+5. Ren, Q., W. Wei, M. Lu, and S. Yang, 2022: Dynamical analysis of the winter Middle East jet stream and comparison with the East Asian and North American jet streams. J. Climate, accepted. 用位势倾向方程诊断东亚急流、中东急流、北美急流的物理维持过程并对比  
