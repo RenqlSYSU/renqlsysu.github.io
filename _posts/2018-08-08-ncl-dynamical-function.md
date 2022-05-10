@@ -75,7 +75,7 @@ copy_VarMeta(vars,sf(0,0,:,:))
 2. The vertical shear of the meridional wind between 200 and 850 hPa (V200–V850)，可以用于研究Hadley环流强度的纬向变化，已有学者利用该诊断量研究Hadley环流的多尺度变率及其与其他气候现象（如ENSO）间的关系。但无法用该指数精确定义Hadley环流的南北边界  
 3. 利用辐散风的径向风分量计算的区域纬向平均的经圈流函数，即可以研究Hadley环流的纬向变化，又可以确定Hadley环流的强度及南北范围。但该指数只用到了环流的辐散风分量，无法全面描述环流整体的变化。  
 
-此外，用纬向风的辐散分量计算全球纬向平均经圈质量流函数同用原始纬向风的计算结果。
+此外，用经向风的辐散分量计算全球纬向平均经圈质量流函数同用原始经向风的计算结果。
 
 参考文献：
 1. Zhang, G. and Z. Wang, 2013: Interannual Variability of the Atlantic Hadley Circulation in Boreal Summer and Its Impacts on Tropical Cyclone Activity. J. Climate, 26, 8529–8544, https://doi.org/10.1175/JCLI-D-12-00802.1   
