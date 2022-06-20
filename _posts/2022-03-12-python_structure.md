@@ -9,6 +9,51 @@ author: renql
 * content
 {:toc}
 
+# python数据结构
+Python有五个标准的数据类型：Numbers（数字），String（字符串），List（列表），Tuple（元组），Dictionary（字典）
+```py
+# 列表是写在方括号 [] 之间、用逗号分隔开的元素列表
+list = [ 'abcd', 786 , 2.23, [1,2,3]]
+tinylist = [123, 'runoob']
+list2 = [i for i in range(30) if i % 3 == 0]
+# 得到列表 [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
+
+names = ['Bob','Tom','alice','Jerry','Wendy','Smith']
+new_names = [name.upper()for name in names if len(name)>3]
+# 得到列表 ['ALICE', 'JERRY', 'WENDY', 'SMITH']
+
+print (len(list))       # 列表元素个数
+print (list[3][0])      # 嵌套列表索引
+print (list[1:3])       # 从第二个开始输出到第三个元素
+print (list[2:])        # 输出从第三个元素开始的所有元素
+print (list[-1::-1])    # 翻转列表
+print (tinylist * 2)    # 输出两次列表
+print (list + tinylist) # 连接列表
+```
+
+元组与列表类似，但元组的元素不能修改。  
+元组写在小括号 () 里，元素之间用逗号隔开  
+元组的索引及切片方式同list  
+
+```py
+# 字典用 {} 标识，它是一个无序的 键(key) : 值(value) 的集合
+# 同一个字典中，键(key)必须是唯一且不可变的，因此数字，字符串或元组都可作为键，但列表不行。
+dict1 = {}
+dict1['one'] = "1 - 菜鸟教程"
+dict1[2]     = "2 - 菜鸟工具"
+
+tinydict = {'name': 'runoob','code':1, 'site': 'www.runoob.com'}
+
+dict2 = {x: x**2 for x in (2, 4, 6)} 
+# 得到的字典为{2: 4, 4: 16, 6: 36}
+
+print (len(dict2))        # 计算字典元素个数，即键的总数。
+print (dict['one'])       # 输出键为 'one' 的值
+print (tinydict.keys())   # 输出所有键
+print (tinydict.values()) # 输出所有值
+del tinydict['Name'] # 删除键 'Name'
+tinydict.clear()     # 清空字典
+```
 
 # python输入输出  
 python列表和元组顺序也是从0开始的
