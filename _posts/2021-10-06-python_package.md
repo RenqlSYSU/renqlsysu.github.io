@@ -22,6 +22,12 @@ python的变量不需要提前申明，直接赋值就可以了，且可以随�
 
 但真的开始用python后，发现他虽然有很多软件包，但把每个包的主要功能了解清楚后，好像也没有那么难了。加上python的网上教程非常多，遇到什么问题，上网一搜就有答案。这一方面还是很好的
 
+操作系统层面：  
+- **subprocess**：在系统层面执行命令  
+- **os**：改变路径  
+- **sys**: 本人主要用于给python脚本传参  
+- **multiprocessing**:Python中的多进程管理包。https://docs.python.org/zh-cn/3/library/multiprocessing.html   
+
 绘图：   
 - **Cartopy**：地图投影、经纬度坐标、地图信息，搭配Matplotlib使用。<a href="https://scitools.org.uk/cartopy/docs/latest/" target="_blank">https://scitools.org.uk/cartopy/docs/latest/</a>   
 - **Matplotlib**：最常用的主要绘图包。<a href="https://matplotlib.org/stable/gallery/index.html" target="_blank">https://matplotlib.org/stable/gallery/index.html</a>   
@@ -36,7 +42,8 @@ python的变量不需要提前申明，直接赋值就可以了，且可以随�
 - **SciPy**是一个依赖于Numpy的高端科学计算工具包，用于数学、科学、工程学等领域，包含的功能：最优化、线性代数、积分、插值、拟合、特殊函数、快速傅里叶变换、信号处理、图像处理、常微分方程求解器等
 <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/index.html" target="_blank">官网User Guide</a>，
 <a href="https://www.cjavapy.com/article/1132/" target="_blank">中文教程</a>，
-<a href="https://github.com/scipy/scipy/tree/135b734994a512334055a97a0f2fae8f0990887b" target="_blank">源代码</a>
+<a href="https://github.com/scipy/scipy/tree/135b734994a512334055a97a0f2fae8f0990887b" target="_blank">源代码</a>    
+- **functools**：python高阶函数包，即参数或（和）返回值为其他函数
 
 另外一些比较小众的气象软件包：
 - **Iris**：https://scitools-iris.readthedocs.io/en/latest/index.html ， https://scitools.org.uk/iris/docs/v2.4.0/userguide/index.html  
