@@ -85,6 +85,11 @@ elif not a <= -1:
 	b = b-a
 else:
 	b = b*a
+	
+list1 = ['a','b','coin']
+if 'a' in list1:
+	print('you are right')
+	
 ```
 
 # 几种python的循环语句  
