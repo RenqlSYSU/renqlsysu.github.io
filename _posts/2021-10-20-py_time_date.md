@@ -106,8 +106,8 @@ dt = datetime.utcfromtimestamp(time.time()) # 把时间戳转为UTC的datetime
                 time:calendar = "gregorian" ;
 ```
 
-当用xarray.open_dataset打开nc文件读取时间维，好像是会自动将该时间坐标转为datetime.  
-但若是用netCDF库的Dataset打开nc文件，则需要使用num2date将时间坐标转为python时间戳（根据ECMWF给出的python例子),如下所示：
+当用 **xarray.open_dataset** 打开nc文件读取时间维，好像是会自动将该时间坐标转为datetime.  
+但若是用netCDF库的Dataset打开nc文件，则需要使用 **num2date** 将时间坐标转为python时间戳（根据ECMWF给出的python例子),如下所示：
 
 ```python
 from netCDF4 import Dataset, date2num, num2date
@@ -116,7 +116,24 @@ with Dataset(f_in) as ds:
     var_time = ds.variables['time']
     time_avail = num2date(var_time[:], var_time.units,
             calendar = var_time.calendar)
+'''
+print(var_time) 的结果：
+<class 'netCDF4._netCDF4.Variable'>
+float64 time(time)
+    standard_name: time
+    units: hours since 1994-12-01 00:00:00
+    calendar: proleptic_gregorian
+unlimited dimensions: time
+current shape = (10248,)
+filling on, default _FillValue of 9.969209968386869e+36 used
 
+print(time_avail)的结果：
+[cftime.DatetimeProlepticGregorian(1994, 12, 1, 0, 0, 0, 0, has_year_zero=True)
+ cftime.DatetimeProlepticGregorian(1994, 12, 1, 1, 0, 0, 0, has_year_zero=True)
+ ...
+ cftime.DatetimeProlepticGregorian(1996, 1, 31, 22, 0, 0, 0, has_year_zero=True)
+ cftime.DatetimeProlepticGregorian(1996, 1, 31, 23, 0, 0, 0, has_year_zero=True)]
+'''
 
 import xarray as xr
 ds = xr.open_dataset("ERA5_NH_t_1989.nc")
@@ -150,8 +167,8 @@ stime = np.array([ds.time.dt.year.isin([1989,1981]),
 var= ds['t'].sel(time=stime)
 ```
 
-由于用xarray打开netcdf文件得到的时间维是一个元素类型为 datetime64[ns] 的 xarray.DataArray数据，因此无法使用 strftime("%Y-%m-%d_%H:00") 将其转换其他格式的时间字符串。
-此时可以使用 np.datetime_as_string(ds.time) 将其转换为字符串元素的 numpy.ndarray，然后用 pd.to_datetime() 将其转换为 pandas 的数据类型，具体如下：
+由于用 xarray 打开 netcdf 文件得到的时间维是一个元素类型为 **datetime64[ns]** 的 **xarray.DataArray** 数据，因此无法直接使用 **strftime(“%Y-%m-%d_%H:00”)** 将其转换其他格式的时间字符串。  
+此时可以使用 **np.datetime_as_string(ds.time)** 将其转换为字符串元素的 numpy.ndarray，然后用 **pd.to_datetime()** 将其转换为 pandas 的数据类型，具体如下：
 ```py
 from datetime import datetime
 time = pd.to_datetime(np.datetime_as_string(ds.time,unit='h'),format='%Y-%m-%dT%H')
@@ -161,6 +178,31 @@ str_time = datetime.strptime(np.datetime_as_string(var.time[0]),
       '%Y-%m-%dT%H:00:00.000000000').strftime('%b %d')
 ```
 
+# matplotlib.dates
+当时间坐标轴用 **datetime.datetime** 列表、**pd.date_range** 生成的数组表示时，plt中均有函数可以设置横纵坐标的时间格式，示例如下：
+
+```py
+import matplotlib.dates as mdates
+from datetime import datetime
+import pandas as pd
+
+
+ftime  = pd.date_range(start='2021-09-16 00',end='2021-09-16 23',freq='1H',closed=None)
+
+
+ftime = []
+for nt in
+	ftime.append(datetime.strptime(nt,'%Y-%m-%d %H:00:00'))
+# datetime一次只能处理一个变量，不能用于列表和数组
+
+
+axe.plot(ftime, var, label=case[nc], linewidth=2)
+axe.tick_params(axis='both', which='major',labelsize=label_font)
+axe.xaxis.set_major_formatter(mdates.DateFormatter("%m-%d_%H:00"))
+plt.setp(axe.get_xticklabels(), rotation=30, ha="right")
+```
+
+![](https://s1.ax1x.com/2022/07/03/j82Usg.png)
 
 # 参考资料：  
 - https://www.runoob.com/python3/python3-date-time.html  
