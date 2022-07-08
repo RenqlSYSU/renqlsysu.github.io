@@ -28,6 +28,10 @@ author: renql
 
 对于**海平面气压和涡度，极值可以直接辨认**。但对于其他场，例如**温度，只有在去除背景场后才能辨认出与天气系统相关的极值**。事实上，即便对于地表气压，对于低压系统移入冰岛低压是否是周围环流造成的假象存在争议。对于冰岛低压是与大尺度强迫相关的背景行星尺度结构，还是移入该区域的天气尺度低压集合，存在争议。相对站得住脚的观点是介于两者之间。
 
+与径向风相比，涡度更强调小尺度，因此用径向风追踪得到的气旋量级弱而涡度追踪得到的气旋量级强，表明这里的气旋尺度较小。
+
+涡度可以用来追踪更小尺度的气旋。**高方差的地区往往对应于高强度或高频率的气旋，且更多是前者**。当某个区域，**方差很大，但追踪密度或强度比较弱**，表明很多系统缺乏系统性的移动。当**方差很弱，但追踪密度或强度比较强**时，表明该地区的系统很小且移动快速，即其能量低于2天，或者其能量大于6天。
+
 ![](https://s1.ax1x.com/2020/09/23/wxJxJI.png)
 
 Neu et al. 2013的论文中得到的一些结论：  
@@ -39,5 +43,7 @@ Neu et al. 2013的论文中得到的一些结论：
 - 另一个关键的结果是，到目前为止，很难清楚地将已确定的气旋特征的差异与不同方案的特征联系起来。
 
 参考文献：
-> Neu et al. 2013: IMILAST – a community effort to intercompare extratropical cyclone detection and tracking algorithms. Bull. Amer. Meteor. Soc., 94, 529–547
+> Neu et al. 2013: IMILAST – a community effort to intercompare extratropical cyclone detection and tracking algorithms. Bull. Amer. Meteor. Soc., 94, 529–547    
+> 
+> Hoskins, B., and K. I. Hodges, 2019: The annual cycle of Northern Hemisphere storm tracks. Part I: Seasons. J. Climate, 32, 1743–1760, https://doi.org/10.1175/JCLI-D-17-0870.1.
 
