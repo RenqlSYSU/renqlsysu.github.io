@@ -13,8 +13,8 @@ author: renql
 
 the vertically integrated atmospheric apparent heat source 整层积分的大气视热源  
 下图选自论文《Interactions between boreal summer intraseasonal oscillations and synoptic-scale disturbances over the western North Pacific. Part II: Apparent heat and moisture sources and eddy momentum transport》  
-![](https://s3.ax1x.com/2020/12/04/Dq0Uc8.jpg)  
-![](https://s3.ax1x.com/2020/12/04/Dq0N1f.jpg)
+![](https://camo.githubusercontent.com/84ad37af17aa8e6cc78fc4401d36582681863e6378b6a1bd0d1d54e03f93ee71/68747470733a2f2f73332e617831782e636f6d2f323032302f31322f30342f4471305563382e6a7067) 
+![](https://camo.githubusercontent.com/c21ee09a32f5f0fc8762b6f4120f6111f496742d8a37ae5877a597ce395caac1/68747470733a2f2f73332e617831782e636f6d2f323032302f31322f30342f4471304e31662e6a7067)
 
 上述公式1是用可观测的变量去估算**垂直扩散加热(感热加热)，大气潜热加热，辐射加热（包括长波短波）**，进而算得大气视热源。因为无法观测到上述三个加热过程，因此需要用可以观测到的风场、温度场去估算。其中垂直速度是p坐标系下的垂直速度（单位Pa/s)。Cp一般取 **1004.0 J/(K kg)** ，所以计算得到的视热源单位 **W/kg**，整层积分后的单位是 **W/m2**。
 
@@ -53,7 +53,7 @@ CESM会默认输出月平均的上述三个加热过程的物理量，如下所�
 ```
 
 两种计算方法的对比
-![](https://s3.ax1x.com/2021/03/12/6UOx5q.png)
+![](https://camo.githubusercontent.com/8e3014c18bdd365dacfd2a492f24beeaba5bd48c3f04edc10af4a7ba83692b77/68747470733a2f2f73332e617831782e636f6d2f323032312f30332f31322f36554f7835712e706e67)
 
 他们的垂直分布如下（第一张图是模式输出资料，第二张图是由温度和风场反算的结果，色标一致，均未乘Cp）   
 ![](https://s3.ax1x.com/2021/03/12/6UOvan.png)  
