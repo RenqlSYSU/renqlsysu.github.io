@@ -91,6 +91,11 @@ now = datetime.now() # 获取当前datetime
 a1 = now + timedelta(hours=10) #时间向后推移10个小时
 a2 = now - timedelta(days=1)   #日期向前推移1天
 
+# 也可以通过两个时间点相减，获得总的时间间隔秒数
+dt1 = datetime(2015, 4, 19, 12, 20)
+dt2 = datetime(2015, 4, 21, 12, 20)
+(dt2-dt1).total_seconds()/60.0/60.0 #间隔的小时数
+
 
 dt.timestamp() # 把datetime转换为timestamp
 dt = datetime.fromtimestamp(time.time()) # 把时间戳转为本地时区的datetime
