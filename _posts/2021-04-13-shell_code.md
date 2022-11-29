@@ -47,6 +47,11 @@ do
 		 echo "----------"
 	fi
 done
+
+radiu=(3 6 9 10)
+for ra in ${radiu[@]} ; do
+	echo ${ra}
+done
 ```
 
 字符串拼接 http://c.biancheng.net/view/1114.html
