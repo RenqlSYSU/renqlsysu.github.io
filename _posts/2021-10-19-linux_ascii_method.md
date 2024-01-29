@@ -37,5 +37,16 @@ sed -i "34s/.*/${fras}/" STATS.latlng_1hr.in
 awk '{if(NF==4 && ($2 > 400 || $3 > 100 )) print FILENAME, $0}' $filname | awk 'END{print NR}'
 
 awk 'NR==4 {print FILENAME, $2}' file1.txt | tee -a file2.txt
+
+# 查看文本文件第一列的去重信息
+awk '!seen[$1]++' hg38.all.cpgSite.bed  # 输出第一次遇到的第一列，而忽略后续的相同项
+awk '{ print $1 }' hg38.all.cpgSite.bed | uniq # 去重，若后面加-c，则会显示每一个元素的重复次数， 但重复行不相邻时，该命令不起作用
+awk '{ print $1 }' hg38.all.cpgSite.bed | sort -u # 对第一列去重并排序
+
+# 将文本文件按第一列特定字符串及第二列排序
+sort -k 1,1V -k 2,2n ${file} | awk '{ if($1=="chr1"||$1=="chr2"||$1=="chr3"||$1=="chr4"||$1=="chr5"||$1=="chr6"||$1=="chr7"||$1=="chr8"||$1=="chr9"||$1=="chr10"||$1=="chr11"||$1=="chr12"||$1=="chr13"||$1=="chr14"||$1=="chr15"||$1=="chr16"||$1=="chr17"||$1=="chr18"||$1=="chr19"||$1=="chr20"||$1=="chr21"||$1=="chr22"||$1=="chrX"||$1=="chrY") { print } }' > ${file}.sort
+# -k 1,1V: 指定按照第一列进行排序，-k1,1 表示只考虑第一列，V 表示按照版本号进行排序（版本排序，例如，10会排在2的前面而不是后面）。
+# -k 2,2n: 如果第一列相同，则按照第二列进行数值（numeric）排序，-k2,2 表示只考虑第二列，n 表示按照数值进行排序。
+# 详细解释可以参照该网站 https://www.cnblogs.com/51linux/archive/2012/05/23/2515299.html 
 ```
 
